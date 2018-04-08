@@ -8,14 +8,6 @@ from .models import Certificates
 def index(request):
     # return HttpResponse('Hello from Python!')
 
-    #NEW
-    certificate = Certs(
-    	name = "Applications of Computing", prereqs = "COS 126", 
-    	name = "sorex", phonenumber = "002376970"
-    	)
-    
-    certificate.save()
-
     #END NEW
     return render(request, 'index.html')
 
