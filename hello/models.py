@@ -9,5 +9,3 @@ class Certificates(models.Model):
 	name = models.CharField(max_length=255)
 	prereqs = models.CharField(max_length=255)
 	departmentHead = models.CharField(max_length=255)
-	 class Meta:
-      db_table = "certificates"
