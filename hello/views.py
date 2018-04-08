@@ -9,17 +9,15 @@ def index(request):
     # return HttpResponse('Hello from Python!')
 
     #NEW
-    certificate = Certificates(
-    	name = "Applications of Computing", prereqs = "COS 126;COS 226;COS 217", 
-    	departmentHead = "Colleen Kenny"
+    certificate = Certs(
+    	name = "Applications of Computing", prereqs = "COS 126", 
+    	name = "sorex", phonenumber = "002376970"
     	)
-
+    
     certificate.save()
 
-    certs = Certificates.objects.all()
-
     #END NEW
-    return render(request, 'index.html', {'certificates' : certs})
+    return render(request, 'index.html')
 
 
 def db(request):

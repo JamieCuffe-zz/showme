@@ -5,7 +5,12 @@ class Greeting(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
 
 #NEW
-class Certificates(models.Model):
-	name = models.CharField(max_length=255)
-	prereqs = models.CharField(max_length=255)
-	departmentHead = models.CharField(max_length=255)
+
+class Certs(models.Model):
+
+   name = models.CharField(max_length = 50)
+   prereqs = models.CharField(max_length = 50)
+   departmentHead = models.CharField(max_length = 50)
+
+   class Meta:
+      db_table = "certs"
