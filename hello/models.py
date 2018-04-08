@@ -10,7 +10,6 @@ class Certs(models.Model):
 
    name = models.CharField(max_length = 50)
    prereqs = models.CharField(max_length = 50)
-   departmentHead = models.CharField(max_length = 50)
 
    class Meta:
       db_table = "certs"
