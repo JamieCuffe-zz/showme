@@ -1,2 +1,2 @@
 # showme
-An app to improve advising and course selection for students.
+An app to improve advising, course selection, and certificate progress for students.
