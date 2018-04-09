@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% extends "base.html" %}
+{% load staticfiles %}
+
   <head>
 
     <meta charset="utf-8">
@@ -125,6 +128,27 @@
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  
+
+  {% block content %}
+    <div class="container">
+
+
+  <h2>Test db connection</h2>
+
+
+  <ul>
+
+  {% for certificate in certificates %}
+      <li>{{ certificate.name }}</li>
+  {% endfor %}
+
+  </ul>
+
+  </div>
+
+  {% endblock %}
 
   </body>
 
