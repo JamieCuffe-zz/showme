@@ -2,13 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Greeting
+from .models import Certs
 
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-
-    #END NEW
-    return render(request, 'index.html')
+    c = Certs()
+    c.save()
+    certificates = Certs.objects.all()
+    if not certificates:
+    	return render(request, 'nodata.html')
+    else:
+    	return render(request, 'index.html', {'certificates': certificates})
 
 
 def db(request):
