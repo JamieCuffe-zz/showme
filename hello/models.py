@@ -34,6 +34,19 @@ class Certificates(models.Model):
    	db_table = "certificates"
 #END NEW
 
+#add students table
+
+# class Students(models.Model):
+#    netid = models.CharField(max_length=100, primary_key=True)
+#    first = models.CharField(max_length = 100)
+#    last = models.CharField(max_length = 100)
+#    major = models.CharField(max_length = 100)
+#    degree = models.CharField(max_length = 100)
+#    year = models.IntegerField()
+    
+#    class Meta:
+#    	db_table = "students"
+
 
 
 
