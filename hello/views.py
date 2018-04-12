@@ -12,7 +12,7 @@ def login(request):
 
 def index(request):
     # intialize html string
-    htmlOut = ''
+    htmlOut = render_to_string('top.html')
 
     # gets user specific information
     #currentStudent = Students.objects.get(netid = 'testStudent')
@@ -42,7 +42,7 @@ def index(request):
 
     htmlOut += render_to_string('header_template.html', studentContext)
 
-    
+    htmlOut += render_to_string('bottom_end_structure.html')
     
     # return html code 
     return HttpResponse(htmlOut)
