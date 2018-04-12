@@ -81,4 +81,5 @@ class Migration(migrations.Migration):
                 'db_table': 'certificates',
             },
         ),
+        migrations.RunPython(populateCertificate_db)
     ]
