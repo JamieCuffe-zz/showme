@@ -52,7 +52,7 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">Alexander Pierce</span>
+            <span class="hidden-xs">{{student_name}}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
@@ -60,8 +60,8 @@
               <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
               <p>
-                Alexander Pierce
-                <small>COS BSE Junior</small>
+                {{student_name}}
+                <small>{{student_major}} {{student_degree}} {{student_year}}</small>
               </p>
             </li>
             <!-- Menu Footer-->
@@ -77,8 +77,8 @@
         </li>
       </ul>
     </div>
-  </nav>
-</header>
+   </nav>
+  </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -89,8 +89,8 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#"> COS BSE Junior</a>
+          <p>{{student_name}}</p>
+          <a href="#"> {{student_major}} {{student_degree}} {{student_year}}</a>
         </div>
       </div>
       <!-- search form -->
@@ -122,14 +122,14 @@
         </li>
         <li class="treeview">
             <a href="#">
-              <i class="fa fa-book"></i> <span>COS 226</span>
+              <i class="fa fa-book"></i> <span>MAE 345</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a><i class="fa fa-circle-o"></i> Data Structures and Algorithms </a></li>
-              <li><a><i class="fa fa-circle-o"></i> Mark Braverman </a></li>
+              <li><a><i class="fa fa-circle-o"></i> Robotics and Intelligent Systems </a></li>
+              <li><a><i class="fa fa-circle-o"></i> Robert Stengel </a></li>
             </ul>
         </li>
     </section>
@@ -155,7 +155,7 @@
             <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
             <div class="info-box-content">
               <span class="info-box-text">Completed Certificates</span>
-              <span class="info-box-number">2</span>
+              <span class="info-box-number">{{gen_numCertsComplete}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -168,7 +168,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Completed Courses</span>
-              <span class="info-box-number">18</span>
+              <span class="info-box-number">{{gen_numCoursesComplete}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -185,7 +185,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Attainable Certificates</span>
-              <span class="info-box-number">3</span>
+              <span class="info-box-number">{{gen_numCertAttainable}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -198,7 +198,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Courses Needed</span>
-              <span class="info-box-number">7</span>
+              <span class="info-box-number">{{gen_numCoursesNeeded}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -256,7 +256,7 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">COS: Applications of Computing</h3>
+              <h3 class="box-title">{{cert_threeLetterCode}} {{cert_name}}</h3>
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
@@ -274,15 +274,17 @@
                 </div>
             <!-- /.col -->
                 <div class="col-md-4">
-                  <h4>Applications of Computing</h4>
-                  <h5><small>The Program in Applications of Computing is an interdisciplinary program designed for Princeton undergraduates who want to combine the study of computing and computers beyond an introductory level with another academic concentration, but who are not majoring in Computer Science.</small></h5>
+                  <h4>{{cert_name}}</h4>
+                  <h5><small>{{cert_description}}</small></h5>
                 </div>
 
                 <div class="col-md-4">
                     <div class="small-box bg-aqua">
                         <div class="inner">
                           <h5>Contact Info</h5>
-                          <a href="#" class="small-box-footer">Website <i class="fa fa-arrow-circle-right"></i></a>
+                          <h6><i class="fa fa-fw  fa-user"></i><a href="#" class="small-box-footer">{{cert_contactName}}</a></h6>
+                          <h6><i class="fa fa-fw fa-envelope"></i><a href="#" class="small-box-footer">{{cert_contactEmail}}</a></h6>
+                          <h6><i class="fa fa-fw fa-link"></i><a href="#" class="small-box-footer">{{cert_website}}</a></h6>
                         </div>
                     </div>
                 </div>
@@ -296,15 +298,6 @@
       <!-- /.box -->
         </div>
       </div>
-
-
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
