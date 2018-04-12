@@ -20,7 +20,7 @@ import hello.views
 
 #NEW
 urlpatterns = [
-    url(r'^$', hello.views.login, name = 'login'),
+    url(r'^$', hello.views.index, name = 'login'),
     url(r'^index', hello.views.index, name = 'index')
     # added a period before '*'
 ]
