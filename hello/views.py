@@ -14,8 +14,9 @@ def index(request):
     htmlOut = ''
 
     # gets user specific information
-    currentStudent = Students.objects.get(netid = 'testStudent')
+    #currentStudent = Students.objects.get(netid = 'testStudent')
     
+    currentStudent = ""
     listOfInfo = interpretedData(currentStudent)
     certsComplete = listOfInfo[0]
     coursesComplete = listOfInfo[1]
