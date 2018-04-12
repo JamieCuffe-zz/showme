@@ -37,77 +37,7 @@ def index(request):
     }
     htmlOut += render_to_string('header_template.html', studentContext)
 
-    # iterate through all certificates
-    certificates = Certificates.objects.all()
-    for certificate in certificates:
-        percentComplete = 75
-        coursesComplete = 14
-        certificateContext = {
-            'cert_name' : certificate.title,
-            'cert_description' : certificate.description,
-            'cert_contactName' : certificate.contact_name,
-            'cert_contactEmail' : certificate.contact_email,
-            'cert_website' : certificate.link_page,
-            'cert_threeLetterCode' : certificate.code,
-            'drop_percentComplete' : percentComplete,
-            'drop_coursesComplete' : coursesComplete
-        }
-        htmlOut += render_to_string('display_cert_template.html', certificateContext)
-
-        # track1 information 
-        if len(certificate.track1) > 0:
-            track1 = parseTrack(str(certificate.track1))
-            htmlOut += render_to_string('track_template.html', track1[0])
-            
-            for course in track1[:-1]:
-                htmlOut += render_to_string('course_template.html', {'track_course_name' : str(course), 'track_course_status' : 'DONE'})
-
-        # track2 information 
-        if len(certificate.track2) > 0:
-            track2 = parseTrack(str(certificate.track3))
-            htmlOut += render_to_string('track_template.html', track1[0])
-            
-            for course in track2[:-1]:
-                htmlOut += render_to_string('course_template.html', {'track_course_name' : str(course), 'track_course_status' : 'DONE'})
-
-        # track3 information 
-        track3 = parseTrack(str(certificate.track3))
-        if len(certificate.track3) > 0:
-            track3 = parseTrack(str(certificate.track3))
-            htmlOut += render_to_string('track_template.html', track3[0])
-            
-            for course in track3[:-1]:
-                htmlOut += render_to_string('course_template.html', {'track_course_name' : str(course), 'track_course_status' : 'DONE'})
-
-        # track4 information 
-        track4 = parseTrack(str(certificate.track4))
-        if len(certificate.track4) > 0:
-            track4 = parseTrack(str(certificate.track4))
-            htmlOut += render_to_string('track_template.html', track4[0])
-            
-            for course in track4[:-1]:
-                htmlOut += render_to_string('course_template.html', {'track_course_name' : str(course), 'track_course_status' : 'DONE'})
-
-
-        # track5 information 
-        track5 = parseTrack(str(certificate.track4))
-        if len(certificate.track5) > 0:
-            track5 = parseTrack(str(certificate.track4))
-            htmlOut += render_to_string('track_template.html', track5[0])
-            
-            for course in track5[:-1]:
-                htmlOut += render_to_string('course_template.html', {'track_course_name' : str(course), 'track_course_status' : 'DONE'})
-
-        # track6 information 
-        track6 = parseTrack(str(certificate.track4))
-        if len(certificate.track6) > 0:
-            track6 = parseTrack(str(certificate.track6))
-            htmlOut += render_to_string('track_template.html', track5[0])
-            
-            for course in track6[:-1]:
-                htmlOut += render_to_string('course_template.html', {'track_course_name' : str(course), 'track_course_status' : 'DONE'})
-
-    htmlOut += render_to_string('bottom_and_structure.html')
+    
     
     # return html code 
     return HttpResponse(htmlOut)
