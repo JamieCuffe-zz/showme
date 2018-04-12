@@ -15,23 +15,23 @@ class Certs(models.Model):
       db_table = "certs"
 
 #NEW
-# class Certificates(models.Model):
+class Certificates(models.Model):
 
-#    title = models.CharField(max_length=100, primary_key=True)
-#    code = models.CharField(max_length=5)
-#    link_page = models.URLField()
-#    contact_name=models.CharField(max_length=255)
-#    contact_email=models.EmailField()
-#    total_courses=models.IntegerField()
-#    description=models.CharField(max_length=10000)
-#    track1=models.CharField(max_length=1000)
-#    track2=models.CharField(max_length=1000)
-#    track3=models.CharField(max_length=1000)
-#    track4=models.CharField(max_length=1000)
-#    track5=models.CharField(max_length=1000)
-#    track6=models.CharField(max_length=1000)
-#    class Meta:
-#    	db_table = "certificates"
+   title = models.CharField(max_length=100, primary_key=True)
+   code = models.CharField(max_length=5)
+   link_page = models.URLField()
+   contact_name=models.CharField(max_length=255)
+   contact_email=models.EmailField()
+   total_courses=models.IntegerField()
+   description=models.CharField(max_length=10000)
+   track1=models.CharField(max_length=1000)
+   track2=models.CharField(max_length=1000)
+   track3=models.CharField(max_length=1000)
+   track4=models.CharField(max_length=1000)
+   track5=models.CharField(max_length=1000)
+   track6=models.CharField(max_length=1000)
+   class Meta:
+   	db_table = "certificates"
 #END NEW
 
 
