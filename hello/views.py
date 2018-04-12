@@ -121,7 +121,7 @@ def interpretedData(student):
 # separates field of information in the track field
 def parseTrack(trackSequence):
     rawInfo = trackSequence.split('*')
-    courses = rawInfo[:-1].split('%')
+    courses = str(rawInfo[:-1]).split('%')
     rawInfo[:-1] = courses
 
     return rawInfo
