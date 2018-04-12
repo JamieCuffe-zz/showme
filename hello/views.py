@@ -24,15 +24,15 @@ def index(request):
     
     # add header to htmlOut
     studentContext = {
-        'student_first' = "Test",
-        'student_last' = "Student",
-        'student_major' = "ENG",
-        'student_degree' = "AB",
-        'student_year' = "2020",
-        'gen_numCertsComplete' = 2,
-        'gen_numCoursesComplete' = 16,
-        'gen_numCertsAttainable' = 3,
-        'gen_numCoursesNeeded' = 12
+        'student_first' : "Test",
+        'student_last' : "Student",
+        'student_major': "ENG",
+        'student_degree' : "AB",
+        'student_year' : "2020",
+        'gen_numCertsComplete' : 2,
+        'gen_numCoursesComplete' : 16,
+        'gen_numCertsAttainable' : 3,
+        'gen_numCoursesNeeded' : 12
     }
     htmlOut += render_to_string('header_template.html', studentContext)
 
