@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from django.http import JsonResponse
 from .models import Greeting
 from .models import Certs
 
@@ -24,4 +24,12 @@ def db(request):
 	greetings = Greeting.objects.all()
 
 	return render(request, 'db.html', {'greetings': greetings})
+
+def testjson(request):
+    responseData = {
+    'id' : 4,
+    'name' : 'Test Response',
+    'roles' : ['Admin', 'User']
+    }
+    return JsonResponse(responseData)
 
