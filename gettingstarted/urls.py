@@ -21,8 +21,6 @@ import hello.views
 #NEW
 urlpatterns = [
     url(r'^$', hello.views.login, name = 'login'),
-    url(r'^index', hello.views.index, name = 'index'),
-    url(r'^transcript', hello.views.transcript, name = 'transcript'),
+    url(r'^index', hello.views.index, name = 'index')
     # added a period before '*'
-    url(r'^result.*', hello.views.result, name = 'result')
 ]

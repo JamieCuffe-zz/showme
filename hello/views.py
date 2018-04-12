@@ -124,33 +124,33 @@ def parseTrack(trackSequence):
 
     return rawInfo
 
-def testtranscript(request):
-    return render(request, 'testtranscript.html')
+# def testtranscript(request):
+#     return render(request, 'testtranscript.html')
 
 
-def result(request):
-    BASE_SERVICE_URL = "https://transcriptapi.tigerapps.org"
-    ticket = request.GET.get("ticket")
-    request_url = '{base}/transcript/?ticket={ticket}'.format(base = BASE_SERVICE_URL,
-        ticket = ticket)
-    r = requests.get(request_url)
-    try:
-        transcript = r.json()["transcript"]
-    except (ValueError, KeyError):
-        flash("Something went wrong! Please try again later.")
-        return redirect(url_for("index"))
+# def result(request):
+#     BASE_SERVICE_URL = "https://transcriptapi.tigerapps.org"
+#     ticket = request.GET.get("ticket")
+#     request_url = '{base}/transcript/?ticket={ticket}'.format(base = BASE_SERVICE_URL,
+#         ticket = ticket)
+#     r = requests.get(request_url)
+#     try:
+#         transcript = r.json()["transcript"]
+#     except (ValueError, KeyError):
+#         flash("Something went wrong! Please try again later.")
+#         return redirect(url_for("index"))
 
-    # allGrades = []
-    # if transcript["grades"] != '':
-    #     for course,grade in transcript["grades"].items():
-    #         # grade is '' if the course has not yet been taken (i.e no grade available).
-    #         if course != '':
-    #             allGrades.append(course)
-    # else:
-    #     for semester,allCourses in transcript["courses"].items():
-    #         allGrades.append(semester)
+#     # allGrades = []
+#     # if transcript["grades"] != '':
+#     #     for course,grade in transcript["grades"].items():
+#     #         # grade is '' if the course has not yet been taken (i.e no grade available).
+#     #         if course != '':
+#     #             allGrades.append(course)
+#     # else:
+#     #     for semester,allCourses in transcript["courses"].items():
+#     #         allGrades.append(semester)
 
-    return render(request, 'testtranscriptresult.html', {'transcript': transcript})
+#     return render(request, 'testtranscriptresult.html', {'transcript': transcript})
     
 
 #OLD
