@@ -26,6 +26,7 @@
         "url": "https://github.com/BlackrockDigital/startbootstrap-shop-item.git"
     },
     "dependencies": {
+        "admin-lte": "^2.4.3",
         "bootstrap": "4.0.0",
         "jquery": "3.3.1"
     },
