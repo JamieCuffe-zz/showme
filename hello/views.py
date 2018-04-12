@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.http import HttpRequest
 from django.http import JsonResponse
+from django.template.loader import render_to_string
 import requests 
 from .models import Certificates
 
