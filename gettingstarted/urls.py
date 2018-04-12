@@ -10,9 +10,17 @@ import hello.views
 # url(r'^$', 'gettingstarted.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
 
+#OLD
+# urlpatterns = [
+#     url(r'^$', hello.views.index, name='index'),
+#     url(r'^db', hello.views.db, name='db'),
+#     url(r'^testjson', hello.views.testjson, name='testjson'),
+#     path('admin/', admin.site.urls),
+# ]
+
+#NEW
 urlpatterns = [
-    url(r'^$', hello.views.index, name='index'),
-    url(r'^db', hello.views.db, name='db'),
-    url(r'^testjson', hello.views.testjson, name='testjson'),
-    path('admin/', admin.site.urls),
+    url(r'^$', hello.views.index, name = 'login'),
+    url(r'^index', hello.views.index, name = 'index')
+    # added a period before '*'
 ]
