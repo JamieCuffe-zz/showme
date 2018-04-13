@@ -46,7 +46,7 @@ def index(request):
     # htmlOut += render_to_string('bottom_end_structure.html')
     
     # return html code 
-    return render(request, 'index.html')
+    return HttpResponse(htmlOut)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
