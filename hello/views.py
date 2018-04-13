@@ -4,6 +4,7 @@ from django.http import HttpRequest
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 import requests 
+import json
 from .models import Certificates
 
 def login(request):
