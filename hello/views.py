@@ -13,7 +13,7 @@ def login(request):
 
 def index(request):
     # intialize html string
-    htmlOut = render_to_string('index.html')
+    #htmlOut = render_to_string('index.html')
 
     # gets user specific information
     # currentStudent = Students.objects.get(netid = 'testStudent')
