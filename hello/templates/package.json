@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-      "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "devDependencies": {
     "R2": "^1.4.3",
