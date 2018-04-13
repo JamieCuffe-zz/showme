@@ -16,7 +16,7 @@ def index(request):
     htmlOut = render_to_string('index.html')
 
     # gets user specific information
-    currentStudent = Students.objects.get(netid = 'testStudent')
+    # currentStudent = Students.objects.get(netid = 'testStudent')
 
     certificates = Certificates.objects.all()
 
