@@ -45,7 +45,7 @@ def index(request):
     # htmlOut += render_to_string('bottom_end_structure.html')
     
     # return html code 
-    return HttpResponse(htmlOut)
+    return HttpResponse(json.dumps(htmlOut), mimetype="application/json")
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
