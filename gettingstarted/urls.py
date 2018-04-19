@@ -21,6 +21,6 @@ import hello.views
 #NEW
 urlpatterns = [
     url(r'^$', hello.views.index, name = 'login'),
-    url(r'^index', hello.views.index, name = 'index')
+    url(r'^index', hello.views.index, name = 'index'),
     url(r'^certificate', hello.views.certificate, name = 'certificate')
 ]
