@@ -44,5 +44,6 @@ class Students(models.Model):
     coursesNeeded = models.IntegerField()
     courseBasket = models.CharField(max_length=1000)
     coursesCompleted = models.CharField(max_length=1000)
+    pinnedCertificates = models.CharField(max_length=1000)
     class Meta:
         db_table = "students"
