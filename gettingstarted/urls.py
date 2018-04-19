@@ -18,9 +18,14 @@ import hello.views
 #     path('admin/', admin.site.urls),
 # ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+
 #NEW
 urlpatterns = [
     url(r'^$', hello.views.index, name = 'login'),
     url(r'^index', hello.views.index, name = 'index'),
     url(r'^certificate', hello.views.certificate, name = 'certificate')
-]
+] + static(settings.STATIC_URL, document_root='hello/templates')
