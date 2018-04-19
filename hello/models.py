@@ -14,7 +14,6 @@ class Certs(models.Model):
    class Meta:
       db_table = "certs"
 
-#NEW
 class Certificates(models.Model):
 
    title = models.CharField(max_length=100, primary_key=True)
@@ -32,21 +31,18 @@ class Certificates(models.Model):
    track6=models.CharField(max_length=1000)
    class Meta:
    	db_table = "certificates"
-#END NEW
 
-#add students table
-
-# class Students(models.Model):
-#    netid = models.CharField(max_length=100, primary_key=True)
-#    first = models.CharField(max_length = 100)
-#    last = models.CharField(max_length = 100)
-#    major = models.CharField(max_length = 100)
-#    degree = models.CharField(max_length = 100)
-#    year = models.IntegerField()
-    
-#    class Meta:
-#    	db_table = "students"
-
-
-
-
+class Students(models.Model):
+    netid = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=1000)
+    major = models.CharField(max_length=100)
+    degree = models.CharField(max_length=100)
+    year = models.IntegerField()
+    certsObtained = models.CharField(max_length=1000)
+    numCoursesCompleted = models.IntegerField()
+    certificateObtainable = models.IntegerField()
+    coursesNeeded = models.IntegerField()
+    courseBasket = models.CharField(max_length=1000)
+    coursesCompleted = models.CharField(max_length=1000)
+    class Meta:
+        db_table = "students"
