@@ -49,7 +49,15 @@ def index(request):
 
 # returns the certificate data to be presented to the user
 def certificate(request):
-    # get all certificates
+    # get all certificates for given student
+    netID = request['path'].split('/')[:-2]
+
+    # gets object for student representation
+    student = Students.objects.get(name = netID)
+
+    # insert parser that returns completed certificates
+
+    # format the certificates from low to craft
 
     # return certificate information
     return JsonResponse(data)
