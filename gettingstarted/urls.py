@@ -25,4 +25,4 @@ urlpatterns = [
     url(r'^$', hello.views.index, name = 'login'),
     url(r'^index', hello.views.index, name = 'index'),
     url(r'^certificate', hello.views.certificate, name = 'certificate')
-] + static(settings.STATIC_URL, document_root='hello/templates')
+] + static('static', document_root='hello/templates')
