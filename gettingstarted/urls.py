@@ -22,5 +22,5 @@ import hello.views
 urlpatterns = [
     url(r'^$', hello.views.index, name = 'login'),
     url(r'^index', hello.views.index, name = 'index')
-    # added a period before '*'
+    url(r'^certificate', hello.views.certificate, name = 'certificate')
 ]

@@ -47,6 +47,13 @@ def index(request):
     # return html code 
     return HttpResponse(htmlOut)
 
+# returns the certificate data to be presented to the user
+def certificate(request):
+    # get all certificates
+
+    # return certificate information
+    return JsonResponse(data)
+
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
 def interpretedData(student):
