@@ -8,8 +8,21 @@ import json
 from .models import Certificates
 
 def login(request):
-    # redirects to index for the test case
-    index(request)
+    # CAS login
+    # redirect_url = "https://fed.princeton.edu/cas/login"
+
+    # if "ticket" in request.args:  # This means CAS has redirected back to us
+    #     session["CAS_TOKEN"] = request.args["ticket"]
+
+    # if "CAS_TOKEN" in session:  # There is a token already, but we might not trust
+    #     if validate(session["CAS_TOKEN"]):  # ensure token validity
+    #         if 'CAS_AFTER_LOGIN_SESSION_URL' in session:
+    #             redirect_url = session.pop('CAS_AFTER_LOGIN_SESSION_URL')
+    #         else:
+    #             redirect_url = "/"
+    #     else:
+    #         del session["CAS_TOKEN"]
+    # return redirect(redirect_url)
 
 def index(request):
     # intialize html string
