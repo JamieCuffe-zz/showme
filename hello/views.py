@@ -91,7 +91,7 @@ def certificate(request):
         data = {
         "name" : "value"
         }
-        return JsonResponse(data)
+        return JsonResponse(certdata)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
