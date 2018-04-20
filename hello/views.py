@@ -89,7 +89,7 @@ def certificate(request):
 
 	    # return certificate information
 
-        return JsonResponse(json.dumps(certdata))
+        return JsonResponse(certdata, safe=False)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
