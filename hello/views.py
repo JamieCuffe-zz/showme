@@ -72,7 +72,7 @@ def certificate(request):
     # order by completion percentage
 
     # return certificate information
-    return JsonResponse(data)
+    return JsonResponse(certificates)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
