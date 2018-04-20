@@ -50,29 +50,33 @@ def index(request):
 # returns the certificate data to be presented to the user
 def certificate(request):
     # get all certificates for given student
-    netID = request.path.split('/')[:-2]
+    if request.method == 'GET':
+	    netID = request.path.split('/')[:-2]
 
-    # gets object for student representation
-    student = Students.objects.get(name = netID)
-    certificates = Certificates.objects.all()
+	    # gets object for student representation
+	    student = Students.objects.get(name = netID)
+	    certificates = Certificates.objects.all()
 
-    # insert parser that returns completed certificates
-    # courses completed by the student 
-    # for certificate in certicates:
-        # completionFunction(student.netID, certificate, student.year, student.coursesCompleted)
-        # if true, student.completedCertificates += '.' + certificate
-        # else 
-            # add to outputted certificates
-            # update track satisfied
-            # for each updated track:
-                # add counted courses
+	    # insert parser that returns completed certificates
+	    # courses completed by the student 
+	    # for certificate in certicates:
+	        # completionFunction(student.netID, certificate, student.year, student.coursesCompleted)
+	        # if true, student.completedCertificates += '.' + certificate
+	        # else 
+	            # add to outputted certificates
+	            # update track satisfied
+	            # for each updated track:
+	                # add counted courses
 
-    # format the certificates from favorited/completion to low
-    # order favorited first
-    # order by completion percentage
+	    # format the certificates from favorited/completion to low
+	    # order favorited first
+	    # order by completion percentage
 
-    # return certificate information
-    return JsonResponse(data)
+	    # return certificate information
+	    data = {
+	    "name" : "value"
+	    }
+	    return JsonResponse(data)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
