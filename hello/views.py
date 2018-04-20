@@ -68,8 +68,11 @@ def certificate(request):
 
 	    # gets object for student representation
 	    #student = Students.objects.get(name = netID)
-	    certificates = Certificates.objects.values()
-
+	    certificates = Certificates.objects.all()
+        data = {}
+        for certificate in certificates:
+            data["title"] = certificate.title
+            data["contact name"] = certicate.contact_name
 	    # insert parser that returns completed certificates
 	    # courses completed by the student
 	    # for certificate in certicates:
@@ -89,7 +92,7 @@ def certificate(request):
 	    # data = {
 	    # "name" : "value"
 	    # }
-	    return JsonResponse(certificates)
+	    return JsonResponse(data)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
