@@ -88,8 +88,10 @@ def certificate(request):
 	    # order by completion percentage
 
 	    # return certificate information
-
-        return JsonResponse(certdata, safe=False)
+        data = {
+        "name" : "value"
+        }
+        return JsonResponse(data)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
