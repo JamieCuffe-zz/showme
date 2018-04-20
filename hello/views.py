@@ -64,15 +64,14 @@ def index(request):
 def certificate(request):
     # get all certificates for given student
     if request.method == 'GET':
-	    netID = request.path.split('/')[:-2]
-
+        netID = request.path.split('/')[:-2]
+        certdata = {}
+        certificates = Certificates.objects.all()
+        for certificate in certificates:
+            certdata['title'] = certificate.title
+            certdata['contact'] = certificate.contact_name
 	    # gets object for student representation
 	    #student = Students.objects.get(name = netID)
-	    certificates = Certificates.objects.all()
-        data = {}
-        for certificate in certificates:
-            data["title"] = certificate.title
-            data["contact name"] = certicate.contact_name
 	    # insert parser that returns completed certificates
 	    # courses completed by the student
 	    # for certificate in certicates:
@@ -89,10 +88,8 @@ def certificate(request):
 	    # order by completion percentage
 
 	    # return certificate information
-	    data = {
-	    "name" : "value"
-	    }
-	    return JsonResponse(data)
+
+        return JsonResponse(json.dumps(certdata))
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
