@@ -5,33 +5,37 @@
     $(document).ready(function (){
         $.ajax({
             type: "GET",
-            url: "http://showme333.herokuapp.com/certificates",
+            url: "certificates",
             success: function(result)
             {
-                // console.log(result);
-                // var output = "HTML HEADER";
-                // for (var i in result)
-                // {
-                //     output += "HTML CODE";
-                // }
-                // output += "ENDING HTML CODE";
-                // displayResources.html(output);
-                // $("LOCATION").addClass("LOCATION");
-                $('#test').append(JSON.stringify(result));
-
+                console.log(result);
+                var output = "HTML HEADER";
+                for (var i in result)
+                {
+                    output += "HTML CODE";
+                }
+                output += "ENDING HTML CODE";
+                displayResources.html(output);
+                $("LOCATION").addClass("LOCATION");
             }
-        })
-
-
-        // $.get(netid + "/certificate", function(data, status){
-        //     // what ever we want to do with the data 
-        // });
+        });
+        $.get(netid + "/certificate", function(data, status){
+            // what ever we want to do with the data 
+        });
+        $('button').click(function () {
+            $.ajax({
+                type: "POST",
+                url: "coursebasket",
+                dataType: "json",
+                data: JSON.stringify({'course':'COS 126'})
+                success: function(data)
+                {
+                    $('#target').html(data.msg);
+                }
+            });
+        });
     });
+    
 </script>
 </head>
-<body>
-	<div id='test'>
-		
-	</div>
-</body>
 </html>

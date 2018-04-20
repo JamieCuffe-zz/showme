@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.http import HttpRequest
 from django.http import JsonResponse
 from django.template.loader import render_to_string
-import requests 
+import requests
 import json
 from .models import Certificates
 
@@ -38,7 +38,7 @@ def index(request):
     coursesComplete = listOfInfo[1]
     certsAttainable = listOfInfo[2]
     coursesNeeded = listOfInfo[3]
-    
+
     for certificate in certificates:
         # add header to htmlOut
         studentContext = {
@@ -56,8 +56,8 @@ def index(request):
     # htmlOut += render_to_string('header_template.html', studentContext)
 
     # htmlOut += render_to_string('bottom_end_structure.html')
-    
-    # return html code 
+
+    # return html code
     return HttpResponse(htmlOut)
 
 # returns the certificate data to be presented to the user
@@ -71,11 +71,11 @@ def certificate(request):
 	    certificates = Certificates.objects.all()
 
 	    # insert parser that returns completed certificates
-	    # courses completed by the student 
+	    # courses completed by the student
 	    # for certificate in certicates:
 	        # completionFunction(student.netID, certificate, student.year, student.coursesCompleted)
 	        # if true, student.completedCertificates += '.' + certificate
-	        # else 
+	        # else
 	            # add to outputted certificates
 	            # update track satisfied
 	            # for each updated track:
@@ -135,7 +135,7 @@ def getrequest(request):
 #     #         allGrades.append(semester)
 
 #     return render(request, 'testtranscriptresult.html', {'transcript': transcript})
-    
+
 
 #OLD
 
@@ -167,4 +167,3 @@ def getrequest(request):
 #     'roles' : ['Admin', 'User']
 #     }
 #     return JsonResponse(responseData)
-
