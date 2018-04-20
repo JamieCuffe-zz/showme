@@ -1,5 +1,7 @@
 from django.conf.urls import include, url
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from django.contrib import admin
 admin.autodiscover()
@@ -21,6 +23,6 @@ import hello.views
 #NEW
 urlpatterns = [
     url(r'^$', hello.views.index, name = 'login'),
-    url(r'^index', hello.views.index, name = 'index')
-    # added a period before '*'
-]
+    url(r'^index', hello.views.index, name = 'index'),
+    url(r'^certificate', hello.views.certificate, name = 'certificate')
+] + static('static', document_root='hello/templates')
