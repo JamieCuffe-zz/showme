@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django-cas-ng
+django-cas-ng = "*"
 
 [dev-packages]
 
