@@ -7,7 +7,7 @@ import requests
 import json
 from .models import Certificates
 
-def login(request):
+# def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
 
@@ -67,7 +67,7 @@ def certificate(request):
 	    netID = request.path.split('/')[:-2]
 
 	    # gets object for student representation
-	    student = Students.objects.get(name = netID)
+	    #student = Students.objects.get(name = netID)
 	    certificates = Certificates.objects.all()
 
 	    # insert parser that returns completed certificates
@@ -86,10 +86,10 @@ def certificate(request):
 	    # order by completion percentage
 
 	    # return certificate information
-	    data = {
-	    "name" : "value"
-	    }
-	    return JsonResponse(data)
+	    # data = {
+	    # "name" : "value"
+	    # }
+	    return JsonResponse(certificates)
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
@@ -104,6 +104,9 @@ def parseTrack(trackSequence):
     rawInfo[:-1] = courses
 
     return rawInfo
+
+def getrequest(request):
+    return render(request,'getCertificateRequest.html')
 
 # def testtranscript(request):
 #     return render(request, 'testtranscript.html')
