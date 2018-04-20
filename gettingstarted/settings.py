@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_cas_ng',
+#    'django_cas_ng',
     'hello'
 ]
 
@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'django_cas_ng.backends.CASBackend',
+    #'django_cas_ng.backends.CASBackend',
 ]
 
 ROOT_URLCONF = 'gettingstarted.urls'
@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-CAS_SERVER_URL = 'https://fed.princeton.edu/cas/'
+#CAS_SERVER_URL = 'https://fed.princeton.edu/cas/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

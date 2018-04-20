@@ -3,13 +3,33 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.http import HttpRequest
 from django.http import JsonResponse
 from django.template.loader import render_to_string
-import requests 
+import requests
 import json
 from .models import Certificates
 
 def login(request):
     # redirects to index for the test case
-    index(request)
+    """
+    Handles traffic in two directions.  First user goes to /login, which
+    redirects to CAS where they log in.  Then redirects back to /login
+    with the query parameter 'ticket'.  Ticket is stored in session 'CAS_TOKEN'
+
+    Then checks whether the CAS_TOKEN is valid using validate(token).
+    """
+    redirect_url = construct_url("login", service=SERVICE_URL+"login")
+
+    if "ticket" in request.args:  # This means CAS has redirected back to us
+        session["CAS_TOKEN"] = request.args["ticket"]
+
+    if "CAS_TOKEN" in session:  # There is a token already, but we might not trust
+        if validate(session["CAS_TOKEN"]):  # ensure token validity
+            if 'CAS_AFTER_LOGIN_SESSION_URL' in session:
+                redirect_url = session.pop('CAS_AFTER_LOGIN_SESSION_URL')
+            else:
+                redirect_url = "/"
+        else:
+            del session["CAS_TOKEN"]
+    return redirect(redirect_url)
 
 def index(request):
     # intialize html string
@@ -25,7 +45,7 @@ def index(request):
     coursesComplete = listOfInfo[1]
     certsAttainable = listOfInfo[2]
     coursesNeeded = listOfInfo[3]
-    
+
     for certificate in certificates:
         # add header to htmlOut
         studentContext = {
@@ -43,8 +63,8 @@ def index(request):
     # htmlOut += render_to_string('header_template.html', studentContext)
 
     # htmlOut += render_to_string('bottom_end_structure.html')
-    
-    # return html code 
+
+    # return html code
     return HttpResponse(htmlOut)
 
 # returns the certificate data to be presented to the user
@@ -58,11 +78,11 @@ def certificate(request):
 	    certificates = Certificates.objects.all()
 
 	    # insert parser that returns completed certificates
-	    # courses completed by the student 
+	    # courses completed by the student
 	    # for certificate in certicates:
 	        # completionFunction(student.netID, certificate, student.year, student.coursesCompleted)
 	        # if true, student.completedCertificates += '.' + certificate
-	        # else 
+	        # else
 	            # add to outputted certificates
 	            # update track satisfied
 	            # for each updated track:
@@ -119,7 +139,7 @@ def parseTrack(trackSequence):
 #     #         allGrades.append(semester)
 
 #     return render(request, 'testtranscriptresult.html', {'transcript': transcript})
-    
+
 
 #OLD
 
@@ -151,4 +171,3 @@ def parseTrack(trackSequence):
 #     'roles' : ['Admin', 'User']
 #     }
 #     return JsonResponse(responseData)
-
