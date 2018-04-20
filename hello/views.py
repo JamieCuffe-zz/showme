@@ -68,7 +68,7 @@ def certificate(request):
 
 	    # gets object for student representation
 	    #student = Students.objects.get(name = netID)
-	    certificates = Certificates.objects.all()
+	    certificates = Certificates.objects.values()
 
 	    # insert parser that returns completed certificates
 	    # courses completed by the student
