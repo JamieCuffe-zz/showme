@@ -89,9 +89,9 @@ def certificate(request):
 	    # order by completion percentage
 
 	    # return certificate information
-	    # data = {
-	    # "name" : "value"
-	    # }
+	    data = {
+	    "name" : "value"
+	    }
 	    return JsonResponse(data)
 
 
