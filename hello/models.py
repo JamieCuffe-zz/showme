@@ -32,18 +32,18 @@ class Certificates(models.Model):
    class Meta:
    	db_table = "certificates"
 
-# class Students(models.Model):
-#     netid = models.CharField(max_length=100, primary_key=True)
-#     name = models.CharField(max_length=1000)
-#     major = models.CharField(max_length=100)
-#     degree = models.CharField(max_length=100)
-#     year = models.IntegerField()
-#     certsObtained = models.CharField(max_length=1000)
-#     numCoursesCompleted = models.IntegerField()
-#     certificateObtainable = models.IntegerField()
-#     coursesNeeded = models.IntegerField()
-#     courseBasket = models.CharField(max_length=1000)
-#     coursesCompleted = models.CharField(max_length=1000)
-#     pinnedCertificates = models.CharField(max_length=1000)
-#     class Meta:
-#         db_table = "students"
+class Students(models.Model):
+    netid = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=1000)
+    major = models.CharField(max_length=100)
+    degree = models.CharField(max_length=100)
+    year = models.IntegerField()
+    certsObtained = models.CharField(max_length=1000)
+    numCoursesCompleted = models.IntegerField()
+    certificateObtainable = models.IntegerField()
+    coursesNeeded = models.IntegerField()
+    courseBasket = models.CharField(max_length=1000)
+    coursesCompleted = models.CharField(max_length=1000)
+    pinnedCertificates = models.CharField(max_length=1000)
+    class Meta:
+        db_table = "students"
