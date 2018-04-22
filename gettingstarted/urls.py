@@ -7,6 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import hello.views
+import django_cas_ng.views
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
@@ -23,6 +24,8 @@ import hello.views
 #NEW
 urlpatterns = [
     url(r'^$', hello.views.index, name = 'login'),
+    url(r'^accounts/login$', django_cas_ng.views.login, name='cas_ng_login'),
+    url(r'^accounts/logout$', django_cas_ng.views.logout, name='cas_ng_logout'),
     url(r'^index', hello.views.index, name = 'index'),
     url(r'^certificate', hello.views.certificate, name = 'certificate'),
     url(r'^getrequest', hello.views.getrequest, name = 'getrequest'),
