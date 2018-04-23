@@ -39,9 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_cas_ng',
     'hello'
-#    'django_cas_ng',
-
 ]
 
 MIDDLEWARE = [
@@ -56,7 +55,7 @@ MIDDLEWARE = [
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend'
-    # 'django_cas_ng.backends.CASBackend',
+    'django_cas_ng.backends.CASBackend',
 ]
 
 ROOT_URLCONF = 'gettingstarted.urls'
@@ -109,7 +108,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# CAS_SERVER_URL = 'https://fed.princeton.edu/cas/'
+CAS_SERVER_URL = 'https://fed.princeton.edu/cas/'
+
+CAS_REDIRECT_URL = 'http://localhost:8000/home/'
+
+LOGIN_URL = '/accounts/login'
 
 
 # Internationalization

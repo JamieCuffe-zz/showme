@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.http import HttpRequest
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.views.decorators.http import require_GET
+from django.contrib.auth.decorators import login_required
 import requests
 import json
 from .models import Certificates
@@ -23,7 +25,7 @@ from .models import Certificates
     #     else:
     #         del session["CAS_TOKEN"]
     # return redirect(redirect_url)
-
+@login_required(login_url = '/accounts/login')
 def index(request):
     # intialize html string
     htmlOut = render_to_string('index.html')
@@ -59,37 +61,7 @@ def index(request):
 
     # return html code
     return HttpResponse(htmlOut)
-
-# GET request - returns the certificate data to be presented to the user
-def certificate(request):
-    # get all certificates for given student
-    if request.method == 'GET':
-        netID = request.path.split('/')[:-2]
-        certdata = {}
-        certificates = Certificates.objects.all()
-        for certificate in certificates:
-            certdata['title'] = certificate.title
-            certdata['contact'] = certificate.contact_name
-	    # gets object for student representation
-	    #student = Students.objects.get(name = netID)
-	    # insert parser that returns completed certificates
-	    # courses completed by the student
-	    # for certificate in certicates:
-	        # completionFunction(student.netID, certificate, student.year, student.coursesCompleted)
-	        # if true, student.completedCertificates += '.' + certificate
-	        # else
-	            # add to outputted certificates
-	            # update track satisfied
-	            # for each updated track:
-	                # add counted courses
-
-	    # format the certificates from favorited/completion to low
-	    # order favorited first
-	    # order by completion percentage
-
-	    # return certificate information
-        return JsonResponse(certdata)
-
+    
 # POST request - puts student netid and course basket into db
 
 def student_coursebasket(request):
@@ -104,11 +76,13 @@ def student_coursebasket(request):
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
+@login_required(login_url = '/accounts/login')
 def interpretedData(student):
     # call interpreter and pull needed information
     return [5, 2, 1, 3]
 
 # separates field of information in the track field
+@login_required(login_url = '/accounts/login')
 def parseTrack(trackSequence):
     rawInfo = trackSequence.split('*')
     courses = str(rawInfo[:-1]).split('%')
@@ -116,13 +90,15 @@ def parseTrack(trackSequence):
 
     return rawInfo
 
+@login_required(login_url = '/accounts/login')
 def getrequest(request):
     return render(request,'getCertificateRequest.html')
 
+@login_required(login_url = '/accounts/login')
 def testtranscript(request):
     return render(request, 'testtranscript.html')
 
-
+@login_required(login_url = '/accounts/login')
 def result(request):
     BASE_SERVICE_URL = "https://transcriptapi.tigerapps.org"
     ticket = request.GET.get("ticket")
@@ -146,4 +122,3 @@ def result(request):
     #         allGrades.append(semester)
 
     return render(request, 'testtranscriptresult.html', {'transcript': transcript})
-

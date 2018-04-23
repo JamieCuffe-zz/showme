@@ -7,6 +7,10 @@ django = "*"
 gunicorn = "*"
 django-heroku = "*"
 requests = "*"
+lxml = "*"
+six = "*"
+python_cas = "*"
+django_cas_ng = "*"
 
 [requires]
 python_version = "3.6"
