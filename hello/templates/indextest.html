@@ -224,50 +224,6 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Monthly Recap Report</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-wrench"></i></button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="row">
-                <div class="col-md-12">
-
-                  <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
-                  </div>
-                  <!-- /.chart-responsive -->
-                </div>
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- /.box-footer -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
               <h3 class="box-title">{{cert_threeLetterCode}} {{cert_name}}</h3>
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -280,78 +236,80 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="chart-responsive">
-                      //-------------
-                      //- PIE CHART -
-                      //-------------
-                      // Get context with jQuery - using jQuery's .get() method.
-                      var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-                      var pieChart       = new Chart(pieChartCanvas)
-                      var PieData        = [
-                        {
-                          value    : 700,
-                          color    : '#f56954',
-                          highlight: '#f56954',
-                          label    : 'Chrome'
-                        },
-                        {
-                          value    : 500,
-                          color    : '#00a65a',
-                          highlight: '#00a65a',
-                          label    : 'IE'
-                        },
-                        {
-                          value    : 400,
-                          color    : '#f39c12',
-                          highlight: '#f39c12',
-                          label    : 'FireFox'
-                        },
-                        {
-                          value    : 600,
-                          color    : '#00c0ef',
-                          highlight: '#00c0ef',
-                          label    : 'Safari'
-                        },
-                        {
-                          value    : 300,
-                          color    : '#3c8dbc',
-                          highlight: '#3c8dbc',
-                          label    : 'Opera'
-                        },
-                        {
-                          value    : 100,
-                          color    : '#d2d6de',
-                          highlight: '#d2d6de',
-                          label    : 'Navigator'
-                        }
-                      ]
-                      var pieOptions     = {
-                        //Boolean - Whether we should show a stroke on each segment
-                        segmentShowStroke    : true,
-                        //String - The colour of each segment stroke
-                        segmentStrokeColor   : '#fff',
-                        //Number - The width of each segment stroke
-                        segmentStrokeWidth   : 2,
-                        //Number - The percentage of the chart that we cut out of the middle
-                        percentageInnerCutout: 50, // This is 0 for Pie charts
-                        //Number - Amount of animation steps
-                        animationSteps       : 100,
-                        //String - Animation easing effect
-                        animationEasing      : 'easeOutBounce',
-                        //Boolean - Whether we animate the rotation of the Doughnut
-                        animateRotate        : true,
-                        //Boolean - Whether we animate scaling the Doughnut from the centre
-                        animateScale         : false,
-                        //Boolean - whether to make the chart responsive to window resizing
-                        responsive           : true,
-                        // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-                        maintainAspectRatio  : true,
-                        //String - A legend template
-                        legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+                    <canvas id="pieChart" style="height: 200px;"></canvas>
+                    <script>
+                    //-------------
+                    //- PIE CHART -
+                    //-------------
+                    // Get context with jQuery - using jQuery's .get() method.
+                    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                    var pieChart       = new Chart(pieChartCanvas)
+                    var PieData        = [
+                      {
+                        value    : 700,
+                        color    : '#f56954',
+                        highlight: '#f56954',
+                        label    : 'Chrome'
+                      },
+                      {
+                        value    : 500,
+                        color    : '#00a65a',
+                        highlight: '#00a65a',
+                        label    : 'IE'
+                      },
+                      {
+                        value    : 400,
+                        color    : '#f39c12',
+                        highlight: '#f39c12',
+                        label    : 'FireFox'
+                      },
+                      {
+                        value    : 600,
+                        color    : '#00c0ef',
+                        highlight: '#00c0ef',
+                        label    : 'Safari'
+                      },
+                      {
+                        value    : 300,
+                        color    : '#3c8dbc',
+                        highlight: '#3c8dbc',
+                        label    : 'Opera'
+                      },
+                      {
+                        value    : 100,
+                        color    : '#d2d6de',
+                        highlight: '#d2d6de',
+                        label    : 'Navigator'
                       }
-                      //Create pie or douhnut chart
-                      // You can switch between pie and douhnut using the method below.
-                      pieChart.Doughnut(PieData, pieOptions)
-                    <canvas id="pieChart" style="height: 100px;"></canvas>
+                    ]
+                    var pieOptions     = {
+                      //Boolean - Whether we should show a stroke on each segment
+                      segmentShowStroke    : true,
+                      //String - The colour of each segment stroke
+                      segmentStrokeColor   : '#fff',
+                      //Number - The width of each segment stroke
+                      segmentStrokeWidth   : 2,
+                      //Number - The percentage of the chart that we cut out of the middle
+                      percentageInnerCutout: 50, // This is 0 for Pie charts
+                      //Number - Amount of animation steps
+                      animationSteps       : 100,
+                      //String - Animation easing effect
+                      animationEasing      : 'easeOutBounce',
+                      //Boolean - Whether we animate the rotation of the Doughnut
+                      animateRotate        : true,
+                      //Boolean - Whether we animate scaling the Doughnut from the centre
+                      animateScale         : false,
+                      //Boolean - whether to make the chart responsive to window resizing
+                      responsive           : true,
+                      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                      maintainAspectRatio  : true,
+                      //String - A legend template
+                      legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    pieChart.Doughnut(PieData, pieOptions)
+                    </script>
                   </div>
               <!-- ./chart-responsive -->
                 </div>
@@ -432,50 +390,6 @@
 
                 <!-- /.box -->
                 </div>
-          <!-- /.row -->
-            </div>
-        <!-- /.footer -->
-          </div>
-      <!-- /.box -->
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">COS: Applications of Computing</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="chart-responsive">
-                    <canvas id="pieChart" style="height: 100px;"></canvas>
-                  </div>
-              <!-- ./chart-responsive -->
-                </div>
-            <!-- /.col -->
-                <div class="col-md-4">
-                  <h4>Applications of Computing</h4>
-                  <h5><small>The Program in Applications of Computing is an interdisciplinary program designed for Princeton undergraduates who want to combine the study of computing and computers beyond an introductory level with another academic concentration, but who are not majoring in Computer Science.</small></h5>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                          <h5>Contact Info</h5>
-                          <a href="#" class="small-box-footer">Website <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            <!-- /.col -->
-              </div>
           <!-- /.row -->
             </div>
         <!-- /.footer -->
