@@ -34,25 +34,25 @@ def index(request):
 
     certificates = Certificates.objects.all()
 
-    currentStudent = ""
-    listOfInfo = interpretedData(currentStudent)
-    certsComplete = listOfInfo[0]
-    coursesComplete = listOfInfo[1]
-    certsAttainable = listOfInfo[2]
-    coursesNeeded = listOfInfo[3]
+    # currentStudent = ""
+    # listOfInfo = interpretedData(currentStudent)
+    # certsComplete = listOfInfo[0]
+    # coursesComplete = listOfInfo[1]
+    # certsAttainable = listOfInfo[2]
+    # coursesNeeded = listOfInfo[3]
 
-    for certificate in certificates:
-        # add header to htmlOut
-        studentContext = {
-            'student_name' : certificate.title,
-            'student_major' : certificate.contact_name,
-            'student_degree' : "AB",
-            'student_year' : 2020,
-            'gen_numCertsComplete' : 1,
-            'gen_numCoursesComplete' : 16,
-            'gen_numCertsAttainable' : 3,
-            'gen_numCoursesNeeded' : 12
-        }
+    # for certificate in certificates:
+    #     # add header to htmlOut
+    #     studentContext = {
+    #         'student_name' : certificate.title,
+    #         'student_major' : certificate.contact_name,
+    #         'student_degree' : "AB",
+    #         'student_year' : 2020,
+    #         'gen_numCertsComplete' : 1,
+    #         'gen_numCoursesComplete' : 16,
+    #         'gen_numCertsAttainable' : 3,
+    #         'gen_numCoursesNeeded' : 12
+    #     }
 
 
     # htmlOut += render_to_string('header_template.html', studentContext)
