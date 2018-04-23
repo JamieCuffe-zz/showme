@@ -21,6 +21,8 @@ import django_cas_ng.views
 #     path('admin/', admin.site.urls),
 # ]
 
+#@login_required
+
 #NEW
 urlpatterns = [
     url(r'^accounts/login$', django_cas_ng.views.login, name='cas_ng_login'),
