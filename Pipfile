@@ -11,6 +11,7 @@ lxml = "*"
 six = "*"
 python_cas = "*"
 django_cas_ng = "*"
+django-cas-ng = "*"
 
 [requires]
 python_version = "3.6"
