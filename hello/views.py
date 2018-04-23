@@ -26,7 +26,7 @@ from .models import Certificates
     #     else:
     #         del session["CAS_TOKEN"]
     # return redirect(redirect_url)
-# @login_required(login_url = '/accounts/login')
+@login_required(login_url = '/accounts/login')
 def index(request):
     # intialize html string
     htmlOut = render_to_string('index.html')
@@ -66,7 +66,7 @@ def index(request):
 
 
 # returns the certificate data to be presented to the user
-# @login_required(login_url = '/accounts/login')
+@login_required(login_url = '/accounts/login')
 def certificate(request):
     # get all certificates for given student
     if request.method == 'GET':
