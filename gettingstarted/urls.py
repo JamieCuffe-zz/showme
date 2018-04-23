@@ -20,6 +20,8 @@ import hello.views
 #     path('admin/', admin.site.urls),
 # ]
 
+#@login_required
+
 #NEW
 urlpatterns = [
     url(r'^$', hello.views.index, name = 'login'),

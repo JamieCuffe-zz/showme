@@ -60,7 +60,7 @@ def index(request):
     # return html code
     return HttpResponse(htmlOut)
 
-# returns the certificate data to be presented to the user
+# GET request - returns the certificate data to be presented to the user
 def certificate(request):
     # get all certificates for given student
     if request.method == 'GET':
@@ -88,10 +88,19 @@ def certificate(request):
 	    # order by completion percentage
 
 	    # return certificate information
-        data = {
-        "name" : "value"
-        }
         return JsonResponse(certdata)
+
+# POST request - puts student netid and course basket into db
+
+def student_coursebasket(request):
+    if request.method == 'POST':
+        netID = request.path.split('/')[:-2]
+        students = Students.objects.all()
+        courses = request.body
+        student = Students(netid=netID, coursebasket=courses)
+        student.save()
+
+
 
 
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
