@@ -62,6 +62,43 @@ def index(request):
 
     # return html code
     return HttpResponse(htmlOut)
+
+
+
+# returns the certificate data to be presented to the user
+@login_required(login_url = '/accounts/login')
+def certificate(request):
+    # get all certificates for given student
+    if request.method == 'GET':
+        netID = request.path.split('/')[:-2]
+        certdata = {}
+        certificates = Certificates.objects.all()
+        for certificate in certificates:
+            certdata['title'] = certificate.title
+            certdata['contact'] = certificate.contact_name
+        # gets object for student representation
+        #student = Students.objects.get(name = netID)
+        # insert parser that returns completed certificates
+        # courses completed by the student
+        # for certificate in certicates:
+            # completionFunction(student.netID, certificate, student.year, student.coursesCompleted)
+            # if true, student.completedCertificates += '.' + certificate
+            # else
+                # add to outputted certificates
+                # update track satisfied
+                # for each updated track:
+                    # add counted courses
+
+        # format the certificates from favorited/completion to low
+        # order favorited first
+        # order by completion percentage
+
+        # return certificate information
+        data = {
+        "name" : "value"
+        }
+        return JsonResponse(certdata)
+
     
 # POST request - puts student netid and course basket into db
 
