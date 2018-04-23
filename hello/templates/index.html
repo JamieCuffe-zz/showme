@@ -54,6 +54,7 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
     <div class="navbar-custom-menu">
+      <button id="transcript_redirect">Upload Transcript</button>
       <ul class="nav navbar-nav">
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
@@ -613,6 +614,9 @@
 <script src="/static/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
+    document.getElementById("transcript_redirect").onclick = function () {
+    location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result";
+  };
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
