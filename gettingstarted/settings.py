@@ -44,18 +44,18 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend'
-    'django_cas_ng.backends.CASBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'django_cas_ng.backends.CASBackend'
 ]
 
 ROOT_URLCONF = 'gettingstarted.urls'
@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CAS_SERVER_URL = 'https://fed.princeton.edu/cas/'
 
-CAS_REDIRECT_URL = 'http://localhost:8000/home/'
+CAS_REDIRECT_URL = 'https://showme333.herokuapp.com/index.html'
 
 LOGIN_URL = '/accounts/login'
 
