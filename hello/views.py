@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from django.template.loader import render_to_string
 from django.views.decorators.http import require_GET
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.backends import ModelBackend
 import requests
 import json
 from .models import Certificates
