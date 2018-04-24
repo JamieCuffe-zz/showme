@@ -79,17 +79,10 @@ def index(request):
     # return html code
     return HttpResponse(htmlOut)
 
-<<<<<<< HEAD
-#def my_view(request):
-#    username = None
-#    if request.user.is_authenticated():
-#        username = request.user.username
-=======
 # def my_view(request):
 #     username = None
 #     if request.user.is_authenticated():
 #         username = request.user.username
->>>>>>> 0a0ffb2f7946bea7239d0be1d508551b7d00eb11
 
 # returns the certificate data to be presented to the user
 @login_required(login_url = '/accounts/login')
