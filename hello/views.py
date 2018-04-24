@@ -43,7 +43,11 @@ def transcript_check(request):
     #netId = "roopar"
     # check if user is in database already
     if Students.objects.filter(netid = netId).count() == 0:
-        # if not, redirect to transcript upload
+        # if not, add user netid to db
+        newUser = Students()
+        newUser.netid = netId
+        newUser.save()
+        # redirect to tigerapps transcript upload
         return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result")
     # get user netid from cookies
     else:
@@ -61,6 +65,7 @@ def transcript_result(request):
         flash("Something went wrong! Please try again later.")
         return redirect(url_for("index"))
 
+    # update database with courses associated with netid
     return redirect("https://showme333.herokuapp.com/index")
 
 
