@@ -9,7 +9,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 import requests
 import json
-from .models import Certificates
 from .models import Certificates, Students
 
 # def login(request):
