@@ -53,7 +53,7 @@ def transcript_check(request):
     else:
         return redirect("https://showme333.herokuapp.com/index")
 
-@login_required(login_url = '/accounts/login')
+
 def transcript_result(request):
     if request.user.is_authenticated:
         netId = request.user.username
@@ -80,7 +80,9 @@ def transcript_result(request):
                 allCourses.append(course)
 
     # update database with courses associated with netid
-    Students.objects.filter(netid=netId).update(coursesCompleted=json.dumps(allCourses))
+    user = Students.objects.get(netid=netId)
+    user.coursesCompleted = json.dumps(allCourses)
+    user.save()
 
     # redirect back to index page
     return redirect("https://showme333.herokuapp.com/index")
