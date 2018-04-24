@@ -10,6 +10,7 @@ from django.contrib.auth.backends import ModelBackend
 import requests
 import json
 from .models import Certificates
+from .models import Certificates, Students
 
 # def login(request):
     # CAS login
@@ -29,7 +30,6 @@ from .models import Certificates
     # return redirect(redirect_url)
 
 
-@login_required(login_url = '/accounts/login')
 def transcript_check(netId):
     # check if user is in database already
     # if not, redirect to transcript upload
@@ -80,10 +80,17 @@ def index(request):
     # return html code
     return HttpResponse(htmlOut)
 
+<<<<<<< HEAD
 #def my_view(request):
 #    username = None
 #    if request.user.is_authenticated():
 #        username = request.user.username
+=======
+# def my_view(request):
+#     username = None
+#     if request.user.is_authenticated():
+#         username = request.user.username
+>>>>>>> 0a0ffb2f7946bea7239d0be1d508551b7d00eb11
 
 # returns the certificate data to be presented to the user
 @login_required(login_url = '/accounts/login')
