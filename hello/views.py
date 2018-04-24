@@ -31,18 +31,21 @@ from .models import Certificates, Students
 
 @login_required(login_url = '/accounts/login')
 def transcript_check(request):
+    netId = None
+    if request.user.is_authenticated():
+        netId = request.user.username
     # check if user is in database already
-    # if not, redirect to transcript upload
-    netId = "roopar"
     if Students.objects.filter(netid = netId).count() == 0:
+        # if not, redirect to transcript upload
         return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
+    # get user netid from cookies
     else:
         return redirect("https://showme333.herokuapp.com/index")
 
 
 @login_required(login_url = '/accounts/login')
 def index(request):
-    # get user netid from cookies
+    
     # intialize html string
     htmlOut = render_to_string('index.html')
     # gets user specific information
@@ -79,9 +82,7 @@ def index(request):
     return HttpResponse(htmlOut)
 
 # def my_view(request):
-#     username = None
-#     if request.user.is_authenticated():
-#         username = request.user.username
+
 
 # returns the certificate data to be presented to the user
 @login_required(login_url = '/accounts/login')
@@ -167,6 +168,7 @@ def result(request):
         flash("Something went wrong! Please try again later.")
         return redirect(url_for("index"))
 
+    return redirect("https://showme333.herokuapp.com/index")
     # allGrades = []
     # if transcript["grades"] != '':
     #     for course,grade in transcript["grades"].items():
@@ -177,4 +179,4 @@ def result(request):
     #     for semester,allCourses in transcript["courses"].items():
     #         allGrades.append(semester)
 
-    return render(request, 'testtranscriptresult.html', {'transcript': transcript})
+    # return render(request, 'testtranscriptresult.html', {'transcript': transcript})
