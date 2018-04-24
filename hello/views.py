@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.http import HttpRequest
 from django.http import JsonResponse
+from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.views.decorators.http import require_GET
 from django.contrib.auth.decorators import login_required
@@ -26,8 +27,24 @@ from .models import Certificates
     #     else:
     #         del session["CAS_TOKEN"]
     # return redirect(redirect_url)
+
+
+@login_required(login_url = '/accounts/login')
+def transcript_check(netId):
+    # check if user is in database already
+    # if not, redirect to transcript upload
+    if Students.objects.filter(netid = netId).count() == 0:
+        return HttpResponseRedirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
+
+    
+
+    
+
 @login_required(login_url = '/accounts/login')
 def index(request):
+    # get user netid from cookies
+    netId = "roopar"
+    transcript_check(netId)
     # intialize html string
     htmlOut = render_to_string('index.html')
     # gets user specific information
