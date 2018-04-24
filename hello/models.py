@@ -23,12 +23,12 @@ class Certificates(models.Model):
    contact_email=models.EmailField()
    total_courses=models.IntegerField()
    description=models.CharField(max_length=10000)
-   track1=models.CharField(max_length=1000)
-   track2=models.CharField(max_length=1000)
-   track3=models.CharField(max_length=1000)
-   track4=models.CharField(max_length=1000)
-   track5=models.CharField(max_length=1000)
-   track6=models.CharField(max_length=1000)
+   tracks=models.CharField(default='', max_length=1000000)
+   # track2=models.CharField(max_length=1000)
+   # track3=models.CharField(max_length=1000)
+   # track4=models.CharField(max_length=1000)
+   # track5=models.CharField(max_length=1000)
+   # track6=models.CharField(max_length=1000)
    class Meta:
    	db_table = "certificates"
 
