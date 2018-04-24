@@ -36,9 +36,9 @@ def transcript_check(request, netId):
     if Students.objects.filter(netid = netId).count() == 0:
         return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
 
-    
 
-    
+
+
 
 @login_required(login_url = '/accounts/login')
 def index(request):
