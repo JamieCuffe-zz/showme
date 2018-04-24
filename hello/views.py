@@ -63,7 +63,10 @@ def index(request):
     # return html code
     return HttpResponse(htmlOut)
 
-
+def my_view(request):
+    username = None
+    if request.user.is_authenticated():
+        username = request.user.username
 
 # returns the certificate data to be presented to the user
 @login_required(login_url = '/accounts/login')
@@ -99,7 +102,7 @@ def certificate(request):
         }
         return JsonResponse(certdata)
 
-    
+
 # POST request - puts student netid and course basket into db
 
 def student_coursebasket(request):
