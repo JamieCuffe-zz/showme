@@ -29,22 +29,20 @@ from .models import Certificates, Students
     #         del session["CAS_TOKEN"]
     # return redirect(redirect_url)
 
-
-def transcript_check(request, netId):
+@login_required(login_url = '/accounts/login')
+def transcript_check(request):
     # check if user is in database already
     # if not, redirect to transcript upload
+    netId = "roopar"
     if Students.objects.filter(netid = netId).count() == 0:
         return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
-
-
-
+    else:
+        return redirect("https://showme333.herokuapp.com/index")
 
 
 @login_required(login_url = '/accounts/login')
 def index(request):
     # get user netid from cookies
-    netId = "roopar"
-    transcript_check(request, netId)
     # intialize html string
     htmlOut = render_to_string('index.html')
     # gets user specific information
