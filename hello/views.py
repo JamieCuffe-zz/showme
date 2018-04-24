@@ -31,18 +31,18 @@ from .models import Certificates, Students
 
 @login_required(login_url = '/accounts/login')
 def transcript_check(request):
-    #return redirect("https://showme333.herokuapp.com/index")
+    return redirect("https://showme333.herokuapp.com/index")
     # netId = None
     # if request.user.is_authenticated():
     #     netId = request.user.username
-    netId = "roopar"
-    # check if user is in database already
-    if Students.objects.filter(netid = netId).count() == 0:
-        # if not, redirect to transcript upload
-        return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
-    # get user netid from cookies
-    else:
-        return redirect("https://showme333.herokuapp.com/index")
+    # netId = "roopar"
+    # # check if user is in database already
+    # if Students.objects.filter(netid = netId).count() == 0:
+    #     # if not, redirect to transcript upload
+    #     return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
+    # # get user netid from cookies
+    # else:
+    #     return redirect("https://showme333.herokuapp.com/index")
 
 
 
@@ -171,7 +171,9 @@ def result(request):
         flash("Something went wrong! Please try again later.")
         return redirect(url_for("index"))
 
-    return redirect("https://showme333.herokuapp.com/index")
+
+    #return redirect("https://showme333.herokuapp.com/index")
+    return render("")
     # allGrades = []
     # if transcript["grades"] != '':
     #     for course,grade in transcript["grades"].items():
