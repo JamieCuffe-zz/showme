@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse, HttpResponseNotFound
 from django.http import HttpRequest
 from django.http import JsonResponse
@@ -29,11 +30,11 @@ from .models import Certificates, Students
     # return redirect(redirect_url)
 
 
-def transcript_check(netId):
+def transcript_check(request, netId):
     # check if user is in database already
     # if not, redirect to transcript upload
     if Students.objects.filter(netid = netId).count() == 0:
-        return HttpResponseRedirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
+        return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
 
     
 
@@ -43,7 +44,7 @@ def transcript_check(netId):
 def index(request):
     # get user netid from cookies
     netId = "roopar"
-    transcript_check(netId)
+    transcript_check(request, netId)
     # intialize html string
     htmlOut = render_to_string('index.html')
     # gets user specific information
