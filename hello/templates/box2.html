@@ -34,12 +34,14 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-<div id="box"></div>
+</head>
+<body>
+<input type = "button" value="+" onclick = "addBox()">
+<div id="content"></div>
 <script>
 function addBox() {
 	var div = document.createElement('div');
-	div.className = 'new box';
+	div.className = 'newbox';
 	var text = '{"type": "Certificate", "name": "Applications of Computing", "code": "PAC", "degree": null, "year": 2018, "description": "The Program in Applications of Computing is an interdisciplinary program designed for Princeton undergraduates who want to combine the study of computing and computers beyond an introductory level with another academic concentration, but who are not majoring in Computer Science. The program welcomes students in all disciplines, including both areas traditionally making heavy use of computation (such as engineering, the physical sciences, economics, and mathematics) and emerging application areas (such as biology, cognitive science, graphic arts, music, history, philosophy, politics, sociology, literature, and so on). Many students have found this program an effective way to apply computer science to their own specialties, and to understand how computing concepts and technology are changing our world.", "urls": [ "http://www.cs.princeton.edu/ugrad/certificate-program"], "contacts": [{"type": "Program Coordinator", "name": "Colleen Kenny", "email": "ckenny@cs.princeton.edu"}]'
 	var obj = JSON.parse(text);
 	var i;
@@ -153,7 +155,7 @@ function addBox() {
 </div>\
 '
   }
-  document.getElementByID('box').appendChild(div);
+  document.getElementByID("content").appendChild(div);
 }
 </script>
 <!-- jQuery 3 -->
