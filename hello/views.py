@@ -93,7 +93,7 @@ def index(request):
     if request.user.is_authenticated:
         netId = request.user.username
     # intialize html string
-    htmlOut = render_to_string('index.html')
+    #htmlOut = render_to_string('index.html')
     # gets user specific information
     # currentStudent = Students.objects.get(netid = 'testStudent')
 
@@ -125,7 +125,8 @@ def index(request):
     # htmlOut += render_to_string('bottom_end_structure.html')
 
     # return html code
-    return HttpResponse(htmlOut)
+    #return HttpResponse(htmlOut)
+    return render(request, 'index.html', {'user': netId})
 
 # def my_view(request):
 
