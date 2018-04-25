@@ -28,27 +28,70 @@ from .models import Certificates, Students
     #     else:
     #         del session["CAS_TOKEN"]
     # return redirect(redirect_url)
+@login_required(login_url = '/accounts/login')
+def userCookiesTest(request):
+    if request.user.is_authenticated:
+        netId = request.user.username
+    return render(request, 'userCookiesTest.html', {'netid': netId})
 
 @login_required(login_url = '/accounts/login')
 def transcript_check(request):
-    return redirect("https://showme333.herokuapp.com/index")
+    #return redirect("https://showme333.herokuapp.com/certificate")
     # netId = None
-    # if request.user.is_authenticated():
-    #     netId = request.user.username
-    # netId = "roopar"
-    # # check if user is in database already
-    # if Students.objects.filter(netid = netId).count() == 0:
-    #     # if not, redirect to transcript upload
-    #     return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333test.herokuapp.com/result")
-    # # get user netid from cookies
-    # else:
-    #     return redirect("https://showme333.herokuapp.com/index")
+    if request.user.is_authenticated:
+        netId = request.user.username
+    #netId = "roopar"
+    # check if user is in database already
+    if Students.objects.filter(netid = netId).count() == 0:
+        # if not, add user netid to db
+        newUser = Students()
+        newUser.netid = netId
+        newUser.save()
+        # redirect to tigerapps transcript upload
+        return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result")
+    # if user is in db already, their courses must be there already - redirect to main page
+    else:
+        return redirect("https://showme333.herokuapp.com/index")
 
+
+def transcript_result(request):
+    if request.user.is_authenticated:
+        netId = request.user.username
+    BASE_SERVICE_URL = "https://transcriptapi.tigerapps.org"
+    ticket = request.GET.get("ticket")
+    request_url = '{base}/transcript/?ticket={ticket}'.format(base = BASE_SERVICE_URL,
+        ticket = ticket)
+    r = requests.get(request_url)
+    try:
+        transcript = r.json()["transcript"]
+    except (ValueError, KeyError):
+        flash("Something went wrong! Please try again later.")
+        return redirect(url_for("index"))
+
+    allCourses = []
+    if transcript["grades"]:
+        for course,grade in transcript["grades"].items():
+            # grade is '' if the course has not yet been taken (i.e no grade available).
+            if course != '':
+                allCourses.append(course)
+    elif transcript["courses"]:
+        for semester,courses in transcript["courses"].items():
+            for course in courses:
+                allCourses.append(course)
+
+    # update database with courses associated with netid
+    user = Students.objects.get(netid=netId)
+    user.coursesCompleted = json.dumps(allCourses)
+    user.save()
+
+    # redirect back to index page
+    return redirect("https://showme333.herokuapp.com/index")
 
 
 @login_required(login_url = '/accounts/login')
 def index(request):
-    
+    if request.user.is_authenticated:
+        netId = request.user.username
     # intialize html string
     htmlOut = render_to_string('index.html')
     # gets user specific information
@@ -171,17 +214,21 @@ def result(request):
         flash("Something went wrong! Please try again later.")
         return redirect(url_for("index"))
 
+    allCourses = []
+    if transcript["grades"]:
+        for course,grade in transcript["grades"].items():
+            # grade is '' if the course has not yet been taken (i.e no grade available).
+            if course != '':
+                allCourses.append(course)
+    elif transcript["courses"]:
+        for semester,courses in transcript["courses"].items():
+            for course in courses:
+                allCourses.append(course)
+        #return render(request, 'testtranscriptresult.html', {'transcript': transcript})
+        #for semester,courses in transcript["courses"].items():
 
     #return redirect("https://showme333.herokuapp.com/index")
-    return render("")
-    # allGrades = []
-    # if transcript["grades"] != '':
-    #     for course,grade in transcript["grades"].items():
-    #         # grade is '' if the course has not yet been taken (i.e no grade available).
-    #         if course != '':
-    #             allGrades.append(course)
-    # else:
-    #     for semester,allCourses in transcript["courses"].items():
-    #         allGrades.append(semester)
+    return render(request, 'testtranscriptresult.html', {'transcript': allCourses})
+
 
     # return render(request, 'testtranscriptresult.html', {'transcript': transcript})
