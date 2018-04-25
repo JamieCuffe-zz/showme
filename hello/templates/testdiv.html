@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+<input type="button" value="+" onclick="addRow()">
+<div id="content"></div>
+<script>
+function addRow() {
+    var div = document.createElement('div');
+
+    div.className = 'row';
+
+var i;
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+obj = JSON.parse(text);
+
+for (i = 0; i < 3; i++) {
+    var nameI = obj.employees[i].firstName
+    div.innerHTML +=
+        '<input type="text" name="name" value="" />\
+        <input type="text" name="value" value="" />\
+        <label> <input type="checkbox" name="check" value="1" />'
+        + nameI +
+        '</label>\
+        <input type="button" value="-" onclick="removeRow(this)">';
+       }
+    var arr = div.getElementsByTagName('script')
+    for (var n = 0; n < arr.length; n++)
+    eval(arr[n].innerHTML)
+
+    document.getElementById('content').appendChild(div);
+}
+function removeRow(input) {
+    document.getElementById('content').removeChild(input.parentNode);
+}
+</script>
