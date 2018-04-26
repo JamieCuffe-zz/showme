@@ -233,3 +233,9 @@ def result(request):
 
 
     # return render(request, 'testtranscriptresult.html', {'transcript': transcript})
+
+@login_required(login_url = '/accounts/login')
+def metainfo(request):
+    metaList = []
+    metaList = [2, 3, 4, 5]
+    JsonResponse(metaList, safe = False)
