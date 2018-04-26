@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 import requests
 import json
+import verifier
 from .models import Certificates, Students
 
 # def login(request):
@@ -136,35 +137,35 @@ def index(request):
 def certificate(request):
     # get all certificates for given student
     if request.method == 'GET':
-        netID = request.path.split('/')[:-2]
-        certdata = {}
-        certificates = Certificates.objects.all()
-        for certificate in certificates:
-            certdata['title'] = certificate.title
-            certdata['contact'] = certificate.contact_name
-        # gets object for student representation
-        #student = Students.objects.get(name = netID)
-        # insert parser that returns completed certificates
-        # courses completed by the student
-        # for certificate in certicates:
-            # completionFunction(student.netID, certificate, student.year, student.coursesCompleted)
-            # if true, student.completedCertificates += '.' + certificate
-            # else
-                # add to outputted certificates
-                # update track satisfied
-                # for each updated track:
-                    # add counted courses
+        courses = []
+        # get course data for student and reformat
+        if request.user.is_authenticated:
+            netId = request.user.username
+            student = Students.objects.filter(netid = netId)
+            courses = student.values("coursesCompleted")
 
-        # format the certificates from favorited/completion to low
-        # order favorited first
-        # order by completion percentage
+        # call interpreter 
+        allCerts = ["PAC", "ACM"]
+        allCertsCourses = []
+        allCertsReqs = []
+        formattedCourses = [[]]
 
-        # return certificate information
-        data = {
-        "name" : "value"
-        }
-        return JsonResponse(certdata)
+        # format courses from transcript to be passed into interpreter
+        for i in range (0, len(courses)):
+            formattedCourses[0].append({"name" : courses[i]})
 
+        # extract courses and reqs from output of interpreter
+        for i in range(0, len(allCerts)):
+            allCertsCourses.append(json.loads(verifier.main(formattedCourses, allCerts[i], 2018)[0]))
+            allCertsReqs.append(json.loads(verifier.main(formattedCourses, allCerts[i], 2018)[1]))
+
+        # take courses from required courses in cert json and append to allCertsReqs
+
+        for i in range(0, len(allCertsReqs)):
+            for j in range (0, len(allCertsReqs[i]["req_list"])):
+                allCertsReqs[i]["req_list"][j]["course_list"] = []
+
+        return JsonResponse(allCertsReqs)
 
 # POST request - puts student netid and course basket into db
 
