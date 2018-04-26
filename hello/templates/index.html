@@ -118,7 +118,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">COURSE QUEUE</li>
-        <h3> Coming soon in Beta test... </h3>
+        <h3> Coming soon... </h3>
         <!-- <li class="active treeview menu-open">
           <a href="#">
             <i class="fa fa-book"></i> <span>COS 226</span>
@@ -160,6 +160,8 @@
     <section class="content">
       <!-- Info boxes -->
       <div class="row">
+        <div id = "genMetaInfo"></div>
+        <!--
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-aqua"><i class="fa fa-check-circle"></i></span>
@@ -168,11 +170,11 @@
               <span class="info-box-text">Certificates</span>
               <span class="info-box-number">{{gen_numCertsComplete}}</span>
             </div>
-            <!-- /.info-box-content -->
+             
           </div>
-          <!-- /.info-box -->
+          
         </div>
-        <!-- /.col -->
+        
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-red"><i class="fa fa-check-circle-o"></i></span>
@@ -182,13 +184,13 @@
                 <span class="info-box-text">Courses</span>
               <span class="info-box-number">{{gen_numCoursesComplete}}</span>
             </div>
-            <!-- /.info-box-content -->
+            
           </div>
-          <!-- /.info-box -->
+          
         </div>
-        <!-- /.col -->
+        
 
-        <!-- fix for small devices only -->
+        
         <div class="clearfix visible-sm-block"></div>
 
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -200,11 +202,11 @@
               <span class="info-box-text">Certificates</span>
               <span class="info-box-number">{{gen_numCertAttainable}}</span>
             </div>
-            <!-- /.info-box-content -->
+            
           </div>
-          <!-- /.info-box -->
+          
         </div>
-        <!-- /.col -->
+        
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-yellow"><i class="fa fa-pencil"></i></span>
@@ -214,13 +216,13 @@
               <span class="info-box-text">Needed</span>
               <span class="info-box-number">{{gen_numCoursesNeeded}}</span>
             </div>
-            <!-- /.info-box-content -->
+            
           </div>
-          <!-- /.info-box -->
+          
         </div>
-        <!-- /.col -->
+      -->
       </div>
-      <!-- /.row -->
+      
 
       <div class="row">
         <div class="col-md-12">
@@ -438,6 +440,21 @@ $(function () {
     var pieChart = new Chart(pieChartCanvas, config)
 })
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var data = JSON.parse('[2, 4, 1, 3]');
+      var output = "";
+
+      output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-aqua"><i class="fa fa-check-circle"></i></span><div class="info-box-content"><span class="info-box-text">Completed</span><span class="info-box-text">Certificates</span><span class="info-box-number">' + data[0] + '</span></div></div></div>';
+      output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-red"><i class="fa fa-check-circle-o"></i></span><div class="info-box-content"><span class="info-box-text">Completed</span><span class="info-box-text">Courses</span><span class="info-box-number">' + data[1] + '</span></div></div></div><div class="clearfix visible-sm-block"></div>';
+      output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-green"><i class="fa fa-cog"></i></span><div class="info-box-content"><span class="info-box-text">Attainable</span><span class="info-box-text">Certificates</span><span class="info-box-number">' + data[2] + '</span></div></div></div>';
+      output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-yellow"><i class="fa fa-pencil"></i></span><div class="info-box-content"><span class="info-box-text">Courses</span><span class="info-box-text">Needed</span><span class="info-box-number">' + data[3] + '</span></div></div></div>';
+
+      $("#genMetaInfo").append(output);
+    });
+  </script>
 
 </body>
 </html>
