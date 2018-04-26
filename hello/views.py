@@ -176,9 +176,6 @@ def student_coursebasket(request):
         student = Students(netid=netID, coursebasket=courses)
         student.save()
 
-
-
-
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
 @login_required(login_url = '/accounts/login')
 def interpretedData(student):
