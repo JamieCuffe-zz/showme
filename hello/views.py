@@ -177,9 +177,6 @@ def student_coursebasket(request):
         student = Students(netid=netID, coursebasket=courses)
         student.save()
 
-
-
-
 # connects to interpreter for certsComplete, coursesComplete, certsAttainable, coursesNeeded
 @login_required(login_url = '/accounts/login')
 def interpretedData(student):
@@ -234,3 +231,9 @@ def result(request):
 
 
     # return render(request, 'testtranscriptresult.html', {'transcript': transcript})
+
+@login_required(login_url = '/accounts/login')
+def metainfo(request):
+    metaList = []
+    metaList = [2, 3, 4, 5]
+    JsonResponse(metaList, safe = False)

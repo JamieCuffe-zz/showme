@@ -36,4 +36,5 @@ urlpatterns = [
     url(r'^testtranscript', hello.views.testtranscript, name='testtranscript'),
     url(r'^usercookiestest', hello.views.userCookiesTest, name='usercookiestest'),
     url(r'^result*', hello.views.result, name='result'),
+    url(r'^metainfo', hello.views.metainfo, name='metainfo'),
 ] + static('static', document_root='hello/templates')
