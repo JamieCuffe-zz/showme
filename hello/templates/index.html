@@ -166,128 +166,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">{{cert_threeLetterCode}} {{cert_name}}</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="chart-responsive">
-                    <canvas id="pieChart" style="height: 200px;"></canvas>
-                  </div>
-
-              <!-- ./chart-responsive -->
-                </div>
-            <!-- /.col -->
-                <div class="col-md-4">
-                  <h4>{{cert_name}}</h4>
-                  <h5><small>{{cert_description}}</small></h5>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                          <h5>Contact Info</h5>
-                          <h6><i class="fa fa-fw fa-user"></i><a href="#" class="small-box-footer">{{cert_contactName}}</a></h6>
-                          <h6><i class="fa fa-fw fa-envelope"></i><a href="#" class="small-box-footer">{{cert_contactEmail}}</a></h6>
-                          <h6><i class="fa fa-fw fa-link"></i><a href="#" class="small-box-footer">{{cert_website}}</a></h6>
-                        </div>
-                    </div>
-                </div>
-
-            <!-- /.col -->
-              </div>
-                <div class="col-md-12">
-                  <div class="box box-default collapsed-box" style="border-style: none; box-shadow: 0 0 0; ">
-                    <div class = "row">
-                      <div class="box-tools pull-left">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                        </button>
-                      </div>
-                      <h5>Courses</h5>
-                    </div>
-
-                    <div class="box-body">
-                      <div class = "row">
-                      </div>
-                      <div class = "row">
-                        <h5>Applications</h5>
-                      </div>
-
-                      <div class = "row">
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-success btn-sm">COS 126</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 226</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-warning btn-sm">COS 217</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 333</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">. . .</button>
-                        </div>
-                      </div>
-                      <div class = "row">
-                        <h5>Systems</h5>
-                      </div>
-                      <div class = "row">
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 126</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 226</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 217</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 333</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">. . .</button>
-                        </div>
-                      </div>
-                      <div class = "row">
-                        <h5>Theory</h5>
-                      </div>
-                      <div class = "row">
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 126</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 226</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 217</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">COS 333</button>
-                        </div>
-                        <div class="col-md-2">
-                          <button type="button" class="btn btn-block btn-info btn-sm">. . .</button>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-
-                <!-- /.box -->
-                </div>
-          <!-- /.row -->
-            </div>
-        <!-- /.footer -->
-          </div>
-      <!-- /.box -->
+          <div id = "genCert")></div>
         </div>
       </div>
   </div>
@@ -393,7 +272,31 @@ $(function () {
       output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-yellow"><i class="fa fa-pencil"></i></span><div class="info-box-content"><span class="info-box-text">Courses</span><span class="info-box-text">Needed</span><span class="info-box-number">' + data[3] + '</span></div></div></div>';
 
       $("#genMetaInfo").append(output);
+
+      var data = JSON.parse('[{"type":"Certificate","name":"Applied & Computation Mathematics","code":"ACM","degree":null,"year":2018,"urls":["https://www.pacm.princeton.edu/undergraduate/course-study"],"description":"At Princeton, the Program in Applied and Computational Mathematics offers a small group of undergraduate students the unique opportunity to learn to perform accurate and controlled numerical studies and, perhaps most important, exposes them to the philosophy and tools of interdisciplinary applied mathematics in a very personal and individualized manner. Students who complete the prescribed requirements are awarded a certificate in Applied and Computational Mathematics. Recently a new option has become available to undergraduate math majors who intend to pursue the PACM certificate, the applied math track.","contacts":[{"type":"Program Coordinator","name":"Gina Holland","email":"gholland@princeton.edu"}],"req_list":[{"name":"Mathematical Foundations","max_counted":3,"min_needed":2,"explanation":"Any 300+ level course or above given by the Math Department, or cross-listed with Math, counts as a foundations course for the PACM Certificate, except those explicitly listed below as applications courses.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["MAT 3**","MAT 4**","APC 350","APC 503","APC 501","APC 506","APC 523","APC 527","AST 301","CBE 448","COS 323","COS 325","COS 340","ELE 486","MAE 305","MAE 306","MAE 503","MAT 321","MAT 325","MAT 375","MAT 377","MAT 378","MAT 385","MAT 427","ORF 307","ORF 309","ORF 405","PHY 521","PHY 523","POL 572","POL 573","QCB 511"]},{"name":"Mathematical Application","max_counted":3,"min_needed":3,"explanation":"Including signal processing, control theory, and optimization, mathematical economics, typically offered by the economics, science, and engineering departments.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":1,"course_list":["AOS 571","AOS 572","AOS 573","AOS 576","APC 509","APC 514","APC 523","APC 524","CBE 341","CEE 361","CEE 532","CHM 305","CHM 306","CHM 405","CHM 406","COS 343","COS 402","COS 424","COS 426","COS 429","COS 423","COS 433","COS 445","COS 451","COS 487","COS 521","COS 522","COS 533","COS 557","ECO 312","ECO 317","ECO 414","ECO 418","ECO 465","ECO 466","ECO 481","ECO 513","ECO 324","ECO 325","EEB 424","ELE 381","ELE 382","ELE 482","ELE 488","ELE 521","ELE 523","ELE 525","ELE 528","ELE 530","ELE 535","GEO 422","GEO 424","GEO 425","GEO 441","GEO 557","MAE 335","MAE 336","MAE 433A","MAE 433B","MAE 434","MAE 541","MAE 542","MAE 545","MAE 546","MAE 552","MAE 559","MAT 323","MAT 582","MOL 436","MSE 515","NEU 437","ORF 335","ORF 350","ORF 405","ORF 407","ORF 435","ORF 473","ORF 523","ORF 526","PHY 304","PHY 305","PHY 408","PHY 509","PHY 525","PHY 562","QCB 408"]}]},{"type":"Certificate","name":"African American Studies","code":"AAS","degree":null,"year":2018,"urls":["http://aas.princeton.edu/programs/undergraduate/aas-certificate/"],"description":"Earning a certificate in African American Studies is a straightforward and enriching course of study which complements, and complicates, any Princeton concentration. Students who opt to pursue a certificate in African American Studies gain access to an extraordinary bibliography that prepares them to think about race and difference in sophisticated ways. Certificate earners are required to complete 5 units of coursework, which include AAS 201; two survey courses; and two additional subfield courses. Additionally, certificate earners are encouraged to make African American people, literature, history, or related study and/or research in African American Studies central to their senior thesis topic. PDF courses cannot be counted toward your certificate requirements (not including P/D/F Only courses).","contacts":[{"type":"Department Assistant","name":"Jana Johnson","email":"jana.johnson@princeton.edu"}],"req_list":[{"name":"Introduction","max_counted":1,"min_needed":1,"explanation":"Students should first take the departmental survey course, AAS 201 Introduction to the Study of African American Cultural Practices.","double_counting_allowed":false,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["AAS 201"]},{"name":"Subfield","max_counted":2,"min_needed":2,"explanation":"African American Studies is organized into three subfields: African American Culture and Life (AACL), Global Race and Ethnicity (GRE), and Race and Public Policy (RPP).","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["AAS ***","LAS 337","WWS 370","SWA 200","SPA 327","SPA 352","SOC 227","SOC 210","SOC 361","SOC 354","SOC 345","SOC 359","SOC 201","REL 360","SOC 216","REL 258","REL 358","PSY 252","POR 309","PSY 307","PSY 313","POR 304","POL 421","POL 366","POL 317","MUS 264","MUS 258","HIS 306","HIS 431","HIS 270","AMS 342","HIS 315","HIS 376","HIS 316","ART 242","ART 456","ECO 351","HIS 314","ARC 305","ARC 401","ANT 350","ANT 322","ANT 321","ANT 301","ANT 210","AFS 427","AFS 320","AMS 379","ANT 304","AFS 303"]},{"name":"Survey","max_counted":2,"min_needed":2,"explanation":"At least one survey course should be a pre-20th century course.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["AAS 353","AAS 366","AAS 359","AAS 367"]}]},{"type":"Certificate","name":"Architecture and Engineering","code":"ACE","degree":null,"year":2018,"urls":["https://arch-eng.princeton.edu/program-requirements/"],"description":"The Program in Architecture and Engineering enables students to work at the intersection of engineering and architecture.  It is a framework for interdisciplinary study to tackle problems that cannot be addressed by one discipline.  The certificate is an opportunity to respond dynamically to evolving global challenges, where elegant and effective solutions lead to more resilient and sustainable communities.","contacts":[{"type":"Program Director","name":"Forrest Meggers","email":"fmeggers@princeton.edu"}],"req_list":[{"name":"Core","max_counted":2,"min_needed":2,"explanation":"The following two design courses are required for all students: ARC 203 and ARC 204.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["ARC 203","ARC 204"]},{"name":"Field of Expertise","max_counted":1,"min_needed":1,"explanation":"With approval of the committee, the student may construct their own “field of expertise” that demonstrates a coherent program of study addressing a global challenge theme.","double_counting_allowed":false,"max_common_with_major":2,"pdfs_allowed":0,"course_list":["CEE 262A","CEE 262B","ARC 374","ENE 202"]},{"name":"Structures","max_counted":1,"min_needed":1,"explanation":"Courses are selected from a list of electives either following a field of expertise or building a unique interdisciplinary set approved by advisor.","double_counting_allowed":false,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["ARC 311","ARC 374","ARC 350","ARC 351","CEE 205","CEE 312","CEE 361","CEE 364","CEE 463","MSE 301","MSE 302"]},{"name":"Computation","max_counted":1,"min_needed":1,"explanation":"Courses are selected from a list of electives either following a field of expertise or building a unique interdisciplinary set approved by advisor.","double_counting_allowed":false,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["ARC 596","CEE 463","CEE 546","COS 126","COS 217","COS 226","COS 306","COS 397","COS 424"]},{"name":"Environment","max_counted":1,"min_needed":1,"explanation":"Courses are selected from a list of electives either following a field of expertise or building a unique interdisciplinary set approved by advisor.","double_counting_allowed":false,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["ARC 311","ARC 382","ART 250","ARC 406","ARC 519","ARC 509","CEE 207","CEE 304","CEE 311","CEE 477","MAE 221","MAE 228","MAE 328","MSE 301","MSE 302"]}]},{"type":"Certificate","name":"African Studies","code":"AFS","degree":null,"year":2018,"description":"Students are encouraged to study in Africa and the program offers language and literature courses in Kiswahili and sponsors and endorses a variety of field study programs. The program casts a wide net, enabling students majoring in any department to design a course of study that satisfies their interests in Africa. Students who study at the University of Cape Town or elsewhere must submit courses for certificate credit to the program manager for director approval. With prior permission from the director eight weeks work in Africa on a project can equal a course cognate.","urls":["http://piirs.princeton.edu/afs/undergrad-opps/cert"],"contacts":[{"type":"Program Manager","name":"Tim Waldron","email":"twaldron@princeton.edu"}],"req_list":[{"name":"Foundation","max_counted":1,"min_needed":1,"explanation":"One foundational course from a list of designated courses that serves as an introduction to Africa.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["POL 366","HIS 457","ANT 358","MUS 258","LIN 260","AAS 492","ART 473","ANT 314","COM 425"]},{"name":"Cross-Listed","max_counted":3,"min_needed":3,"explanation":"Students can substitute a cross-listed course with another course with prior approval from the director of the Program in African Studies.  Students who study abroad must submit courses for certificate credit to the program manager for director approval.  A one year-long sequence in Swahili or Twi can satisfy two of these course requirements.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["AFS ***"]}]},{"type":"Certificate","name":"American Studies","code":"AMS","degree":null,"year":2018,"description":"Objects of study range across multiple media, including texts, images, works of art, music, performance, and film, and draw from the diverse fields of literature, history, political science, art history, economics, law, cultural studies, and the history of science.  The course attends to how knowledge about America has and continues to be produced, disseminated, and consumed, emphasizing the cognitive processes associated with the invention and delineation of America.","urls":["https://ams.princeton.edu/academics/program-study"],"contacts":[{"type":"Program Assistant","name":"Candice Kessel","email":"cwkessel@princeton.edu"}],"req_list":[{"name":"Core","max_counted":1,"min_needed":1,"explanation":"This course introduces a selection of signature ideas and debates that made the nation what it is today and what it is becoming.  Objects of study range across multiple media, including texts, images, works of art, music, performance, and film, and draw from the diverse fields of literature, history, political science, art history, economics, law, cultural studies, and the history of science.  The course attends to how knowledge about America has and continues to be produced, disseminated, and consumed, emphasizing the cognitive processes associated with the invention and delineation of America.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["AMS 101"]},{"name":"Breadth","max_counted":3,"min_needed":3,"explanation":"Three courses in American Studies, Asian American Studies, or Latino Studies, either originating in the relevant program or cross-listed, and representing disciplinary breadth in the social sciences, arts, and humanities. No more than one course taken in fulfillment of the student’s concentration may be counted toward the certificate.","double_counting_allowed":false,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["AMS 3**","AMS 4**"]}]},{"type":"Certificate","name":"Archaeology","code":"ART","degree":null,"year":2018,"description":"The Program in Archaeology is designed to provide students with an interdisciplinary foundation in archaeology—the study of the material remains of the past—and to equip students to use archaeological evidence in other fields of inquiry. The Program offers courses that cover many cultures and periods, including Egypt, the Near East, Greece, Rome, and the Americas. It encourages a deep integration of the humanities and the sciences, and promotes the awareness of issues of cultural heritage.","urls":["https://artandarchaeology.princeton.edu/about-us/undergraduate/programs-of-study"],"contacts":[{"type":"Department Manager","name":"Susan Lehre","email":"lehre@princeton.edu"}],"req_list":[{"name":"Core","max_counted":2,"min_needed":2,"explanation":"The core courses and fieldwork requirement ensure breadth and provide a theoretical and methodological foundation for further study.","double_counting_allowed":false,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["ART 100","ART 401"]},{"name":"Fieldwork","max_counted":1,"min_needed":1,"explanation":"“Fieldwork” is not limited to excavation. Sustained engagement in any aspect of an archaeological project fulfills the obligation. Students may, for example, assist in a geophysical survey, participate in a surface survey, work in archaeological archives, or intern for a zoologist. Fieldwork must be approved by the program’s executive committee ahead of time.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["ART 304"]},{"name":"Breadth","max_counted":3,"min_needed":3,"explanation":"At least one must be offered in the Department of Art and Archaeology in the Ancient area, and at least one must be a course outside of the Department of Art and Archaeology (see the list below). Approved Freshman Seminars may count toward the three courses. A Freshman Seminar taught by a faculty member in the Department of Art and Archaeology may not count for the required course outside of the department.","double_counting_allowed":false,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["ANT 206","ANT 308","ANT 374","ART 100","ART 102","ART 200","ART 201","ART 266","ART 267","ART 290","ART 300","ART 301","ART 304","ART 306","ART 308","ART 395","ART 418","ART 401","ART 481","FRS 126","FRS 129","GEO 103","GEO 203","GEO 370"]}]},{"type":"Certificate","name":"Program in Global Health and Health Policy","code":"GHP","year":2018,"degree":null,"description":"Over the course of the last century, innovations in public health and medicine have improved outcomes in many affluent countries. In other parts of the world, however, the situation is more complicated. New public-private partnerships and multidisciplinary research collaborations are reshaping global health. They ask not just what, but why and how? Princeton is at the forefront of this movement, transforming realities for people around the world, and you can be part of that experience.","urls":["https://ua.princeton.edu/academic-units/program-global-health-and-health-policy","https://globalhealth.princeton.edu/"],"contacts":[{"type":"Co-Director","name":"João G. Biehl","email":"jbiehl@princeton.edu"},{"type":"Co-Director","name":"Andrea Graham","email":"algraham@princeton.edu"}],"req_list":[{"name":"Core Requirements","max_counted":2,"min_needed":2,"explanation":"Completion of GHP 350 (Critical Perspectives on Global Health and Health Policy) and GHP 351 (Epidemiology) is required by the end of junior year.","double_counting_allowed":false,"max_common_with_major":2,"pdfs_allowed":0,"completed_by_semester":6,"course_list":["GHP 350","GHP 351"]},{"name":"Health-Related Electives","max_counted":4,"min_needed":4,"explanation":"Four additional health-related electives approved by the GHP program, at least one of which is in an area outside of the home department. ","double_counting_allowed":false,"pdfs_allowed":1,"completed_by_semester":8,"course_list":["AMS 306","PSY 317","WWS 453","MOL 425","MOL 458","MOL 423","ISC 326","LAS 372","GSS 420","GHP 4121","GHP 400","EEB 328","CBE 447","AAS 302","WWS 354","MOL 460","MOL 349","EEB 327","ECO 332","CHM 440","ENV 407","MOL 433","MOL 459","GHP 301","ANT 403","CBE 440","GHP 300","GHP 410","MOL 447","WWS 393","ENV 329","WWS 407","GHP 408","GHP 409"]}]},{"type":"Certificate","name":"History and the Practice of Diplomacy","code":"HPD","year":2018,"description":"The undergraduate certificate program will provide preparation for careers in governmental and nongovernmental organizations (NGOs) that preserve stability and improve lives around the world. In addition to requiring courses in the Woodrow Wilson School and the Department of History, the interdisciplinary program will provide students with the opportunity to take applicable classes from politics and other social sciences, as well as those exploring particular regions of the world, such as Near Eastern studies and East Asian studies. Students of any major may pursue the certificate.","urls":["https://ua.princeton.edu/academic-units/program-history-and-practice-diplomacy","https://hpd.princeton.edu/"],"contacts":[{"type":"Co-Director","name":"Stephen Kotkin","email":"kotkin@princeton.edu"},{"type":"Co-Director","name":"Michael Mullen","email":"mgmullen@princeton.edu"}],"req_list":[{"name":"Core Course","max_counted":1,"min_needed":1,"explanation":"The core course WWS 315/ POL 393 for the History and the Practice of Diplomacy Certificate.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"completed_by_semester":8,"req_list":[],"course_list":["WWS 315"]},{"name":"Internship","max_counted":0,"min_needed":0,"explanation":"An internship, usually during a summer, with a suitable government agency or nongovernmental organization (NGO), domestic or international.  An internship could include research in think tanks as well as activities described as people to people diplomacy.","double_counting_allowed":false,"completed_by_semester":8,"req_list":[],"course_list":[]},{"name":"Elective Courses","min_needed":4,"explanation":"Four additional courses: two be in the history department in international, global, diplomatic history, or ancient history, and two in the Woodrow Wilson School, politics department, or other departments, on subjects such as international relations, international organizations, international political economy, security studies, war, peace, the environment and sustainability, global stability.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"completed_by_semester":8,"req_list":[],"course_list":["WWS ***","HIS ***"]}]},{"type":"Certificate","name":"Near Eastern Studies","code":"NES","year":2018,"description":"The Program in Near Eastern Studies provides students in any department of Princeton University the opportunity to study the languages, modern history, contemporary institutions, and problems of the Near East. Its purpose is to enhance a liberal education and to offer additional training for students who plan a career in that area. For this program, the Near East is defined as the entire Arab world plus the present-day states of Iran, Israel, and Turkey.","urls":["https://ua.princeton.edu/academic-units/program-near-eastern-studies","http://www.princeton.edu/nep/"],"contacts":[{"type":"Director","name":"Professor Bernard A. Haykel","email":"haykel@princeton.edu"},{"type":"Program Manager","name":"Karen N. Chirik","email":"kchirik@princeton.edu"}],"req_list":[{"name":"Language","min_needed":4,"description":"Language Requirement","explanation":"Students who have had no relevant language training will take at least two years of Arabic, Hebrew, Persian, or Turkish language as elective courses.","double_counting_allowed":false,"pdfs_allowed":0,"completed_by_semester":8,"req_list":[],"course_list":["ARA 1**","ARA 301","ARA 302","HEB 1**","PER 1**","TUR 1**","TUR 304","TUR 305"]},{"name":"History","min_needed":1,"description":"History Requirement","explanation":"All students will take, as departmental courses, at least one appropriate history course in the Department of Near Eastern Studies. Students in the Department of History will take at least two such courses.","double_counting_allowed":false,"pdfs_allowed":0,"completed_by_semester":8,"req_list":[],"course_list":["NES ***"]},{"name":"Social Sciences","min_needed":2,"description":"Social Sciences Requirement","explanation":"All students will take at least two courses treating the Near East that are chosen from the offerings of the Departments of Anthropology, Near Eastern Studies, Politics, Religion, and Sociology, and the Woodrow Wilson School.","double_counting_allowed":false,"pdfs_allowed":0,"completed_by_semester":8,"req_list":[],"course_list":["ANT *","NES *","POL *","REL *","SOC *","WWS *"]}]},{"type":"Certificate","name":"Applications of Computing","code":"PAC","degree":null,"year":2018,"description":"The Program in Applications of Computing is an interdisciplinary program designed for Princeton undergraduates who want to combine the study of computing and computers beyond an introductory level with another academic concentration, but who are not majoring in Computer Science. The program welcomes students in all disciplines, including both areas traditionally making heavy use of computation (such as engineering, the physical sciences, economics, and mathematics) and emerging application areas (such as biology, cognitive science, graphic arts, music, history, philosophy, politics, sociology, literature, and so on). Many students have found this program an effective way to apply computer science to their own specialties, and to understand how computing concepts and technology are changing our world.","urls":["http://www.cs.princeton.edu/ugrad/certificate-program"],"contacts":[{"type":"Program Coordinator","name":"Colleen Kenny","email":"ckenny@cs.princeton.edu"}],"req_list":[{"name":"Prerequisite","max_counted":1,"min_needed":1,"explanation":"COS 126 or permission from placement officer.","double_counting_allowed":true,"max_common_with_major":1,"pdfs_allowed":0,"course_list":["COS 126","ISC 231","ISC 232","ISC 233","ISC 234"]},{"name":"Intermediate","max_counted":2,"min_needed":2,"explanation":"Two courses from among the following four: COS 217, COS 226, COS 323 (cross listed as ORF 363)  and/or COS 324.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":1,"course_list":["COS 324","COS 323","COS 226","COS 217"]},{"name":"Substantial Computing Content","max_counted":1,"min_needed":1,"explanation":"This may be either a second COS departmental, or an outside course.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["COS 3**","COS 4**","APC 524","ARC 374","CBE 422","CBE 442","CBE 448","ECO 326","ELE 375","ELE 381","ELE 396","ELE 463","ELE 481","ELE 482","ELE 475","MAT 305","MAE 345","MAE 412","MAE 433","MOL 457","NEU 314","NEU 437","ORF 307","ORF 301","MUS 315","ORF 350","ORF 417","ORF 523","ORF 467","ORF 311","ORF 309","PSY 322","WWS 357"]},{"name":"Depth","max_counted":1,"min_needed":1,"explanation":"One COS departmental at the 300- or 400-level, not including COS 397, COS 398, COS 497, COS 498, COS 323 (ORF 363) or COS 324. That is, if requirement (2) is satisfied with COS 217 and 226, then COS 323 (ORF 363) or COS 324 cannot count towards satisfying this requirement.","double_counting_allowed":false,"max_common_with_major":0,"pdfs_allowed":0,"course_list":["COS 3**","COS 4**"]}]}]');
+
+      var output = '';
+      $.each(data, function(index, certificate) {
+        var tracks = '';
+        $.each(certificate.req_list, function(number, track) {
+          tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
+          $.each(track.course_list, function(listing, course) {
+            tracks += '<div class="col-md-2"><button type="button" class="btn btn-block btn-success btn-sm">' + course + '</button></div>'; 
+          });
+          tracks += '</div>';
+        });
+
+        output += '<div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button></div></div>';
+        output += '<div class="box-body"><div class="row"><div class="col-md-4"><div class="chart-responsive"><canvas id="pieChart" style="height: 200px;"></canvas></div></div>';
+        output += '<div class="col-md-4"><h4>' + certificate.name + '</h4><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-aqua"><div class="inner"><h5>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i><a href="#" class="small-box-footer">' + certificate.contacts[0].name + '</a></h6><h6><i class="fa fa-fw fa-envelope"></i><a href="#" class="small-box-footer">' + certificate.contacts[0].email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a href="#" class="small-box-footer"></a></h6><h6><i class="fa fa-fw fa-link"></i><a href="#" class="small-box-footer"><a href="' + certificate.urls[0] + '">' + certificate.urls[0] + '</a></a></h6></div></div></div></div>';
+        output += '<div class="col-md-12"><div class="box box-default collapsed-box" style="border-style: none; box-shadow: 0 0 0; "><div class = "row"><div class="box-tools pull-left"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button></div><h5>Courses</h5></div><div class="box-body"><div class = "row"></div>';
+        output += tracks + '</div></div></div></div></div>'; 
+
+      });
+
+      $("#genCerts").append(output);
     });
+
   </script>
 
 </body>
