@@ -5,11 +5,11 @@ from pprint import pprint
 import os
 import collections
 
-schema_location = "schema.json" # path to the requirements JSON schema
-majors_location = "Certificates/" # path to folder conatining the major requirements JSONs
-certificates_location = "../certificates/" # path to folder conatining the certificate requirements JSONs
-AB_requirements_location = "../degrees/AB_2018.json" # path to the AB requirements JSON
-BSE_requirements_location = "../degrees/BSE_2018.json" # path to the BSE requirements JSON
+# schema_location = "schema.json" # path to the requirements JSON schema
+majors_location = "hello/Certificates/" # path to folder conatining the major requirements JSONs
+# certificates_location = "../certificates/" # path to folder conatining the certificate requirements JSONs
+# AB_requirements_location = "../degrees/AB_2018.json" # path to the AB requirements JSON
+# BSE_requirements_location = "../degrees/BSE_2018.json" # path to the BSE requirements JSON
 
 # def check_major(major_name, courses, year=2018, user_info=None):
 #     """

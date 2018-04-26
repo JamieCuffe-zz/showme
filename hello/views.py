@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 import requests
 import json
-import verifier
+import hello.verifier
 from .models import Certificates, Students
 
 # def login(request):
@@ -144,28 +144,30 @@ def certificate(request):
             student = Students.objects.filter(netid = netId)
             courses = student.values("coursesCompleted")
 
+        certs = Certificates.objects.all()
+
         # call interpreter 
-        allCerts = ["PAC", "ACM"]
-        allCertsCourses = []
-        allCertsReqs = []
-        formattedCourses = [[]]
+        # allCerts = ["PAC", "ACM"]
+        # allCertsCourses = []
+        # allCertsReqs = []
+        # formattedCourses = [[]]
 
-        # format courses from transcript to be passed into interpreter
-        for i in range (0, len(courses)):
-            formattedCourses[0].append({"name" : courses[i]})
+        # # format courses from transcript to be passed into interpreter
+        # for i in range (0, len(courses)):
+        #     formattedCourses[0].append({"name" : courses[i]})
 
-        # extract courses and reqs from output of interpreter
-        for i in range(0, len(allCerts)):
-            allCertsCourses.append(json.loads(verifier.main(formattedCourses, allCerts[i], 2018)[0]))
-            allCertsReqs.append(json.loads(verifier.main(formattedCourses, allCerts[i], 2018)[1]))
+        # # extract courses and reqs from output of interpreter
+        # for i in range(0, len(allCerts)):
+        #     allCertsCourses.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[0]))
+        #     allCertsReqs.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[1]))
 
-        # take courses from required courses in cert json and append to allCertsReqs
+        # # take courses from required courses in cert json and append to allCertsReqs
 
-        for i in range(0, len(allCertsReqs)):
-            for j in range (0, len(allCertsReqs[i]["req_list"])):
-                allCertsReqs[i]["req_list"][j]["course_list"] = []
+        # for i in range(0, len(allCertsReqs)):
+        #     for j in range (0, len(allCertsReqs[i]["req_list"])):
+        #         allCertsReqs[i]["req_list"][j]["course_list"] = []
 
-        return JsonResponse(allCertsReqs)
+        return HttpResponse(certs)
 
 # POST request - puts student netid and course basket into db
 
