@@ -183,6 +183,7 @@ def certificate(request):
             
             reqList = json.loads(testCertificate[0]["tracks"])
 
+            testRegex = ""
             for j in range(0, len(reqList)):
                 courseList = reqList[j]["courses"]
                 courseListNew = []
@@ -190,13 +191,15 @@ def certificate(request):
                     matchCourseList = allCertsCourses[0][i]
                     successOrFail = "info"
                     for l in range(0, len(matchCourseList)):
+                        if matchCourseList[l]["name"] == "COS 3**":
+                            testRegex = matchCourseList[l]["name"].replace("*", "[0-9]")
                         regexString = matchCourseList[l]["name"].replace("*", "[0-9]")
                         if (re.search(regexString, courseList[k])) and (matchCourseList[l]["used"]):
                             successOrFail = "success"
                     courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
                 allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
-        return JsonResponse(allCertsReqs, safe=False)
+        return JsonResponse(testRegex, safe=False)
 
 # POST request - puts student netid and course basket into db
 
