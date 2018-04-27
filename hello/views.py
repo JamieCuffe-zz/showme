@@ -9,10 +9,12 @@ from django.views.decorators.http import require_GET
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 from django.core.serializers.json import DjangoJSONEncoder
+import os
+import collections
 import requests
 import json
 import hello.verifier
-from .models import Certificates, Students
+from .models import Students
 
 # def login(request):
     # CAS login
@@ -99,7 +101,7 @@ def index(request):
     # gets user specific information
     # currentStudent = Students.objects.get(netid = 'testStudent')
 
-    certificates = Certificates.objects.all()
+    #certificates = Certificates.objects.all()
 
     # currentStudent = ""
     # listOfInfo = interpretedData(currentStudent)
@@ -149,10 +151,11 @@ def certificate(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter 
-        allCerts = ["PAC", "ACM", "FIN"]
+        allCerts = ["PAC"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
+        totalOutput = []
 
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
@@ -166,7 +169,6 @@ def certificate(request):
         # take courses from required courses in cert json and append to allCertsReqs
 
         for i in range(0, len(allCertsReqs)):
-            allData = list(Certificates.objects.filter(code = 'PAC').values())
             #test = list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))
             #description = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))[0]["description"])
             # urls = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("link_page"))[0]["link_page"])
@@ -178,7 +180,9 @@ def certificate(request):
             for j in range (0, len(allCertsReqs[i]["req_list"])):
                 allCertsReqs[i]["req_list"][j]["course_list"] = []
 
-        return JsonResponse(allData,safe=False)
+        totalOutput.append(allCertsCourses)
+
+        return JsonResponse(allCertsReqs, safe=False)
 
 # POST request - puts student netid and course basket into db
 
