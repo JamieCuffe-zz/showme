@@ -166,13 +166,13 @@ def certificate(request):
         # take courses from required courses in cert json and append to allCertsReqs
 
         for i in range(0, len(allCertsReqs)):
-            description = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))[0]["description"])
-            urls = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("link_page"))[0]["link_page"])
-            contactName = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_name"))[0]["contact_name"])
-            contactEmail = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_email"))[0]["contact_email"])
-            allCertsReqs[i]["description"] = description
-            allCertsReqs[i]["urls"] = urls
-            allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+            # description = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))[0]["description"])
+            # urls = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("link_page"))[0]["link_page"])
+            # contactName = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_name"))[0]["contact_name"])
+            # contactEmail = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_email"))[0]["contact_email"])
+            # allCertsReqs[i]["description"] = description
+            # allCertsReqs[i]["urls"] = urls
+            # allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
             for j in range (0, len(allCertsReqs[i]["req_list"])):
                 allCertsReqs[i]["req_list"][j]["course_list"] = []
 
