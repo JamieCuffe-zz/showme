@@ -180,20 +180,20 @@ def certificate(request):
             allCertsReqs[i]["urls"] = urls
             allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
             
-            # reqList = testCertificate[0]["tracks"]
+            reqList = json.loads(testCertificate[0]["tracks"])
 
-            # for j in range(0, len(reqList)):
-            #     courseList = reqList[j]["course_list"]
-            #     for k in range(0, len(courseList)):
-            #         matchCourseList = allCertsCourses[0][i]
-            #         successOrFail = "info"
-            #         for l in range(0, len(matchCourseList)):
-            #             if (courseList[k] == matchCourseList[l]["name"]) and (matchCourseList[l]["used"]):
-            #                 successOrFail = "satisfied"
-            #         courseListNew[k] = {"title" : courseList[k], "satisfied" : successOrFail}
-            #     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
+            for j in range(0, len(reqList)):
+                courseList = reqList[j]["course_list"]
+                for k in range(0, len(courseList)):
+                    matchCourseList = allCertsCourses[0][i]
+                    successOrFail = "info"
+                    for l in range(0, len(matchCourseList)):
+                        if (courseList[k] == matchCourseList[l]["name"]) and (matchCourseList[l]["used"]):
+                            successOrFail = "satisfied"
+                    courseListNew[k] = {"title" : courseList[k], "satisfied" : successOrFail}
+                allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
-        return JsonResponse(testCertificate, safe=False)
+        return JsonResponse(allCertsReqs, safe=False)
 
 # POST request - puts student netid and course basket into db
 
