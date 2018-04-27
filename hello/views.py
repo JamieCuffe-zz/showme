@@ -184,6 +184,7 @@ def certificate(request):
 
             for j in range(0, len(reqList)):
                 courseList = reqList[j]["courses"]
+                courseListNew = []
                 for k in range(0, len(courseList)):
                     matchCourseList = allCertsCourses[0][i]
                     successOrFail = "info"
