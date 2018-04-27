@@ -8,6 +8,7 @@ from django.template.loader import render_to_string
 from django.views.decorators.http import require_GET
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
+from django.core.serializers.json import DjangoJSONEncoder
 import requests
 import json
 import hello.verifier
@@ -137,37 +138,45 @@ def index(request):
 def certificate(request):
     # get all certificates for given student
     if request.method == 'GET':
-        courses = []
+        studentCourses = []
         # get course data for student and reformat
         if request.user.is_authenticated:
             netId = request.user.username
-            student = Students.objects.filter(netid = netId)
-            courses = student.values("coursesCompleted")
-
-        certs = Certificates.objects.all()
+            # student = Students.objects.filter(netid = netId)
+            # courses = student.values("coursesCompleted")
+            # data = list(courses)[0]["coursesCompleted"]
+            # studentCourses = json.loads(data)
+            studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter 
-        # allCerts = ["PAC", "ACM"]
-        # allCertsCourses = []
-        # allCertsReqs = []
-        # formattedCourses = [[]]
+        allCerts = ["PAC", "ACM", "FIN"]
+        allCertsCourses = []
+        allCertsReqs = []
+        formattedCourses = [[]]
 
-        # # format courses from transcript to be passed into interpreter
-        # for i in range (0, len(courses)):
-        #     formattedCourses[0].append({"name" : courses[i]})
+        # format courses from transcript to be passed into interpreter
+        for i in range (0, len(studentCourses)):
+            formattedCourses[0].append({"name" : studentCourses[i]})
 
-        # # extract courses and reqs from output of interpreter
-        # for i in range(0, len(allCerts)):
-        #     allCertsCourses.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[0]))
-        #     allCertsReqs.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[1]))
+        # extract courses and reqs from output of interpreter
+        for i in range(0, len(allCerts)):
+            allCertsCourses.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[0]))
+            allCertsReqs.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[1]))
 
-        # # take courses from required courses in cert json and append to allCertsReqs
+        # take courses from required courses in cert json and append to allCertsReqs
 
-        # for i in range(0, len(allCertsReqs)):
-        #     for j in range (0, len(allCertsReqs[i]["req_list"])):
-        #         allCertsReqs[i]["req_list"][j]["course_list"] = []
+        for i in range(0, len(allCertsReqs)):
+            description = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))[0]["description"])
+            urls = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("link_page"))[0]["link_page"])
+            contactName = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_name"))[0]["contact_name"])
+            contactEmail = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_email"))[0]["contact_email"])
+            allCertsReqs[i]["description"] = description
+            allCertsReqs[i]["urls"] = urls
+            allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+            for j in range (0, len(allCertsReqs[i]["req_list"])):
+                allCertsReqs[i]["req_list"][j]["course_list"] = []
 
-        return HttpResponse(certs)
+        return JsonResponse(allCertsReqs,safe=False)
 
 # POST request - puts student netid and course basket into db
 
