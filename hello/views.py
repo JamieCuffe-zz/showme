@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 from django.core.serializers.json import DjangoJSONEncoder
 import os
+import re
 import collections
 import requests
 import json
@@ -189,7 +190,8 @@ def certificate(request):
                     matchCourseList = allCertsCourses[0][i]
                     successOrFail = "info"
                     for l in range(0, len(matchCourseList)):
-                        if (courseList[k] == matchCourseList[l]["name"]) and (matchCourseList[l]["used"]):
+                        regexString = matchCourseList[l]["name"].replace('*', '[0-9]')
+                        if (re.search(regexString, courseList[k])) and (matchCourseList[l]["used"]):
                             successOrFail = "satisfied"
                     courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
                 allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
