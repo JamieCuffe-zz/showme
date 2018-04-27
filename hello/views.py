@@ -157,7 +157,7 @@ def certificate(request):
         formattedCourses = [[]]
         totalOutput = []
 
-        testCertificate = list(Certificates.objects.filter(title = 'Applications of Computing'))
+        testCertificate = list(Certificates.objects.filter(title = 'Applications of Computing').values())
 
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
