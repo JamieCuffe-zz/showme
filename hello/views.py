@@ -15,7 +15,7 @@ import collections
 import requests
 import json
 import hello.verifier
-from .models import Students
+from .models import Students, Certificates
 # def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
