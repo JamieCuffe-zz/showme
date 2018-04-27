@@ -152,7 +152,7 @@ def certificate(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter 
-        allCerts = ["PAC", "ACM"]
+        allCerts = ["PAC", "ACM", "FIN", "GHP", "AAS"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
@@ -188,7 +188,7 @@ def certificate(request):
                 courseList = reqList[j]["courses"]
                 courseListNew = []
                 for k in range(0, len(courseList)):
-                    matchCourseList = allCertsCourses[0][i]
+                    matchCourseList = allCertsCourses[0][0]
                     successOrFail = "info"
                     for l in range(0, len(matchCourseList)):
                         regexString = courseList[k].replace("*", "[0-9]")
