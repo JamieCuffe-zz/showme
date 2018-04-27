@@ -180,7 +180,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="chart-responsive">
-                    <canvas id="pieChart" style="height: 200px;"></canvas>
+                    <canvas id="pieChart1" style="height: 200px;"></canvas>
                   </div>
 
               <!-- ./chart-responsive -->
@@ -307,7 +307,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="chart-responsive">
-                      <canvas id="pieChart" style="height: 200px;"></canvas>
+                      <canvas id="pieChart2" style="height: 200px;"></canvas>
                     </div>
   
                 <!-- ./chart-responsive -->
@@ -465,12 +465,15 @@
 document.getElementById("transcript").onclick = function () {
 location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result";
 };
+</script>
+
+<script>
 //-------------
 //- PIE CHART -
 //-------------
 // Get context with jQuery - using jQuery's .get() method.
 $(function () {
-    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+    var pieChartCanvas = $('#pieChart1').get(0).getContext('2d')
     var config = {
 			type: 'doughnut',
 			data: {
@@ -508,6 +511,51 @@ $(function () {
     var pieChart = new Chart(pieChartCanvas, config)
 })
 </script>
+
+<script>
+    //-------------
+    //- PIE CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    $(function () {
+        var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
+        var config = {
+          type: 'doughnut',
+          data: {
+            datasets: [{
+              data: [
+                1,2,3
+              ],
+              backgroundColor: [
+                'blue',
+                            'red',
+                            'green'
+              ],
+              label: 'Dataset 1'
+            }],
+            labels: [
+              'Applications',
+              'Systems',
+              'Theory'
+            ]
+          },
+          options: {
+            responsive: true,
+            legend: {
+              position: 'right',
+            },
+            title: {
+              display: true,
+            },
+            animation: {
+              animateScale: true,
+              animateRotate: true
+            }
+          }
+        };
+        var pieChart = new Chart(pieChartCanvas, config)
+    })
+    </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
