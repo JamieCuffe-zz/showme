@@ -170,7 +170,6 @@ def certificate(request):
 
         # take courses from required courses in cert json and append to allCertsReqs
 
-        mae = ""
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
             if (testCertificate):
@@ -191,8 +190,6 @@ def certificate(request):
                         successOrFail = "info"
                         for l in range(0, len(matchCourseList)):
                             regexString = courseList[k].replace("*", "[0-9]")
-                            if courseList[k] == "MAE 305":
-                                mae = matchCourseList[l]["used"]
                             if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
                                 successOrFail = "success"
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
@@ -200,7 +197,7 @@ def certificate(request):
 
                 totalOutput.append(allCertsReqs[i])
 
-        return JsonResponse(mae, safe=False)
+        return JsonResponse(totalOutput, safe=False)
 
 # POST request - puts student netid and course basket into db
 
