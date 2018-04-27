@@ -15,7 +15,7 @@ import collections
 import requests
 import json
 import hello.verifier
-from .models import Students,Certificates
+from .models import Students, Certificates
 
 # def login(request):
     # CAS login
