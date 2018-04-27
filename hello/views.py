@@ -270,5 +270,5 @@ def result(request):
 @login_required(login_url = '/accounts/login')
 def metainfo(request):
     metaList = []
-    metaList = [2, 3, 4, 5]
-    JsonResponse(metaList, safe = False)
+    metaList = [2, 29, 4, 5]
+    return JsonResponse(metaList, safe = False)
