@@ -166,7 +166,7 @@ def certificate(request):
         # take courses from required courses in cert json and append to allCertsReqs
 
         for i in range(0, len(allCertsReqs)):
-            allData = list(Certificates.objects.filter(title=allCertsReqs[i]["name"]))
+            allData = list(Certificates.objects.all())
             test = list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))
             #description = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))[0]["description"])
             # urls = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("link_page"))[0]["link_page"])
