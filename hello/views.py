@@ -173,29 +173,30 @@ def certificate(request):
 
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
-            description = testCertificate[0]["description"]
-            urls = testCertificate[0]["link_page"]
-            contactName = testCertificate[0]["contact_name"]
-            contactEmail = testCertificate[0]["contact_email"]
-            allCertsReqs[i]["description"] = description
-            allCertsReqs[i]["urls"] = urls
-            allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
-            
-            reqList = json.loads(testCertificate[0]["tracks"])
+            if (testCertificate):
+                description = testCertificate[0]["description"]
+                urls = testCertificate[0]["link_page"]
+                contactName = testCertificate[0]["contact_name"]
+                contactEmail = testCertificate[0]["contact_email"]
+                allCertsReqs[i]["description"] = description
+                allCertsReqs[i]["urls"] = urls
+                allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+                
+                reqList = json.loads(testCertificate[0]["tracks"])
 
-            testRegex = ""
-            for j in range(0, len(reqList)):
-                courseList = reqList[j]["courses"]
-                courseListNew = []
-                for k in range(0, len(courseList)):
-                    matchCourseList = allCertsCourses[0][0]
-                    successOrFail = "info"
-                    for l in range(0, len(matchCourseList)):
-                        regexString = courseList[k].replace("*", "[0-9]")
-                        if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
-                            successOrFail = "success"
-                    courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
-                allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
+                testRegex = ""
+                for j in range(0, len(reqList)):
+                    courseList = reqList[j]["courses"]
+                    courseListNew = []
+                    for k in range(0, len(courseList)):
+                        matchCourseList = allCertsCourses[0][0]
+                        successOrFail = "info"
+                        for l in range(0, len(matchCourseList)):
+                            regexString = courseList[k].replace("*", "[0-9]")
+                            if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
+                                successOrFail = "success"
+                        courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
+                    allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
         return JsonResponse(allCertsReqs, safe=False)
 
