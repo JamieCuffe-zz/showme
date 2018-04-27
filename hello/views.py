@@ -190,9 +190,9 @@ def certificate(request):
                     matchCourseList = allCertsCourses[0][i]
                     successOrFail = "info"
                     for l in range(0, len(matchCourseList)):
-                        regexString = matchCourseList[l]["name"].replace('*', '[0-9]')
+                        regexString = matchCourseList[l]["name"].replace("*", "[0-9]")
                         if (re.search(regexString, courseList[k])) and (matchCourseList[l]["used"]):
-                            successOrFail = "satisfied"
+                            successOrFail = "success"
                     courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
                 allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
