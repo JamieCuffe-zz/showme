@@ -220,9 +220,10 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
     $(document).ready(function () {
       $.ajax({
         type: "GET",
+        datatype: "json",
         url: "https://showme333.herokuapp.com/metainfo",
         success: function(json) {
-          var data = jQuery.parseJSON(json);
+          var data = jQuery.getJSON(json);
 
           var output = "";
 
