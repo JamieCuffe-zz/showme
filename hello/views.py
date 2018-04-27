@@ -14,7 +14,7 @@ import collections
 import requests
 import json
 import hello.verifier
-from .models import Students
+from .models import Students,Certificates
 
 # def login(request):
     # CAS login
@@ -157,6 +157,8 @@ def certificate(request):
         formattedCourses = [[]]
         totalOutput = []
 
+        
+
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
@@ -169,18 +171,16 @@ def certificate(request):
         # take courses from required courses in cert json and append to allCertsReqs
 
         for i in range(0, len(allCertsReqs)):
-            #test = list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))
-            #description = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("description"))[0]["description"])
-            # urls = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("link_page"))[0]["link_page"])
-            # contactName = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_name"))[0]["contact_name"])
-            # contactEmail = json.loads(list(Certificates.objects.filter(title=allCertsReqs[i]["name"]).values("contact_email"))[0]["contact_email"])
-            # allCertsReqs[i]["description"] = description
-            # allCertsReqs[i]["urls"] = urls
-            # allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+            testCertificate = list(Certificates.objects.filter(title = 'Applications of Computing').values())
+            description = testCertificate[0]["description"]
+            urls = testCertificate[0]["link_page"]
+            contactName = testCertificate[0]["contact_name"]
+            contactEmail = testCertificate[0]["contact_email"]
+            allCertsReqs[i]["description"] = description
+            allCertsReqs[i]["urls"] = urls
+            allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
             for j in range (0, len(allCertsReqs[i]["req_list"])):
                 allCertsReqs[i]["req_list"][j]["course_list"] = []
-
-        totalOutput.append(allCertsCourses)
 
         return JsonResponse(allCertsReqs, safe=False)
 
