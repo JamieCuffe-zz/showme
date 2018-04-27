@@ -268,5 +268,48 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
 <div id = "#genPieChart"></div>
 
+<script>
+  $(function () {
+    var pieChartCanvas = $('#pieChart_AppliedandComputationMathematics').get(0).getContext('2d')
+    var config = {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: [
+						1,2,3
+					],
+					backgroundColor: [
+						'blue',
+                        'red',
+                        'green'
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					'Applications',
+					'Systems',
+					'Theory'
+				]
+			},
+			options: {
+				responsive: true,
+				legend: {
+					position: 'right',
+				},
+				title: {
+					display: true,
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
+		};
+
+    var pieChart = new Chart(pieChartCanvas, config)
+
+})
+</script>
+
 </body>
 </html>
