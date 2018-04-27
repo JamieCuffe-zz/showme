@@ -554,5 +554,53 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var pieChart = new Chart(pieChartCanvas, config)
   })
   </script>
+  <script>
+  //-------------
+  //- PIE CHART -
+  //-------------
+  // Get context with jQuery - using jQuery's .get() method.
+  $(function () {
+      var pieChartCanvas = $('#pieChart_AFS').get(0).getContext('2d')
+      var config = {
+           type: 'doughnut',
+           data: {
+               datasets: [{
+                   data: [
+                       1,2,3,4
+                   ],
+                   backgroundColor: [
+                       '#00c1eb',
+                          '#e2493f',
+                          '#00a663',
+                          '#f69a39',
+                          '#0720f4',
+                          '#83067b',
+                          '#ffc0cb'
+                   ],
+                   label: 'Dataset 1'
+               }],
+               labels: [
+                   'Applications',
+                   'Systems',
+                   'Theory'
+               ]
+           },
+           options: {
+               responsive: true,
+               legend: {
+                   position: 'right',
+               },
+               title: {
+                   display: true,
+               },
+               animation: {
+                   animateScale: true,
+                   animateRotate: true
+               }
+           }
+       };
+      var pieChart = new Chart(pieChartCanvas, config)
+  })
+  </script>
 </body>
 </html>
