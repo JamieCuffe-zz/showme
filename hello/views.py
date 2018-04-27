@@ -171,7 +171,7 @@ def certificate(request):
         # take courses from required courses in cert json and append to allCertsReqs
 
         for i in range(0, len(allCertsReqs)):
-            testCertificate = list(Certificates.objects.filter(title = 'Applications of Computing').values())
+            testCertificate = list(Certificates.objects.filter(title = "Applications of Computing").values())
             description = testCertificate[0]["description"]
             urls = testCertificate[0]["link_page"]
             contactName = testCertificate[0]["contact_name"]
@@ -179,8 +179,19 @@ def certificate(request):
             allCertsReqs[i]["description"] = description
             allCertsReqs[i]["urls"] = urls
             allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
-            for j in range (0, len(allCertsReqs[i]["req_list"])):
-                allCertsReqs[i]["req_list"][j]["course_list"] = []
+            
+            reqList = testCertificate[0]["req_list"]
+
+            for j in range(0, len(reqList)):
+                courseList = reqList[j]["course_list"]
+                for k in range(0, len(courseList)):
+                    matchCourseList = allCertsCourses[0][i]
+                    successOrFail = "info"
+                    for l in range(0, len(matchCourseList)):
+                        if (courseList[k] == matchCourseList[l]["name"]) and (matchCourseList[l]["used"]):
+                            successOrFail = "satisfied"
+                    courseListNew[k] = {"title" : courseList[k], "satisfied" : successOrFail}
+                allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
         return JsonResponse(allCertsReqs, safe=False)
 
