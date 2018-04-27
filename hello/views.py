@@ -191,7 +191,7 @@ def certificate(request):
                     for l in range(0, len(matchCourseList)):
                         if (courseList[k] == matchCourseList[l]["name"]) and (matchCourseList[l]["used"]):
                             successOrFail = "satisfied"
-                    courseListNew[k] = {"title" : courseList[k], "satisfied" : successOrFail}
+                    courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
                 allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
         return JsonResponse(allCertsReqs, safe=False)
