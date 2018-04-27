@@ -159,7 +159,6 @@ def certificate(request):
         totalOutput = []
 
         
-
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
@@ -183,8 +182,6 @@ def certificate(request):
                 allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
                 
                 reqList = json.loads(testCertificate[0]["tracks"])
-
-                testRegex = ""
                 for j in range(0, len(reqList)):
                     courseList = reqList[j]["courses"]
                     courseListNew = []
@@ -198,7 +195,9 @@ def certificate(request):
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
-        return JsonResponse(allCertsReqs, safe=False)
+                totalOutput.append(allCertsReqs[i])
+
+        return JsonResponse(totalOutput, safe=False)
 
 # POST request - puts student netid and course basket into db
 
