@@ -152,7 +152,7 @@ def certificate(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter 
-        allCerts = ["PAC", "ACM"]
+        allCerts = Certificates.objects.count()
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
@@ -165,7 +165,7 @@ def certificate(request):
             formattedCourses[0].append({"name" : studentCourses[i]})
 
         # extract courses and reqs from output of interpreter
-        for i in range(0, len(allCerts)):
+        for i in range(0, allCerts):
             allCertsCourses.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[0]))
             allCertsReqs.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[1]))
 
