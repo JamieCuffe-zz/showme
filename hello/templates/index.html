@@ -217,6 +217,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
+    $(document).ready(function () {
       $.ajax({
         type: "GET",
         datatype: "json",
@@ -277,63 +278,63 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
       });
     $("#genPieChart").append(pieGen);*/
+    });
   </script>
 
-  <script>
-      $(function () {
-        var pieChartCanvas = $('#pieChart_ApplicationsofComputing').get(0).getContext('2d')
-        var config = {
-          type: 'doughnut',
-          data: {
-            datasets: [{
-              data: [
-                1,2,3,1
-              ],
-              backgroundColor: [
-                  "#00c1eb",
-                  "#e2493f",
-                  "#00a663",
-                  "#f69a39",
-                  "#0720f4",
-                  "#83067b",
-                  "#ffc0cb",
-                  "#00fffe",
-                  "#fffd56",
-                  "#e10b3e",
-                  "#9b68c6",
-                  "#00fe52",
-                  "#b6f3fe",
-                  "#6c4329",
-                  "#3b3c69"
-              ],
-              label: 'Dataset 1'
-            }],
-            labels: [
-              'Applications',
-              'Systems',
-              'Theory',
-              'Incomplete'
-            ]
+<script>
+    $(function () {
+      var pieChartCanvas = $('#pieChart_ApplicationsofComputing').get(0).getContext('2d')
+      var config = {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [
+              1,2,3
+            ],
+            backgroundColor: [
+                "#00c1eb",
+                "#e2493f",
+                "#00a663",
+                "#f69a39",
+                "#0720f4",
+                "#83067b",
+                "#ffc0cb",
+                "#00fffe",
+                "#fffd56",
+                "#e10b3e",
+                "#9b68c6",
+                "#00fe52",
+                "#b6f3fe",
+                "#6c4329",
+                "#3b3c69"
+            ],
+            label: 'Dataset 1'
+          }],
+          labels: [
+            'Applications',
+            'Systems',
+            'Theory'
+          ]
+        },
+        options: {
+          responsive: true,
+          legend: {
+            position: 'right',
           },
-          options: {
-            responsive: true,
-            legend: {
-              position: 'right',
-            },
-            title: {
-              display: true,
-            },
-            animation: {
-              animateScale: true,
-              animateRotate: true
-            }
+          title: {
+            display: true,
+          },
+          animation: {
+            animateScale: true,
+            animateRotate: true
           }
-        };
+        }
+      };
 
-        var pieChart = new Chart(pieChartCanvas, config)
+      var pieChart = new Chart(pieChartCanvas, config)
 
-    })
-  </script>
+  })
+</script>
 
 <script>
   $(function () {
@@ -343,7 +344,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 			data: {
 				datasets: [{
 					data: [
-						2,1,3
+						1,2,3
 					],
 					backgroundColor: [
                         "#00c1eb",
@@ -365,9 +366,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 					label: 'Dataset 1'
 				}],
 				labels: [
-					'Mathematical Foundations',
-					'Mathematical Application',
-					'Incomplete'
+					'Applications',
+					'Systems',
+					'Theory'
 				]
 			},
 			options: {
@@ -398,7 +399,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         data: {
           datasets: [{
             data: [
-              2,3,2
+              1,2,3
             ],
             backgroundColor: [
                 "#00c1eb",
@@ -420,9 +421,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
             label: 'Dataset 1'
           }],
           labels: [
-            'Core',
-            'Health-Related Electives',
-            'Incomplete'
+            'Applications',
+            'Systems',
+            'Theory'
           ]
         },
         options: {
@@ -453,7 +454,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         data: {
           datasets: [{
             data: [
-              1,2,1,2
+              1,2,3
             ],
             backgroundColor: [
                 "#00c1eb",
@@ -475,10 +476,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
             label: 'Dataset 1'
           }],
           labels: [
-            'Introduction',
-            'Subfield',
-            'Survey',
-            'Incomplete'
+            'Applications',
+            'Systems',
+            'Theory'
           ]
         },
         options: {
@@ -724,6 +724,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   })
 </script>
 -->
+
 <!--
 <script>
     $(function () {
@@ -835,6 +836,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   })
 </script>
 -->
+
 
 
 </body>
