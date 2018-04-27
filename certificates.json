@@ -544,7 +544,7 @@
                 "name": "Senior Thesis",
                 "max_counted": 0,
                 "min_needed": 0,
-                "explanation": "A senior thesis written in the home department that addresses or relates to global health and health policy in\nan interdisciplinary manner. The thesis requirement can be fulfilled in three ways: an integrated thesis on a health topic; a final\nchapter that connects the thesis to health and health policy; a separate research paper on a topic directly\nrelevant to health and health policy. The topic must be approved by the GHP program in the fall of the senior year.",
+                "explanation": "A senior thesis written in the home department that addresses or relates to global health and health policy in an interdisciplinary manner. The thesis requirement can be fulfilled in three ways: an integrated thesis on a health topic; a final chapter that connects the thesis to health and health policy; a separate research paper on a topic directly relevant to health and health policy. The topic must be approved by the GHP program in the fall of the senior year.",
                 "double_counting_allowed": false,
                 "completed_by_semester": 8,
                 "req_list": [],
@@ -563,7 +563,7 @@
             {
                 "name": "Health-Related Electives",
                 "min_needed": 4,
-                "explanation": "Four additional health-related electives approved by the GHP program, at least one of which is in an area\noutside of the home department. ",
+                "explanation": "Four additional health-related electives approved by the GHP program, at least one of which is in an area outside of the home department. ",
                 "double_counting_allowed": false,
                 "pdfs_allowed": 1,
                 "completed_by_semester": 8,
