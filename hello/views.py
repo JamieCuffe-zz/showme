@@ -14,7 +14,7 @@ import collections
 import requests
 import json
 import hello.verifier
-from .models import Students
+from .models import Students,Certificates
 
 # def login(request):
     # CAS login
@@ -157,6 +157,8 @@ def certificate(request):
         formattedCourses = [[]]
         totalOutput = []
 
+        testCertificate = list(Certificates.objects.filter(title = 'Applications of Computing'))
+
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
@@ -182,7 +184,7 @@ def certificate(request):
 
         totalOutput.append(allCertsCourses)
 
-        return JsonResponse(allCertsReqs, safe=False)
+        return JsonResponse(testCertificate, safe=False)
 
 # POST request - puts student netid and course basket into db
 
