@@ -193,7 +193,7 @@ def certificate(request):
                     courseListNew[k] = {"title" : courseList[k], "satisfied" : successOrFail}
                 allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
-        return JsonResponse(allCertsReqs, safe=False)
+        return JsonResponse(testCertificate, safe=False)
 
 # POST request - puts student netid and course basket into db
 
