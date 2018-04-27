@@ -256,7 +256,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
           piegen += '<script>$(function () {var pieChartCanvas = $("#pieChart_' + program.name.split(' ').join('') + ').get(0).getContext("2d")';
           piegen += 'var config = {type: "doughnut",data: {datasets: [{data: [1,2,3,4],backgroundColor: ["#00c1eb","#e2493f", "#00a663", "#f69a39", "#0720f4", "#83067b", "#ffc0cb", "#00fffe", "#fffd56", "#e10b3e", "#9b68c6", "#00fe52", "#b6f3fe", "#6c4329", "#3b3c69"';
-          piegen += '], label: "Dataset 1" }], labels: ["Applications", "Systems", "Theory", "Incomplete"]}, options: {responsive: true, legend: {position: "right",}, title: {display: true,}, animation: {animateScale: true, animateRotate: true}}}; var pieChart = new Chart(pieChartCanvas, config)}) </script>';
+          piegen += '], label: "Dataset 1" }], labels: ["Applications", "Systems", "Theory", "Incomplete"]}, options: {responsive: true, legend: {position: "right",}, title: {display: true,}, animation: {animateScale: true, animateRotate: true}}}; var pieChart = new Chart(pieChartCanvas, config)})</script>';
 
       });
     $("#genPieChart").append(piegen);
