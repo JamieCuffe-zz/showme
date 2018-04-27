@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 from django.core.serializers.json import DjangoJSONEncoder
 import os
+import re
 import collections
 import requests
 import json
@@ -151,14 +152,13 @@ def certificate(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter 
-        allCerts = ["PAC"]
+        allCerts = ["PAC", "ACM", "FIN", "GHP", "AAS"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
         totalOutput = []
 
         
-
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
@@ -171,30 +171,33 @@ def certificate(request):
         # take courses from required courses in cert json and append to allCertsReqs
 
         for i in range(0, len(allCertsReqs)):
-            testCertificate = list(Certificates.objects.filter(title = "Applications of Computing").values())
-            description = testCertificate[0]["description"]
-            urls = testCertificate[0]["link_page"]
-            contactName = testCertificate[0]["contact_name"]
-            contactEmail = testCertificate[0]["contact_email"]
-            allCertsReqs[i]["description"] = description
-            allCertsReqs[i]["urls"] = urls
-            allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
-            
-            reqList = json.loads(testCertificate[0]["tracks"])
+            testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
+            if (testCertificate):
+                description = testCertificate[0]["description"]
+                urls = testCertificate[0]["link_page"]
+                contactName = testCertificate[0]["contact_name"]
+                contactEmail = testCertificate[0]["contact_email"]
+                allCertsReqs[i]["description"] = description
+                allCertsReqs[i]["urls"] = urls
+                allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+                
+                reqList = json.loads(testCertificate[0]["tracks"])
+                for j in range(0, len(reqList)):
+                    courseList = reqList[j]["courses"]
+                    courseListNew = []
+                    for k in range(0, len(courseList)):
+                        matchCourseList = allCertsCourses[0][0]
+                        successOrFail = "info"
+                        for l in range(0, len(matchCourseList)):
+                            regexString = courseList[k].replace("*", "[0-9]")
+                            if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
+                                successOrFail = "success"
+                        courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
+                    allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
-            for j in range(0, len(reqList)):
-                courseList = reqList[j]["courses"]
-                courseListNew = []
-                for k in range(0, len(courseList)):
-                    matchCourseList = allCertsCourses[0][i]
-                    successOrFail = "info"
-                    for l in range(0, len(matchCourseList)):
-                        if (courseList[k] == matchCourseList[l]["name"]) and (matchCourseList[l]["used"]):
-                            successOrFail = "satisfied"
-                    courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
-                allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
+                totalOutput.append(allCertsReqs[i])
 
-        return JsonResponse(allCertsReqs, safe=False)
+        return JsonResponse(totalOutput, safe=False)
 
 # POST request - puts student netid and course basket into db
 
