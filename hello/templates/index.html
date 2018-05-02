@@ -56,47 +56,8 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
     <div class="navbar-custom-menu">
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
-          </div>
-        </form>
-        <!-- /.search form -->
         <button type="button" id ="transcript" class="btn btn-block btn-info btn-sm">Upload Transcript</button>
       <ul class="nav navbar-nav">
-        <!-- User Account: style can be found in dropdown.less -->
-        <li class="dropdown user user-menu">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="/static/dist/img/user_placeholder.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">{{ user }}</span>
-          </a>
-          <ul class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header">
-              <img src="/static/dist/img/user_placeholder.jpg" class="img-circle" alt="User Image">
-
-              <p>
-                {{ user }}
-                <small>{{student_major}} {{student_degree}} {{student_year}}</small>
-              </p>
-            </li>
-            <!-- Menu Footer-->
-            <li class="user-footer">
-              <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
-              </div>
-              <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
-              </div>
-            </li>
-          </ul>
-        </li>
       </ul>
     </div>
   </nav>
@@ -118,30 +79,12 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">COURSE QUEUE</li>
-        <h3> Coming soon... </h3>
         <li class="active treeview menu-open">
-          <a href="#">
+          <a>
             <i class="fa fa-book"></i> <span>COS 226</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a><i class="fa fa-circle-o"></i> Data Structures and Algorithms </a></li>
-            <li><a><i class="fa fa-circle-o"></i> Mark Braverman </a></li>
-          </ul>
         </li>
-        <li class="treeview">
-            <a href="#">
-              <i class="fa fa-book"></i> <span>MAE 345</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a><i class="fa fa-circle-o"></i> Robotics and Intelligent Systems </a></li>
-              <li><a><i class="fa fa-circle-o"></i> Robert Stengel </a></li>
-            </ul>
+        </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -270,6 +213,23 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
       });
     $("#genPieChart").append(pieGen);*/
+
+    /*colors:                   "#00c1eb",
+                      "#e2493f",
+                      "#00a663",
+                      "#f69a39",
+                      "#0720f4",
+                      "#83067b",
+                      "#ffc0cb",
+                      "#00fffe",
+                      "#fffd56",
+                      "#e10b3e",
+                      "#9b68c6",
+                      "#00fe52",
+                      "#b6f3fe",
+                      "#6c4329",
+                      "#3b3c69"*/
+
     });
   </script>
 
@@ -355,9 +315,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -399,9 +359,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -442,9 +402,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -485,9 +445,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -529,9 +489,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -572,9 +532,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -615,9 +575,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -658,9 +618,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -701,9 +661,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
