@@ -18,7 +18,7 @@ LANGS = [ # language departments
     "JPN","KOR","LAT","PER","PLS","POR","RUS","SPA","SWA","TUR","TWI","URD",
 ]
 
-def check_major(major_name, courses, year=2018):
+def check_major(major_name, courses, year):
     """
     Returns information about the major requirements satisfied by the courses
     given in courses.
@@ -263,7 +263,7 @@ def _course_match(course_name, pattern):
     return False
 
 def main(courses, major_name, year):
-    satisfied,courses,major = check_certificate(major_name,courses)
+    satisfied,courses,major = check_major(major_name,courses,2018)
     totalOutput = []
     totalOutput.append(_json_format(courses))
     totalOutput.append(_json_format(major))
