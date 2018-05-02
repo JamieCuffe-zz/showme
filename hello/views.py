@@ -15,8 +15,7 @@ import collections
 import requests
 import json
 import hello.verifier
-from .models import Students,Certificates
-
+from .models import Students, Certificates
 # def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
@@ -170,7 +169,6 @@ def certificate(request):
 
         # take courses from required courses in cert json and append to allCertsReqs
 
-        mae = ""
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
             if (testCertificate):
@@ -193,14 +191,12 @@ def certificate(request):
                             regexString = courseList[k].replace("*", "[0-9]")
                             if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
                                 successOrFail = "success"
-                            if matchCourseList[l]["name"] == "MAE 305":
-                                mae = matchCourseList[l]["used"]
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
                 totalOutput.append(allCertsReqs[i])
 
-        return JsonResponse(mae, safe=False)
+        return JsonResponse(totalOutput, safe=False)
 
 # POST request - puts student netid and course basket into db
 
@@ -270,5 +266,5 @@ def result(request):
 @login_required(login_url = '/accounts/login')
 def metainfo(request):
     metaList = []
-    metaList = [2, 3, 4, 5]
-    JsonResponse(metaList, safe = False)
+    metaList = [2, 29, 4, 5]
+    return JsonResponse(metaList, safe = False)
