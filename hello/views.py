@@ -267,7 +267,6 @@ def result(request):
 def metainfo(request):
     # get all certificates for given student
     if request.method == 'GET':
-        return JsonResponse([1,2,3,4], safe = False)
         studentCourses = []
         # get course data for student and reformat
         if request.user.is_authenticated:
@@ -323,6 +322,7 @@ def metainfo(request):
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
                 totalOutput.append(allCertsReqs[i])
+        return JsonResponse([4,3,2,1], safe = False)
 
         completeCert = 0
         attainable = 0
