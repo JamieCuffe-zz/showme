@@ -322,7 +322,6 @@ def metainfo(request):
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
                 totalOutput.append(allCertsReqs[i])
-        return JsonResponse([4,3,2,1], safe = False)
 
         completeCert = 0
         attainable = 0
@@ -337,6 +336,8 @@ def metainfo(request):
                 if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.8:
                     attainable += 1
                     neededCourses += totalOutput[i]["min_needed"] - totalOutput[i]["count"]
+
+        return JsonResponse([4,3,2,1], safe = False)
         
         numTaken = 0
         for i in range(0, len(formattedCourses)):
