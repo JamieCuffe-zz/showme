@@ -328,9 +328,8 @@ def metainfo(request):
         neededCourses = 0
         # iterate through output courses to populate meta data
         for i in range(0, len(totalOutput)):
-            if str(totalOutput[i]["satisfied"]).lower() == 'true':
-                #completeCert += 1
-                completeCert += str(totalOutput[i]["name"])
+            if totalOutput[i]["satisfied"] == True:
+                completeCert += 1
             else:
                 # calculates if the certificate is attainable 
                 if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.8:
