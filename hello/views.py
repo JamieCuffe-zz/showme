@@ -265,10 +265,6 @@ def result(request):
 
 @login_required(login_url = '/accounts/login')
 def metainfo(request):
-    metaList = []
-    metaList = [2, 29, 4, 5]
-    return JsonResponse(metaList, safe = False)
-
     # get all certificates for given student
     if request.method == 'GET':
         studentCourses = []
