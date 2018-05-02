@@ -15,6 +15,7 @@ import collections
 import requests
 import json
 import hello.verifier
+import hello.new_verifier
 from .models import Students, Certificates
 # def login(request):
     # CAS login
@@ -164,8 +165,8 @@ def certificate(request):
 
         # extract courses and reqs from output of interpreter
         for i in range(0, len(allCerts)):
-            allCertsCourses.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[0]))
-            allCertsReqs.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[1]))
+            allCertsCourses.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[0]))
+            allCertsReqs.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[1]))
 
         # take courses from required courses in cert json and append to allCertsReqs
 
