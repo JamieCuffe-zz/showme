@@ -266,6 +266,81 @@ def result(request):
 
 @login_required(login_url = '/accounts/login')
 def metainfo(request):
-    metaList = []
-    metaList = [2, 29, 4, 5]
-    return JsonResponse(metaList, safe = False)
+    # get all certificates for given student
+    if request.method == 'GET':
+        studentCourses = []
+        # get course data for student and reformat
+        if request.user.is_authenticated:
+            netId = request.user.username
+            # student = Students.objects.filter(netid = netId)
+            # courses = student.values("coursesCompleted")
+            # data = list(courses)[0]["coursesCompleted"]
+            # studentCourses = json.loads(data)
+            studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
+
+        # call interpreter 
+        allCerts = ["PAC", "ACM", "FIN", "GHP", "AAS"]
+        allCertsCourses = []
+        allCertsReqs = []
+        formattedCourses = [[]]
+        totalOutput = []
+
+        
+        # format courses from transcript to be passed into interpreter
+        for i in range (0, len(studentCourses)):
+            formattedCourses[0].append({"name" : studentCourses[i]})
+
+        # extract courses and reqs from output of interpreter
+        for i in range(0, len(allCerts)):
+            allCertsCourses.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[0]))
+            allCertsReqs.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[1]))
+
+        # take courses from required courses in cert json and append to allCertsReqs
+
+        for i in range(0, len(allCertsReqs)):
+            testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
+            if (testCertificate):
+                description = testCertificate[0]["description"]
+                urls = testCertificate[0]["link_page"]
+                contactName = testCertificate[0]["contact_name"]
+                contactEmail = testCertificate[0]["contact_email"]
+                allCertsReqs[i]["description"] = description
+                allCertsReqs[i]["urls"] = urls
+                allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+                
+                reqList = json.loads(testCertificate[0]["tracks"])
+                for j in range(0, len(reqList)):
+                    courseList = reqList[j]["courses"]
+                    courseListNew = []
+                    for k in range(0, len(courseList)):
+                        matchCourseList = allCertsCourses[0][0]
+                        successOrFail = "info"
+                        for l in range(0, len(matchCourseList)):
+                            regexString = courseList[k].replace("*", "[0-9]")
+                            if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
+                                successOrFail = "success"
+                        courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
+                    allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
+
+                totalOutput.append(allCertsReqs[i])
+
+        completeCert = 0
+        attainable = 0
+        neededCourses = 0
+        # iterate through output courses to populate meta data
+        for i in range(0, len(totalOutput)):
+            if totalOutput[i]["satisfied"] == True:
+                completeCert += 1
+            else:
+                # calculates if the certificate is attainable 
+                if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.75:
+                    attainable += 1
+                    neededCourses += totalOutput[i]["min_needed"] - totalOutput[i]["count"]
+        
+        numTaken = 0
+        for i in range(0, len(formattedCourses)):
+            for j in range(0, len(formattedCourses[i])):
+                numTaken += 1
+
+        metaList = [completeCert, numTaken, attainable, neededCourses]
+        return JsonResponse(metaList, safe = False)
