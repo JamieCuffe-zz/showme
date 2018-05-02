@@ -112,13 +112,11 @@
         </div>
         <div class="pull-left info">
           <p>{{ user }}</p>
-          <a href="#"> {{student_major}} {{student_degree}} {{student_year}}</a>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">COURSE QUEUE</li>
-        <h3> Coming soon... </h3>
         <li class="active treeview menu-open">
           <a href="#">
             <i class="fa fa-book"></i> <span>COS 226</span>
@@ -126,10 +124,6 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a><i class="fa fa-circle-o"></i> Data Structures and Algorithms </a></li>
-            <li><a><i class="fa fa-circle-o"></i> Mark Braverman </a></li>
-          </ul>
         </li>
         <li class="treeview">
             <a href="#">
@@ -138,10 +132,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
-            <ul class="treeview-menu">
-              <li><a><i class="fa fa-circle-o"></i> Robotics and Intelligent Systems </a></li>
-              <li><a><i class="fa fa-circle-o"></i> Robert Stengel </a></li>
-            </ul>
+        </li>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -277,40 +268,40 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   $(function () {
     var pieChartCanvas = $('#pieChart_AppliedandComputationMathematics').get(0).getContext('2d')
     var config = {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					data: [
-						1,2,3,2
-					],
-					backgroundColor: [
-						'blue',
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [
+            1,2,3,2
+          ],
+          backgroundColor: [
+            'blue',
                         'red',
                         'green'
-					],
-					label: 'Dataset 1'
-				}],
-				labels: [
-					'Applications',
-					'Systems',
-					'Theory',
+          ],
+          label: 'Dataset 1'
+        }],
+        labels: [
+          'Applications',
+          'Systems',
+          'Theory',
           'Incomplete'
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'right',
-				},
-				title: {
-					display: true,
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-		};
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'right',
+        },
+        title: {
+          display: true,
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    };
 
     var pieChart = new Chart(pieChartCanvas, config)
 
