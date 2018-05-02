@@ -267,6 +267,7 @@ def result(request):
 def metainfo(request):
     # get all certificates for given student
     if request.method == 'GET':
+        return JsonResponse([1,2,3,4], safe = False)
         studentCourses = []
         # get course data for student and reformat
         if request.user.is_authenticated:
