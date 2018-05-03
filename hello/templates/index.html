@@ -121,7 +121,11 @@
           <a href="#">
             <i class="fa fa-book"></i> <span>COS 226</span>
           </a>
+          <a href="#">
             <i class="fa fa-book"></i> <span>MAE 345</span>
+          </a>
+          <div id = "courseq"></div>
+
         </li>
 
     </section>
@@ -226,7 +230,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $.each(certificate.req_list, function(number, track) {
           tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
           $.each(track.course_list, function(listing, course) {
-            tracks += '<div class="col-md-2"><button type="button" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
+            tracks += '<div class="col-md-2"><button id="coursebutton" type="button" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
           });
           tracks += '</div>';
         });
@@ -254,6 +258,16 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
     $("#genPieChart").append(pieGen);*/
     });
   </script>
+<script>
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("coursebutton").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+    output2 = '<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>'
+    $("#courseq").append(output2);
+}
+</script>
 
 <script>
   $(function () {
