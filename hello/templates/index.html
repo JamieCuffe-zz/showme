@@ -39,6 +39,15 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+      $("#coursebutton").click(function(){
+          $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>');
+      });
+  });
+  </script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
@@ -256,13 +265,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
     $("#genPieChart").append(pieGen);*/
     });
   </script>
-<script>
-$(document).ready(function(){
-    $("#coursebutton").click(function(){
-        $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>');
-    });
-});
-</script>
 
 <script>
   $(function () {
