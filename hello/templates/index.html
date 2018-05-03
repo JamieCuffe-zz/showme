@@ -270,7 +270,9 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 $(document).ready(function(){
     $(".col-md-2").click(function(){
       var txt = $(this).attr("value")
-        $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>' + txt + '</span></a>');
+      var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right">' +
+        '<i class="fa fa-times"></i></button></a>';
+        $("#courseq").append(text);
     });
 });
 </script>
