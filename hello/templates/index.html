@@ -117,15 +117,13 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">COURSE QUEUE</li>
-        <li class="treeview">
+        <li class="treeview" id = "courseq">
           <a href="#">
             <i class="fa fa-book"></i> <span>COS 226</span>
           </a>
           <a href="#">
             <i class="fa fa-book"></i> <span>MAE 345</span>
           </a>
-          <div id = "courseq"></div>
-
         </li>
 
     </section>
@@ -264,7 +262,7 @@ document.getElementById("coursebutton").onclick = function() {myFunction()};
 
 /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
 function myFunction() {
-    output2 = '<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>'
+    output2 = '<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>';
     $("#courseq").append(output2);
 }
 </script>
