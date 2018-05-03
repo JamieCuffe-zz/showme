@@ -100,9 +100,10 @@ $(document).ready(function () {
   $(".col-md-2").find("button").click(function(){
       var $this = $(this);
       var clicked = $this.data('clicked');
-      var txt = $(this).attr("id");
-      var text = '<a href="#" id = "'+ txt + '"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
-      var removetag = "#" + txt;
+      var id = $(this).attr("id");
+      var txt = id.split("_");
+      var text = '<a href="#" id = "'+ id + '"><i class="fa fa-book"></i> <span>' + txt[0] + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
+      var removetag = "#" + id;
       if(clicked) {
           $this.css('background-color', '#00c0ef');
           $this.css('border-color', '#00acd6');
@@ -157,12 +158,12 @@ $(document).ready(function () {
  </aside>
 
 <div class="col-md-2">
-	<button id="COS3--Applied" type="button" class="btn btn-block btn-info btn-sm">' + course + '</button>
+	<button id="COS3--_Applied" type="button" class="btn btn-block btn-info btn-sm">' + course + '</button>
 </div>
 
 
 <div class="col-md-2">
-	<button id="course2" type="button" class="btn btn-block btn-info btn-sm">' + course2 + '</button>
+	<button id="course2_1" type="button" class="btn btn-block btn-info btn-sm">' + course2 + '</button>
 </div>
 
 
