@@ -56,37 +56,39 @@ $(document).ready(function(){
     });
 });
 */
+/*
 $(document).ready(function(){
 	$(".col-md-2").click(function() {
 	   var txt = $(this).attr("value")
-       var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right">' +
-				'<i class="fa fa-times"></i></button></a>';
-       '<div><i class="fa fa-book"></i> <span>' + txt +'><a href="#" class="remove_field">Remove</a></div>'
+       var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
 	   $("#courseq").append(text);
 	});
 });	
+*/
 </script>
 
 <script>
 $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
-    //var wrapper         = $("#courseq"); //Fields wrapper
-    //var add_button      = $(".col-md-2"); //Add button ID
-    var txt = $(this).attr("value")
-    var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right">' +
-				'<i class="fa fa-times"></i></button></a>';
+    var wrapper         = $("#courseq"); //Fields wrapper
+    var add_button      = $(".col-md-2"); //Add button ID
+    var txt = $(this).attr("value");
+    var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
     
     var x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
+        var txt = $(this).attr("value")
+    	var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append(text); //add input box
         }
     });
     
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
+    $(wrapper).on("click",".box-tools pull-right", function(e){ //user click on remove text
+        e.preventDefault(); 
+        $(this).parent('a').remove(); x--;
     })
 });
 </script>
