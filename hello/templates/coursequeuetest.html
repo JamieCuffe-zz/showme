@@ -47,8 +47,11 @@
 
 <script>
 $(document).ready(function(){
-    $("#coursebutton").click(function(){
-        $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>');
+	//var text = $('.col-md-2').find('.btn btn-block btn-info btn-sm');
+    $(".col-md-2").click(function(){
+    	var txt = $(this).attr("value")
+    	//var value = $( this ).val();
+        $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span>' + txt + '</a>');
     });
 });
 </script>
@@ -88,8 +91,12 @@ $(document).ready(function(){
     <!-- /.sidebar -->
  </aside>
 
-<div class="col-md-2">
+<div class="col-md-2" value = "1">
 	<button id="coursebutton" type="button" class="btn btn-block btn-info btn-sm">' + course + '</button>
+</div>
+
+<div class="col-md-2" value = "2">
+	<button id="coursebutton2" type="button" class="btn btn-block btn-info btn-sm">' + course2 + '</button>
 </div>
 
 
