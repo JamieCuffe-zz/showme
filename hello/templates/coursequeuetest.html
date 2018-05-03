@@ -27,7 +27,8 @@
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,9 +43,21 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#coursebutton").click(function(){
+        $("#cq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>');
+    });
+});
+</script>
+
+
 </head>
 
 <body>
+
 
  <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -61,7 +74,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">COURSE QUEUE</li>
-        <li class="treeview" id = "courseq">
+        <li id="cq" class="treeview">
           <a href="#">
             <i class="fa fa-book"></i> <span>COS 226</span>
           </a>
@@ -73,22 +86,11 @@
     </ul>
     </section>
     <!-- /.sidebar -->
-  </aside>
+ </aside>
 
 <div class="col-md-2">
 	<button id="coursebutton" type="button" class="btn btn-block btn-info btn-sm">' + course + '</button>
 </div>
-
-<script>
-// Get the button, and when the user clicks on it, execute myFunction
-document.getElementById("coursebutton").onclick = function() {myFunction()};
-
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
-function myFunction() {
-    output2 = '<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>';
-    $("#courseq").append(output2);
-}
-</script>
 
 
 
