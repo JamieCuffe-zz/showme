@@ -257,14 +257,11 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
     });
   </script>
 <script>
-// Get the button, and when the user clicks on it, execute myFunction
-document.getElementById("coursebutton").onclick = function() {myFunction()};
-
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
-function myFunction() {
-    output2 = '<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>';
-    $("#courseq").append(output2);
-}
+$(document).ready(function(){
+    $("#coursebutton").click(function(){
+        $("courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>');
+    });
+});
 </script>
 
 <script>
