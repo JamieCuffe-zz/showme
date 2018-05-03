@@ -274,8 +274,8 @@ $(document).ready(function () {
       var clicked = $this.data('clicked');
       var id = $(this).attr("id");
       var txt = id.split("_");
-      var course = txt[0];
-      var text = '<a href="#" id = "'+ id + '"><i class="fa fa-book"></i> <span>' + txt[0] + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
+      var coursename = txt[0].substring(0, 3) + ' ' + txt[0].substring(3, txt[0].length);
+      var text = '<a href="#" id = "'+ id + '"><i class="fa fa-book"></i> <span>' + coursename + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
       var removetag = "#" + id;
       if(clicked) {
           $this.css('background-color', '#00c0ef');
