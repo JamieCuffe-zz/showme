@@ -237,7 +237,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $.each(certificate.req_list, function(number, track) {
           tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
           $.each(track.course_list, function(listing, course) {
-            tracks += '<div class="col-md-2" value =' + course + '"><button type="button" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
+            tracks += '<div class="col-md-2" value ="' + course + '"" "><button type="button" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
           });
           tracks += '</div>';
         });
@@ -270,7 +270,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 $(document).ready(function(){
     $(".col-md-2").click(function(){
       var txt = $(this).attr("value")
-        $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span>' + txt + '</a>');
+        $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>' + txt + '</span></a>');
     });
 });
 </script>
