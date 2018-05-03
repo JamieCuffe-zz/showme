@@ -56,18 +56,21 @@ $(document).ready(function(){
     });
 });
 */
+
 /*
-$(document).ready(function(){
-	$(".col-md-2").click(function() {
-	   var txt = $(this).attr("value")
-       var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
-	   $("#courseq").append(text);
-	});
-});	
+$("button").click(function(){
+    var color = clicked ? 'red' : 'blue';
+    $(this).css('background-color', color);
+    clicked = !clicked;
+});
 */
+
 </script>
 
+
+
 <script>
+  /*
 $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $("#courseq"); //Fields wrapper
@@ -88,11 +91,34 @@ $(document).ready(function() {
     
     $(wrapper).on("click",".box-tools pull-right", function(e){ //user click on remove text
         e.preventDefault(); 
-        $(this).parent('a').remove(); x--;
+        //$(this).parent('a').remove(); x--;
+        $(wrapper).append("hello"); //add input box
     })
 });
-</script>
+*/
+$(document).ready(function () {
+  $(".col-md-2").find("button").click(function(){
+      var $this = $(this);
+      var clicked = $this.data('clicked');
+      var txt = $(this).attr("id");
+      var text = '<a href="#" id = "'+ txt + '"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
+      var removetag = "#" + txt;
+      if(clicked) {
+          $this.css('background-color', '#00c0ef');
+          $this.css('border-color', '#00acd6');
+          $(removetag).remove();
+      } else {
+          $this.css('background-color', '#f39c12');
+          $this.css('border-color', '#e08e0b');
+          $("#courseq").append(text);
 
+      }
+      $this.data('clicked', !clicked);
+  });
+});
+</script>
+<script>
+</script>
 </head>
 
 <body>
@@ -130,14 +156,13 @@ $(document).ready(function() {
     <!-- /.sidebar -->
  </aside>
 
-<div class="col-md-2" value = "1">
-	<button id="coursebutton" type="button" class="btn btn-block btn-info btn-sm">' + course + '</button>
+<div class="col-md-2">
+	<button id="course1" type="button" class="btn btn-block btn-info btn-sm">' + course + '</button>
 </div>
 
-<div class="col-md-2" value = "2">
-	<button id="coursebutton2" type="button" class="btn btn-block btn-info btn-sm">' + course2 + '</button>
+<div class="col-md-2">
+	<button id="course2" type="button" class="btn btn-block btn-info btn-sm">' + course2 + '</button>
 </div>
-
 
 
 <!-- jQuery 3 -->

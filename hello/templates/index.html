@@ -237,7 +237,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $.each(certificate.req_list, function(number, track) {
           tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
           $.each(track.course_list, function(listing, course) {
-            tracks += '<div class="col-md-2" value ="' + course + '"><button type="button" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
+            tracks += '<div class="col-md-2><button type="button" id="'+ course + '" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
           });
           tracks += '</div>';
         });
@@ -267,12 +267,25 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   </script>
 
 <script>
-$(document).ready(function(){
-    $(".col-md-2").click(function(){
-      var txt = $(this).attr("value");
-      var text = '<a href="#"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
-     $("#courseq").append(text);
-    });
+$(document).ready(function () {
+  $(".col-md-2").find("button").click(function(){
+      var $this = $(this);
+      var clicked = $this.data('clicked');
+      var txt = $(this).attr("id");
+      var text = '<a href="#" id = "'+ txt + '"><i class="fa fa-book"></i> <span>' + txt + '</span><button class="box-tools pull-right"><i class="fa fa-times"></i></button></a>';
+      var removetag = "#" + txt;
+      if(clicked) {
+          $this.css('background-color', '#00c0ef');
+          $this.css('border-color', '#00acd6');
+          $(removetag).remove();
+      } else {
+          $this.css('background-color', '#f39c12');
+          $this.css('border-color', '#e08e0b');
+          $("#courseq").append(text);
+
+      }
+      $this.data('clicked', !clicked);
+  });
 });
 </script>
 
