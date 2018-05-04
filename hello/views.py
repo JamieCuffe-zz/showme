@@ -199,7 +199,10 @@ def certificate(request):
 
         # orders courses
         for i in range(0, len(totalOutput)):
-            totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
+            if totalOutput[i]["min_needed"] == 0:
+                totalOutput[i]['percentage'] = 100
+            else:
+                totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
 
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
