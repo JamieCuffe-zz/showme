@@ -198,11 +198,11 @@ def certificate(request):
                 totalOutput.append(allCertsReqs[i])
 
         # orders courses
-        # for i in range(0, len(totalOutput)):
-        #     totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
+        for i in range(0, len(totalOutput)):
+            totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
 
-        # # orders by percent complete
-        # totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
+        # orders by percent complete
+        totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
         return JsonResponse(totalOutput, safe=False)
 
     # POST request - puts student netid and course basket into db
