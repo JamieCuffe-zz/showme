@@ -219,11 +219,13 @@ def certificate(request):
             topThree = orderedCourses
 
 
+        test = []
         for i in range(0,len(totalOutput)):
             for j in range(0, len(totalOutput[i]["req_list"])):
                 newCourseList = []
                 for l in range(0, len(topThree)):
                     for k in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
+                        test = totalOutput[i]["req_list"][j]["course_list"]
                         if topThree[l] == totalOutput[i]["req_list"][j]["course_list"][k]["title"][0:3]:
                             newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][k])
                             del totalOutput[i]["req_list"][j]["course_list"][k]
@@ -240,7 +242,7 @@ def certificate(request):
 
         # # orders by percent complete
         # totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
-        return JsonResponse(totalOutput, safe=False)
+        return JsonResponse(test, safe=False)
 
     # POST request - puts student netid and course basket into db
 
