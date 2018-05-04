@@ -197,46 +197,46 @@ def certificate(request):
 
                 totalOutput.append(allCertsReqs[i])
 
-        orderedCourses={}
+        # orderedCourses={}
 
-        for course in studentCourses:
-            seen = False
-            for key in orderedCourses:
-                if course[0:3] == key:
-                    orderedCourses[key] += 1
-                    seen = True
-            if seen == False:
-                orderedCourses[course[0:3]] = 1
+        # for course in studentCourses:
+        #     seen = False
+        #     for key in orderedCourses:
+        #         if course[0:3] == key:
+        #             orderedCourses[key] += 1
+        #             seen = True
+        #     if seen == False:
+        #         orderedCourses[course[0:3]] = 1
 
-        # orderedCourses = sorted(orderedCourses, key=lambda k: list(k.values())[0])
-        orderedCourses = sorted(orderedCourses,key=orderedCourses.get, reverse=True)
+        # # orderedCourses = sorted(orderedCourses, key=lambda k: list(k.values())[0])
+        # orderedCourses = sorted(orderedCourses,key=orderedCourses.get, reverse=True)
 
-        topThree = []
+        # topThree = []
 
-        if len(orderedCourses) >= 3:
-            topThree = orderedCourses[:3]
-        else:
-            topThree = orderedCourses
+        # if len(orderedCourses) >= 3:
+        #     topThree = orderedCourses[:3]
+        # else:
+        #     topThree = orderedCourses
 
 
-        test = []
+        # test = []
 
-        for i in range(0,len(totalOutput)):
-            for j in range(0, len(totalOutput[i]["req_list"])):
-                newCourseList = []
-                for l in range(0, len(topThree)):
-                    for k in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
-                        if topThree[l] == totalOutput[i]["req_list"][j]["course_list"][k]["title"][0:3]:
-                            newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][k])
-                            #del totalOutput[i]["req_list"][j]["course_list"][k]
-                for m in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
-                    seen = False
-                    for n in range(0, len(newCourseList)):
-                        if (newCourseList[n]["title"] == totalOutput[i]["req_list"][j]["course_list"][m]["title"]):
-                            seen == True
-                    if (seen == False):
-                        newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][m])
-                totalOutput[i]["req_list"][j]["course_list"] =newCourseList
+        # for i in range(0,len(totalOutput)):
+        #     for j in range(0, len(totalOutput[i]["req_list"])):
+        #         newCourseList = []
+        #         for l in range(0, len(topThree)):
+        #             for k in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
+        #                 if topThree[l] == totalOutput[i]["req_list"][j]["course_list"][k]["title"][0:3]:
+        #                     newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][k])
+        #                     #del totalOutput[i]["req_list"][j]["course_list"][k]
+        #         for m in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
+        #             seen = False
+        #             for n in range(0, len(newCourseList)):
+        #                 if (newCourseList[n]["title"] == totalOutput[i]["req_list"][j]["course_list"][m]["title"]):
+        #                     seen == True
+        #             if (seen == False):
+        #                 newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][m])
+        #         totalOutput[i]["req_list"][j]["course_list"] =newCourseList
 
 
 
