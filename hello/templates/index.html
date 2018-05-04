@@ -39,6 +39,15 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+      $("#coursebutton").click(function(){
+          $("#courseq").append('<a href="#"> <i class="fa fa-book"></i> <span>MAE 345</span></a>');
+      });
+  });
+  </script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
@@ -78,12 +87,15 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">COURSE QUEUE</li>
-        <li class="active treeview menu-open">
-          <a>
+        <li class="treeview" id = "courseq">
+          <a href="#">
             <i class="fa fa-book"></i> <span>COS 226</span>
           </a>
+          <a href="#">
+            <i class="fa fa-book"></i> <span>MAE 345</span>
+          </a>
         </li>
-        </ul>
+
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -186,7 +198,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $.each(certificate.req_list, function(number, track) {
           tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
           $.each(track.course_list, function(listing, course) {
-            tracks += '<div class="col-md-2"><button type="button" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
+            courseid = course.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
+            tracks += '<div class="col-md-2"><button type="button" id="'+ courseid +'" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
           });
           tracks += '</div>';
         });
@@ -233,43 +246,68 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   </script>
 
 <script>
+$(document).ready(function () {
+  $(".col-md-2").find("button").click(function(){
+      var $this = $(this);
+      var clicked = $this.data('clicked');
+      var id = $(this).attr("id");
+      var txt = id.split("_");
+      var coursename = txt[0].substring(0, 3) + ' ' + txt[0].substring(3, txt[0].length);
+      var text = '<a href="#" id = "'+ id + '"><i class="fa fa-book"></i> <span>' + coursename + '</span></a>';
+      var removetag = "#" + id;
+      if(clicked) {
+          $this.css('background-color', '#00c0ef');
+          $this.css('border-color', '#00acd6');
+          $(removetag).remove();
+      } else {
+          $this.css('background-color', '#f39c12');
+          $this.css('border-color', '#e08e0b');
+          $("#courseq").append(text);
+
+      }
+      $this.data('clicked', !clicked);
+  });
+});
+</script>
+
+<script>
   $(function () {
     var pieChartCanvas = $('#pieChart_AppliedandComputationMathematics').get(0).getContext('2d')
     var config = {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					data: [
-						1,2,3,2
-					],
-					backgroundColor: [
-						'blue',
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [
+            1,2,3,2
+          ],
+          backgroundColor: [
+            'blue',
                         'red',
                         'green'
-					],
-					label: 'Dataset 1'
-				}],
-				labels: [
-					'Applications',
-					'Systems',
-					'Theory',
+          ],
+          label: 'Dataset 1'
+        }],
+        labels: [
+          'Applications',
+          'Systems',
+          'Theory',
           'Incomplete'
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'right',
-				},
-				title: {
-					display: true,
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-		};
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'right',
+        },
+        title: {
+          display: true,
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    };
 
     var pieChart = new Chart(pieChartCanvas, config)
 
