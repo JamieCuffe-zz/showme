@@ -225,8 +225,8 @@ def certificate(request):
             for j in range(0, len(totalOutput[i]["req_list"])):
                 newCourseList = []
                 for l in range(0, len(topThree)):
-                    test = topThree
-                #     for k in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
+                    for k in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
+                        test = topThree[l]
                 #         if topThree[l] == totalOutput[i]["req_list"][j]["course_list"][k]["title"][0:3]:
                 #             newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][k])
                 #             del totalOutput[i]["req_list"][j]["course_list"][k]
