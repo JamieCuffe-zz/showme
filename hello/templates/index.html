@@ -65,47 +65,8 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
     <div class="navbar-custom-menu">
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
-          </div>
-        </form>
-        <!-- /.search form -->
         <button type="button" id ="transcript" class="btn btn-block btn-info btn-sm">Upload Transcript</button>
       <ul class="nav navbar-nav">
-        <!-- User Account: style can be found in dropdown.less -->
-        <li class="dropdown user user-menu">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="/static/dist/img/user_placeholder.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">{{ user }}</span>
-          </a>
-          <ul class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header">
-              <img src="/static/dist/img/user_placeholder.jpg" class="img-circle" alt="User Image">
-
-              <p>
-                {{ user }}
-                <small>{{student_major}} {{student_degree}} {{student_year}}</small>
-              </p>
-            </li>
-            <!-- Menu Footer-->
-            <li class="user-footer">
-              <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
-              </div>
-              <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
-              </div>
-            </li>
-          </ul>
-        </li>
       </ul>
     </div>
   </nav>
@@ -221,7 +182,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
           output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-aqua"><i class="fa fa-check-circle"></i></span><div class="info-box-content"><span class="info-box-text">Completed</span><span class="info-box-text">Certificates</span><span class="info-box-number">' + data[0] + '</span></div></div></div>';
           output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-red"><i class="fa fa-check-circle-o"></i></span><div class="info-box-content"><span class="info-box-text">Completed</span><span class="info-box-text">Courses</span><span class="info-box-number">' + data[1] + '</span></div></div></div><div class="clearfix visible-sm-block"></div>';
-          output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-green"><i class="fa fa-cog"></i></span><div class="info-box-content"><span class="info-box-text">Attainable</span><span class="info-box-text">Certificates</span><span class="info-box-number">' + data[2] + '</span></div></div></div>';
+          output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-green"><i class="fa fa-bullseye"></i></span><div class="info-box-content"><span class="info-box-text">Attainable</span><span class="info-box-text">Certificates</span><span class="info-box-number">' + data[2] + '</span></div></div></div>';
           output += '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"><span class="info-box-icon bg-yellow"><i class="fa fa-pencil"></i></span><div class="info-box-content"><span class="info-box-text">Courses</span><span class="info-box-text">Needed</span><span class="info-box-number">' + data[3] + '</span></div></div></div>';
 
           $("#genMetaInfo").append(output);
@@ -246,7 +207,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button></div></div>';
         //output += '<div class="box-body"><div class="row"><div class="col-md-4"></div>';
         output += '<div class="box-body"><div class="row"><div class="col-md-4"><div class="chart-responsive"><canvas id="pieChart_' + certificate.name.split(" ").join("") + '" style="height: 200px;"></canvas></div></div>';
-        output += '<div class="col-md-4"><h4>' + certificate.name + '</h4><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-aqua"><div class="inner"><h5>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i><a href="#" class="small-box-footer">' + certificate.contacts[0].name + '</a></h6><h6><i class="fa fa-fw fa-envelope"></i><a href="#" class="small-box-footer">' + certificate.contacts[0].email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a href="#" class="small-box-footer"><a href="' + certificate.urls[0] + '">' + certificate.urls[0] + '</a></a></h6></div></div></div></div>';
+        output += '<div class="col-md-4"><h4>' + certificate.name + '</h4><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h4>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts[0].name + '</h6><h6 href="#"><i class="fa fa-fw fa-envelope"></i>' + certificate.contacts[0].email + '</h6><h6 href="' + certificate.urls[0] + '"><i class="fa fa-fw fa-link"></i>' + '"> Website</h6></div></div></div></div>';
         output += '<div class="col-md-12"><div class="box box-default collapsed-box" style="border-style: none; box-shadow: 0 0 0; "><div class = "row"><div class="box-tools pull-left"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button></div><h5>Courses</h5></div><div class="box-body"><div class = "row"></div>' + tracks + '</div></div></div></div></div></div></div>';
       });
 
@@ -264,6 +225,23 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
       });
     $("#genPieChart").append(pieGen);*/
+
+    /*colors:                   "#00c1eb",
+                      "#e2493f",
+                      "#00a663",
+                      "#f69a39",
+                      "#0720f4",
+                      "#83067b",
+                      "#ffc0cb",
+                      "#00fffe",
+                      "#fffd56",
+                      "#e10b3e",
+                      "#9b68c6",
+                      "#00fe52",
+                      "#b6f3fe",
+                      "#6c4329",
+                      "#3b3c69"*/
+
     });
   </script>
 
@@ -374,9 +352,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -418,9 +396,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -461,9 +439,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -504,9 +482,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -548,9 +526,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -591,9 +569,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -634,9 +612,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -677,9 +655,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
@@ -720,9 +698,9 @@ $(document).ready(function () {
           }
         }
       };
-  
+
       var pieChart = new Chart(pieChartCanvas, config)
-  
+
   })
 </script>
 
