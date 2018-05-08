@@ -183,7 +183,6 @@ def certificate(request):
                 allCertsReqs[i]["description"] = description
                 allCertsReqs[i]["urls"] = urls
                 allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
-                
                 reqList = json.loads(testCertificate[0]["tracks"])
                 for j in range(0, len(reqList)):
                     courseList = reqList[j]["courses"]
