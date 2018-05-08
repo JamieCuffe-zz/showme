@@ -174,6 +174,7 @@ def certificate(request):
 
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
+            testFinance = list(Certificates.objects.filter(title = "Finance").values())
             allReturned.append(testCertificate)
             if (testCertificate):
                 description = testCertificate[0]["description"]
@@ -240,10 +241,27 @@ def certificate(request):
                             seen = True
                     if (seen == False):
                         newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][m])
-                totalOutput[i]["req_list"][j]["course_list"] =newCourseList
+                # totalOutput[i]["req_list"][j]["course_list"] =newCourseList
+                newCourseListTwo = []
+                for o in range(0, len(newCourseList)):
+                    if(newCourseList[o]["satisfied"] == "success"):
+                        newCourseListTwo.append(newCourseList[o])
+                for p in range(0, len(newCourseList)):
+                    seenTwo = False
+                    for q in range(0, len(newCourseListTwo)):
+                        if (newCourseList[p]["title"] == newCourseListTwo[q]["title"]):
+                            seenTwo = True
+                    if (seenTwo == False):
+                        newCourseListTwo.append(newCourseList[p])
+                totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo
 
 
 
+        # adds format for each track for visual
+        for i in range(0, len(totalOutput)):
+            colors = ["info", "danger", "success", "warning", "primary"]
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"]]
 
         # orders courses
         for i in range(0, len(totalOutput)):
