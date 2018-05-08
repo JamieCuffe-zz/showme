@@ -89,13 +89,14 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) 
     <section class="content-header">
       <h1>
         showME
         <small>Prototype</small>
       </h1>
     </section>
+    -->
 
     <!-- Main content -->
     <section class="content">
@@ -104,6 +105,49 @@
         <div id = "genMetaInfo"></div>
       </div>
       <!-- /.row -->
+
+      <!-- General MetaData -->
+      <div class = "row">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="info-box">
+                  <span class="info-box-icon bg-yellow"><i class="fa fa-star-o"></i></span>
+                  <div class="info-box-content" style="color: #000000;">
+                      <span class="info-box-text">Most Popular</span>
+                      <span class="info-box-text" style="font-weight:bold">Applications of Computing</span>
+                      <div class="progress">
+                          <div class="progress-bar" style="color: #000000;" style="width: 100%"></div>
+                      </div>
+                      <span class="progress-description">Completed by 14% of students</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="info-box">
+                  <span class="info-box-icon bg-aqua"><i class="fa fa-line-chart"></i></span>
+                  <div class="info-box-content" style="color: #000000;">
+                      <span class="info-box-text">Fastest Growing</span>
+                      <span class="info-box-text" style="font-weight:bold">Entrepreneurship</span>
+                      <div class="progress">
+                          <div class="progress-bar" style="color: #000000;" style="width: 100%"></div>
+                      </div>
+                      <span class="progress-description">Created by popular demand</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="info-box">
+                  <span class="info-box-icon bg-green"><i class="fa fa-group"></i></span>
+                  <div class="info-box-content" style="color: #000000;">
+                      <span class="info-box-text">Rarest</span>
+                      <span class="info-box-text" style="font-weight:bold">African American Studies</span>
+                      <div class="progress">
+                          <div class="progress-bar" style="color: #000000;" style="width: 100%"></div>
+                      </div>
+                      <span class="progress-description">Join the 1% enrolled</span>
+                  </div>
+              </div>
+          </div>
+      </div>
 
       <div id = "genCerts"></div>
 
@@ -185,10 +229,15 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           $.each(data, function(index, certificate) {
             var tracks = '';
             $.each(certificate.req_list, function(number, track) {
-              tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
+              tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row" class="btn-group">';
               $.each(track.course_list, function(listing, course) {
+<<<<<<< HEAD
                 courseid = course.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
                 tracks += '<div class="col-md-2"><button type="button" class="btn btn-' + course.satisfied + ' btn-info btn-sm">' + course.title + '</button></div>';
+=======
+                //courseid = course.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
+                tracks += '<div class="col-md-2"><button type="button" class="btn btn-' + course.satisfied + ' btn-lg" style="margin:0px; border:solid white;">' + course.title + '</button></div>';
+>>>>>>> ddfaa2b604852e10c072e2a998da437fbad6e121
               });
               tracks += '</div>';
             });
