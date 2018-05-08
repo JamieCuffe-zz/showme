@@ -239,7 +239,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
             
             var progressBar = ""; 
             $.each(certificate.req_list, function(number, track) {
-              progressBar += '<h5>' + track.name + '</h5><div class="progress"><div class="progress-bar progress-bar-"' + track.barGraph[0] + '" role="progressbar" aria-valuenow="' + track.barGraph[1] + '" aria-valuemin="0" aria-valuemax="' + track.barGraph[2] + '" style="width:' + track.barGraph[3] + '%;">' + track.barGraph[1] + ' of ' + track.barGraph[2] + ' completed</div></div>';
+              progressBar += '<h5>' + track.name + '</h5><div class="progress"><div class="progress-bar progress-bar-"' + track.barGraph[0] + '" role="progressbar" aria-valuenow="' + track.barGraph[1] + '" aria-valuemin="0" aria-valuemax="' + track.barGraph[2] + '" style="width:' + track.barGraph[3] + '%;color:' + track.barGraph[4] + ';">' + track.barGraph[1] + ' of ' + track.barGraph[2] + ' completed</div></div>';
             });
 
             output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '    |    ' + certificate.percentage + '%' + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button></div></div>';
