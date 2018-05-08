@@ -24,7 +24,6 @@ class Certificates(models.Model):
    total_courses=models.IntegerField()
    description=models.CharField(max_length=10000)
    tracks=models.CharField(default='', max_length=1000000)
-   metaCert = models.CharField(default = '', max_length = 100000)
    # track2=models.CharField(max_length=1000)
    # track3=models.CharField(max_length=1000)
    # track4=models.CharField(max_length=1000)
