@@ -257,7 +257,11 @@ def certificate(request):
 
 
 
-
+        # adds format for each track for visual
+        for i in range(0, len(totalOutput)):
+            colors = ["info", "danger", "success", "warning", "primary"]
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"]]
 
         # orders courses
         for i in range(0, len(totalOutput)):
