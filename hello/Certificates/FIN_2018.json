@@ -75,8 +75,7 @@
                         "PHY 312"
                     ]
                 }
-            ],
-            "course_list": []
+            ]
         },
         {
             "name": "Program of Study",
@@ -193,11 +192,9 @@
                                 "WWS 340"
                             ]
                         }
-                    ],
-                    "course_list": []
+                    ]
                 }
-            ],
-            "course_list": []
+            ]
         }
     ]
 }
