@@ -158,6 +158,8 @@ def certificate(request):
         formattedCourses = [[]]
         totalOutput = []
 
+        allReturned = []
+
         
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
@@ -172,6 +174,7 @@ def certificate(request):
 
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
+            allReturned.append(testCertificate)
             if (testCertificate):
                 description = testCertificate[0]["description"]
                 urls = testCertificate[0]["link_page"]
@@ -196,59 +199,58 @@ def certificate(request):
 
                 totalOutput.append(allCertsReqs[i])
 
-        # orderedCourses={}
 
-        # for course in studentCourses:
-        #     seen = False
-        #     for key in orderedCourses:
-        #         if course[0:3] == key:
-        #             orderedCourses[key] += 1
-        #             seen = True
-        #     if seen == False:
-        #         orderedCourses[course[0:3]] = 1
+        # order list of courses by relevance to student
 
-        # # orderedCourses = sorted(orderedCourses, key=lambda k: list(k.values())[0])
-        # orderedCourses = sorted(orderedCourses,key=orderedCourses.get, reverse=True)
+        orderedCourses={}
 
-        # topThree = []
+        for course in studentCourses:
+            seen = False
+            for key in orderedCourses:
+                if course[0:3] == key:
+                    orderedCourses[key] += 1
+                    seen = True
+            if seen == False:
+                orderedCourses[course[0:3]] = 1
 
-        # if len(orderedCourses) >= 3:
-        #     topThree = orderedCourses[:3]
-        # else:
-        #     topThree = orderedCourses
+        # orderedCourses = sorted(orderedCourses, key=lambda k: list(k.values())[0])
+        orderedCourses = sorted(orderedCourses,key=orderedCourses.get, reverse=True)
+
+        topThree = []
+
+        if len(orderedCourses) >= 3:
+            topThree = orderedCourses[:3]
+        else:
+            topThree = orderedCourses
 
 
-        # test = []
 
-        # for i in range(0,len(totalOutput)):
-        #     for j in range(0, len(totalOutput[i]["req_list"])):
-        #         newCourseList = []
-        #         for l in range(0, len(topThree)):
-        #             for k in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
-        #                 if topThree[l] == totalOutput[i]["req_list"][j]["course_list"][k]["title"][0:3]:
-        #                     newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][k])
-        #                     #del totalOutput[i]["req_list"][j]["course_list"][k]
-        #         for m in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
-        #             seen = False
-        #             for n in range(0, len(newCourseList)):
-        #                 if (newCourseList[n]["title"] == totalOutput[i]["req_list"][j]["course_list"][m]["title"]):
-        #                     seen == True
-        #             if (seen == False):
-        #                 newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][m])
-        #         totalOutput[i]["req_list"][j]["course_list"] =newCourseList
+        for i in range(0,len(totalOutput)):
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                newCourseList = []
+                for l in range(0, len(topThree)):
+                    for k in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
+                        if topThree[l] == totalOutput[i]["req_list"][j]["course_list"][k]["title"][0:3]:
+                            newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][k])
+                            #del totalOutput[i]["req_list"][j]["course_list"][k]
+                for m in range(0, len(totalOutput[i]["req_list"][j]["course_list"])):
+                    seen = False
+                    for n in range(0, len(newCourseList)):
+                        if (newCourseList[n]["title"] == totalOutput[i]["req_list"][j]["course_list"][m]["title"]):
+                            seen = True
+                    if (seen == False):
+                        newCourseList.append(totalOutput[i]["req_list"][j]["course_list"][m])
+                totalOutput[i]["req_list"][j]["course_list"] =newCourseList
 
 
 
 
         # orders courses
-        for i in range(0, len(totalOutput)):
-            if totalOutput[i]["min_needed"] != 0:
-                totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
-            else:
-                totalOutput[i]['percentage'] = 0
+        # for i in range(0, len(totalOutput)):
+        #     totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
 
-        # orders by percent complete
-        totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
+        # # orders by percent complete
+        # totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
         return JsonResponse(totalOutput, safe=False)
 
     # POST request - puts student netid and course basket into db

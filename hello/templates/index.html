@@ -198,10 +198,47 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
             output += '<div class="col-md-4"><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h4>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts.name + '</h6><h6><i class="fa fa-fw fa-envelope"></i><a href="mailto:' + certificate.contacts.email + '">' + certificate.contacts.email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a href="' + certificate.urls + '">Website</a></h6></div></div></div></div>';
             output += '<div class="col-md-12"><div class="box box-default collapsed-box" style="border-style: none; box-shadow: 0 0 0; "><div class = "row"><div class="box-tools pull-left"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button></div><h5>Courses</h5></div><div class="box-body"><div class = "row"></div>' + tracks + '</div></div></div></div></div></div></div>';
           });
+          tracks += '</div>';
+        });
 
-          $("#genCerts").append(output);
-        }
+        output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button></div></div>';
+        //output += '<div class="box-body"><div class="row"><div class="col-md-4"></div>';
+        output += '<div class="box-body"><div class="row"><div class="col-md-4"><div class="chart-responsive"><canvas id="pieChart_' + certificate.name.split(" ").join("") + '" style="height: 200px;"></canvas></div></div>';
+        output += '<div class="col-md-4"><h4>' + certificate.name + '</h4><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h4>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts[0].name + '</h6><h6 href="#"><i class="fa fa-fw fa-envelope"></i>' + certificate.contacts[0].email + '</h6><h6 href="' + certificate.urls[0] + '"><i class="fa fa-fw fa-link"></i>' + '"> Website</h6></div></div></div></div>';
+        output += '<div class="col-md-12"><div class="box box-default collapsed-box" style="border-style: none; box-shadow: 0 0 0; "><div class = "row"><div class="box-tools pull-left"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button></div><h5>Courses</h5></div><div class="box-body"><div class = "row"></div>' + tracks + '</div></div></div></div></div></div></div>';
       });
+
+      $("#genCerts").append(output);
+      /*
+      var pieGen = "";
+      $.each(data, function(i,program) {
+
+          pieGen += '<script>$(function () {var pieChartCanvas = $("#pieChart_AppliedandComputationMathematics).get(0).getContext("2d")';
+          pieGen += 'var config = {type: "doughnut",data: {datasets: [{data: [1,2,3,4],backgroundColor: ["#00c1eb","#e2493f", "#00a663", "#f69a39", "#0720f4", "#83067b", "#ffc0cb", "#00fffe", "#fffd56", "#e10b3e", "#9b68c6", "#00fe52", "#b6f3fe", "#6c4329", "#3b3c69"';
+          pieGen += '], label: "Dataset 1" }], labels: ["Applications", "Systems", "Theory", "Incomplete"]},';
+          pieGen += 'options: {responsive: true, legend: {position: "right",}, title: {display: true,}, animation: {animateScale: true,';
+          pieGen += 'animateRotate: true}}}; var pieChart = new Chart(pieChartCanvas, config)})'
+          pieGen += '<' + '/script>';
+
+      });
+    $("#genPieChart").append(pieGen);*/
+
+    /*colors:                   "#00c1eb",
+                      "#e2493f",
+                      "#00a663",
+                      "#f69a39",
+                      "#0720f4",
+                      "#83067b",
+                      "#ffc0cb",
+                      "#00fffe",
+                      "#fffd56",
+                      "#e10b3e",
+                      "#9b68c6",
+                      "#00fe52",
+                      "#b6f3fe",
+                      "#6c4329",
+                      "#3b3c69"*/
+
     });
   </script>
 
