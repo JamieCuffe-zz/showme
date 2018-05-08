@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Horizontal Bar Chart</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"></script>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="container" style="width: 75%;">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script>
+		var MONTHS = ['Track1', 'Track2'];
+		var color = Chart.helpers.color;
+		var horizontalBarChartData = {
+			datasets: [{
+				label: 'Dataset 1',
+				backgroundColor: ["#00c1eb","#e2493f"],
+				borderColor: ["#00c1eb","#e2493f"],
+				borderWidth: 1,
+				data: [3,2]
+			}],
+			labels: ['Track1', 'Track2']
+		};
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myHorizontalBar = new Chart(ctx, {
+				type: 'horizontalBar',
+				data: horizontalBarChartData,
+				options: {
+					// Elements options apply to all of the options unless overridden in a dataset
+					// In this case, we are setting the border of each horizontal bar to be 2px wide
+					elements: {
+						rectangle: {
+							borderWidth: 2,
+						}
+					},
+					responsive: true,
+					legend: {
+						position: 'right',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Horizontal Bar Chart'
+					}
+				}
+			});
+		};
+
+	</script>
+</body>
+
+</html>
