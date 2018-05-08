@@ -188,7 +188,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
               tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
               $.each(track.course_list, function(listing, course) {
                 //courseid = course.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
-                tracks += '<div class="col-md-2"><button type="button" class="btn btn-block btn-info btn-sm">' + course + '</button></div>';
+                tracks += '<div class="col-md-2"><button type="button" class="btn btn-' + course.satisfied + ' btn-info btn-sm">' + course.title + '</button></div>';
               });
               tracks += '</div>';
             });
