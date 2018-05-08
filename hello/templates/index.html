@@ -231,7 +231,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
             $.each(certificate.req_list, function(number, track) {
               tracks += '<div class = "row"><h4>' + track.name + '</h4></div><div class = "row"><div class="btn-toolbar" role="toolbar">';
               $.each(track.course_list, function(listing, course) {
-                courseid = course.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
+                courseid = course.title.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
                 tracks += '<div class="col-md-2"><div class="btn-group" role="group"><button type="button" class="btn btn-' + course.satisfied + ' btn-lg">' + course.title + '</button></div></div>';
               });
               tracks += '</div></div>';
