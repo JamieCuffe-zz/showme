@@ -261,14 +261,14 @@ def certificate(request):
         for i in range(0, len(totalOutput)):
             colors = ["info", "danger", "success", "warning", "primary"]
             for j in range(0, len(totalOutput[i]["req_list"])):
-                textColor = "#000000"
+                textColor = "#ffffff"
                 percentage = 0
                 if totalOutput[i]["req_list"][j]["min_needed"] != 0:
                     percentage = totalOutput[i]["req_list"][j]["count"]/totalOutput[i]["req_list"][j]["min_needed"] * 100
                 if percentage > 100:
                     percentage = 100
                 if percentage == 0:
-                    textColor = "#ffffff"
+                    textColor = "#000000"
                 totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"], percentage, textColor]
 
         # orders courses
