@@ -56,7 +56,6 @@
             "max_common_with_major": 0,
             "pdfs_allowed": 0,
             "course_list": [
-                "COS 306",
                 "COS 314",
                 "COS 318",
                 "COS 320",
@@ -99,6 +98,7 @@
                 "CBE 442",
                 "CBE 448",
                 "ECO 326",
+                "ELE 206",
                 "ELE 375",
                 "ELE 381",
                 "ELE 396",
@@ -135,7 +135,6 @@
             "max_common_with_major": 0,
             "pdfs_allowed": 0,
             "course_list": [
-                "COS 306",
                 "COS 314",
                 "COS 318",
                 "COS 320",
@@ -171,7 +170,8 @@
                 "COS 487",
                 "COS 495",
                 "COS 497",
-                "COS 498"
+                "COS 498",
+                "ELE 206"
             ]
         }
     ]
