@@ -222,7 +222,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       });
 
 
-       $.ajax({
+        $.ajax({
         type: "GET",
         datatype: "json",
         url: "https://showme333.herokuapp.com/certificate",
@@ -231,24 +231,21 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           $.each(data, function(index, certificate) {
             var tracks = '';
             $.each(certificate.req_list, function(number, track) {
-              tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
+              tracks += '<div class = "row"><h4>' + track.name + '</h4></div><div class = "row"><div class="btn-toolbar" role="toolbar">';
               $.each(track.course_list, function(listing, course) {
-                //courseid = course.title.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
-                // id="'+ courseid +'"
-                tracks += '<div class="col-md-2"><button type="button"  class="btn btn-block btn-info btn-sm">' + course.title + '</button></div>';
+                courseid = course.title.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
+                tracks += '<div class="col-md-2"><div class="btn-group" id = "' + courseid +  '" role="group"><button type="button" class="btn btn-' + course.satisfied + ' btn-lg">' + course.title + '</button></div></div>';
               });
-              tracks += '</div>';
+              tracks += '</div></div>';
             });
 
-            output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button></div></div>';
-            //output += '<div class="box-body"><div class="row"><div class="col-md-4"></div>';
+            output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '    |    ' + certificate.percentage + '%' + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button></div></div>';
             output += '<div class="box-body"><div class="row"><div class="col-md-4"><div class="chart-responsive"><canvas id="pieChart_' + certificate.name.split(" ").join("") + '" style="height: 200px;"></canvas></div></div>';
-            output += '<div class="col-md-4"><h4>' + certificate.name + '</h4><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h4>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts.name + '</h6><h6 href="#"><i class="fa fa-fw fa-envelope"></i>' + certificate.contacts.email + '</h6><h6 href="' + certificate.urls + '"><i class="fa fa-fw fa-link"></i>' + '"> Website</h6></div></div></div></div>';
-            output += '<div class="col-md-12"><div class="box box-default collapsed-box" style="border-style: none; box-shadow: 0 0 0; "><div class = "row"><div class="box-tools pull-left"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button></div><h5>Courses</h5></div><div class="box-body"><div class = "row"></div>' + tracks + '</div></div></div></div></div></div></div>';
+            output += '<div class="col-md-4"><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h5>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts.name + '</h6><h6><i class="fa fa-fw fa-envelope"></i><a style="color: #ffffff;" href="mailto:' + certificate.contacts.email + '">' + certificate.contacts.email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a style="color: #ffffff;" href="' + certificate.urls + '">Website</a></h6></div></div></div></div>';
+            output +=  '<div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#collapse1">Track Breakdown</a></h4></div><div id="collapse1" class="panel-collapse collapse"><div class="panel-body">' + tracks + '</div></div></div></div></div></div></div>';
           });
 
           $("#genCerts").append(output);
-
         }
       });
 
