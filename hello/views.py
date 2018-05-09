@@ -272,6 +272,9 @@ def certificate(request):
                         newCourseListTwo.append(newCourseList[p])
                 totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo
 
+                # calculates percent complete for track
+                if totalOutput[i]["req_list"][j]["min_needed"] == 0:
+                    totalOutput[i]["req_list"][j]["per_complete"] == 0
                 
 
         # adds format for each track for visual
