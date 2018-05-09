@@ -133,11 +133,11 @@ def index(request):
     #return HttpResponse(htmlOut)
     return render(request, 'index.html', {'user': netId})
 
-    @login_required(login_url = '/accounts/login')
-    def about(request):
-        if request.user.is_authenticated:
-            netId = request.user.username
-        return render(request, 'about.html', {'user': netId})
+@login_required(login_url = '/accounts/login')
+def about(request):
+    if request.user.is_authenticated:
+        netId = request.user.username
+    return render(request, 'about.html', {'user': netId})
 
 # def my_view(request):
 
