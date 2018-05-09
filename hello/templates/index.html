@@ -293,14 +293,10 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
       }
-      else if(!clicked && $(this).attr("class") != "btn btn-success btn-sm") {
+      else {
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
-      }
-      else if(!clicked && $(this).attr("class") == "btn btn-success btn-sm") {
-        $this.css('background-color', '#00a663');
-        $this.css('border-color', '#00acd6');
       }
 
       $this.data('clicked', !clicked);
