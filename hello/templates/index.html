@@ -327,7 +327,7 @@ $(document).ready(function(){
       $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"text",
+        contentType:"json",
         url: "https://showme333.herokuapp.com/save",
         data: JSON.stringify(courseQueue),
         success: function(returnJSON) {
@@ -344,7 +344,7 @@ $(document).ready(function(){
       $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"text",
+        contentType:"json",
         url: "https://showme333.herokuapp.com/delete",
         data: JSON.stringify(courseQueue),
         success: function(returnJSON) {
