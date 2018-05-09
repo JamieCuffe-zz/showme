@@ -478,10 +478,10 @@ def delete(request):
             netId = request.user.username
 
         if Students.objects.filter(netid = netId).count() != 0:
-            student = Students()
-            student.courseBasket = ""
-            returnTest = student.courseBasket
-            student.save()
+            user = Students.objects.get(netid=netId)
+            user.courseBasket = ""
+            returnTest = user.courseBasket
+            user.save()
 
         return JsonResponse(["Complete"], safe = False)
 
