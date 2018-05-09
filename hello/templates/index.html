@@ -326,7 +326,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   $(document).ready(function () {
     $("#update").find("button").click(function(){
       $.ajax({
-        type: "GET",
+        type: "POST",
         datatype: "json",
         contentType:"application/json",
         processData: false,
@@ -346,6 +346,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         datatype: "json",
         contentType:"application/json; charset=utf-8",
         url: "https://showme333.herokuapp.com/delete",
+        processData: false,
         data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
           //clear course queue and basket
