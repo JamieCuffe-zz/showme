@@ -306,7 +306,7 @@ var DoughnutTextInsideChart = new Chart($('#myChart')[0].getContext('2d')).Dough
               });
               tracks += '</div>'
             });
-            output += '<div class = "box"><div class = "box-header with-border"><h3 class = "box-title">' + certificate.name + '      ' + '<i class="fa-chevron-up"></i></h3>';
+            output += '<div class = "box"><div class = "box-header with-border"><h3 class = "box-title">' + certificate.name + '      ' + '<i class="fa fa-chevron-up"></i></h3>';
             output += '<div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button></div></div><div class="box-body"><div class="row"><div class="col-md-4"><h5>Track 1</h5><div class="progress"><div class="progress-bar progress-bar-secondary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;color:#000000;text-align: center;"> None</div></div></div>';
             output += '<div class="col-md-4"><h4>' + certificate.name + '</h4><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-aqua"><div class="inner"><h5>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i><a href="#" class="small-box-footer">' + certificate.contacts[0].name + '</a></h6>';
             output += '<h6><i class="fa fa-fw fa-envelope"></i><a href="#" class="small-box-footer">' + certificate.contacts[0].email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a href="#" class="small-box-footer"><a href="' + certificate.urls[0] + '">' + certificate.urls[0] + '</a></a></h6></div></div></div></div>';
