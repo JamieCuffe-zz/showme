@@ -311,7 +311,7 @@ def certificate(request):
 
             if totalOutput[i]["min_needed"] == 0:
                 totalOutput[i]["percentage"] = 0
-            elif totalOutput[i]["min_needed"] > 0 and totalOutput[i]["min_needed"] < 100:
+            elif totalOutput[i]["min_needed"] > 0 and (totalOutput[i]["count"]/totalOutput[i]["min_needed"] * 100) < 100:
                 totalOutput[i]["percentage"] = int(round(totalOutput[i]["count"]/totalOutput[i]["min_needed"] * 100))
             else:
                 totalOutput[i]["percentage"] = 100
