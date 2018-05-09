@@ -232,6 +232,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   <script>
 
     var courseQueue = [];
+
     var poplatePage = function () {
       $.ajax({
         type: "GET",
@@ -291,7 +292,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
   $(document).ready(function () {
     $("#genCerts").on("click", ".col-md-2 button", function() {
-      console.log("REACHED 1");
       var $this = $(this);
       var clicked = $this.data('clicked');
       var id = $(this).attr("id");
@@ -299,21 +299,22 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var coursename = txt[0].substring(0, 3) + ' ' + txt[0].substring(3, txt[0].length);
       var text = '<a id = "'+ id + '"><i class="fa fa-book"></i> <span>' + coursename + '</span></a>';
       var removetag = "#" + id;
-      console.log("REACHED 2");
 
       if(clicked && $(this).attr("class") != "btn btn-block btn-success btn-sm") {
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
+        var i = courseQueue.indexOf(coursename);
+        courseQueue.splice(i, 1);
       }
       else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
+        courseQueue.push(coursename);
       }
 
       $this.data('clicked', !clicked);
-      console.log("REACHED 6");
     });
   });
 
@@ -322,10 +323,12 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"application/json; charset=utf-8",
+        contentType:"text",
         url: "https://showme333.herokuapp.com/save",
-        data: JSON.stringify(courseQueue), //stringly list of courses in queue
-        success: function(data) {
+        data: JSON.stringify(courseQueue), 
+        success: function(returnJSON) {
+          $("#genMetaInfo").empty();
+          $("#genCerts").empty();
           poplatePage()
         }
       });
@@ -333,15 +336,18 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   });
 
   $(document).ready(function () {
-    $("#update").find("button").click(function(){
+    $("#delete").find("button").click(function(){
       $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"application/json; charset=utf-8",
+        contentType:"text",
         url: "https://showme333.herokuapp.com/delete",
-        data: JSON.stringify(courseQueue), //stringly list of courses in queue
-        success: function(data) {
-          //clear course queue and basket
+        data: JSON.stringify(courseQueue), 
+        success: function(returnJSON) {
+          courseQueue = []
+          $("#courseq").empty();
+          $("#genMetaInfo").empty();
+          $("#genCerts").empty();
           poplatePage()
         }
       });

@@ -16,7 +16,8 @@ import requests
 import json
 import hello.verifier
 import hello.new_verifier
-from .models import Students,Certificates
+from .models import Students,Certificates,Metadata
+from django.views.decorators.csrf import csrf_exempt
 # def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
@@ -169,6 +170,7 @@ def certificate(request):
 
         count = 0
 
+        allMetadata = Metadata.objects.all()
 
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
@@ -186,6 +188,8 @@ def certificate(request):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
             allReturned.append(testCertificate)
             if (testCertificate):
+                trend = list(Metadata.objects.filter(code=testCertificate[0]["code"]).values())[0]["trend"]
+                number_of_students = list(Metadata.objects.filter(code=testCertificate[0]["code"]).values())[0]["number_of_students"]
                 description = testCertificate[0]["description"]
                 urls = testCertificate[0]["link_page"]
                 contactName = testCertificate[0]["contact_name"]
@@ -193,6 +197,8 @@ def certificate(request):
                 allCertsReqs[i]["description"] = description
                 allCertsReqs[i]["urls"] = urls
                 allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+                allCertsReqs[i]["number_of_students"] = number_of_students
+                allCertsReqs[i]["trend"] = trend
                 reqList = json.loads(testCertificate[0]["tracks"])
                 for j in range(0, len(reqList)):
                     courseList = reqList[j]["courses"]
@@ -266,7 +272,9 @@ def certificate(request):
                         newCourseListTwo.append(newCourseList[p])
                 totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo
 
-
+        for i in range(0, len(totalOutput)):
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                totalOutput[i]["req_list"][j]["per_track"] = 0
 
         # adds format for each track for visual
         for i in range(0, len(totalOutput)):
@@ -384,6 +392,12 @@ def metainfo(request):
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
 
+        '''
+        basket = json.loads(Students.objects.get(netid=netId).courseBasket)
+        for i in range(0, len(basket)):
+            formattedCourses[0].append({"name" : basket[i]})
+        '''
+
         # extract courses and reqs from output of interpreter
         for i in range(0, len(allCerts)):
             allCertsCourses.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[0]))
@@ -414,6 +428,14 @@ def metainfo(request):
                             if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
                                 successOrFail = "success"
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
+
+                        '''
+                        # updates color for courses from queue 
+                        for t in range(0, len(courseListNew)):
+                            if courseListNew[t]["title] in basket:
+                                courseListNew[t]["satisfied"] = "warning"
+                        '''
+
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
                 totalOutput.append(allCertsReqs[i])
@@ -439,12 +461,32 @@ def metainfo(request):
         metaList = [completeCert, numTaken, attainable, neededCourses]
     return JsonResponse(metaList, safe = False)
 
+@csrf_exempt
 @login_required(login_url = '/accounts/login')
 def delete(request):
     if request.method == 'POST':
-        num = 0
+        # update backend
+        '''
+        student = Students.objects.get(netid=netId)
+        student.courseBasket = ""
+        testResponse = student.courseBasket
+        student.save()
+        '''
+        return JsonResponse("Removed", safe = False)
 
+@csrf_exempt
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
-        num = 0
+        # update backend
+        '''
+        incorporate student taken courses with this as orange color
+        '''
+
+        '''
+        student = Students.objects.get(netid=netId)
+        student.courseBasket = request.body
+        testResponse = student.courseBasket
+        student.save()
+        '''
+        return JsonResponse("Working", safe = False)
