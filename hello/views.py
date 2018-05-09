@@ -482,15 +482,14 @@ def delete(request):
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
-        # update backend
-        '''
-        incorporate student taken courses with this as orange color
-        '''
+        returnTest = ""
+        if request.user.is_authenticated:
+            netId = request.user.username
 
-        '''
-        student = Students.objects.get(netid=netId)
-        student.courseBasket = request.body
-        testResponse = student.courseBasket
-        student.save()
-        '''
-        return JsonResponse("Working", safe = False)
+        if Students.objects.filter(netid = netId).count() != 0:
+            student = Students()
+            student.courseBasket = request.body
+            returnTest = student.courseBasket
+            student.save()
+        
+        return JsonResponse(returnTest, safe = False)
