@@ -453,5 +453,5 @@ def delete(request):
 def save(request):
     if request.method == 'POST':
         # add list to course basket as json
-        Students.objects.filter(netid = netId).courseBasket = request.body
-        return JsonResponse(request.body, safe = False)
+        Students.objects.get(netid=netId).courseBasket = request.body
+        return JsonResponse(Students.objects.get(netid=netId).courseBasket, safe = False)
