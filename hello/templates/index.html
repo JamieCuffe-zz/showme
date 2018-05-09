@@ -57,9 +57,6 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
     <div class="navbar-custom-menu">
-      <div class="pull-left info">
-          <button type="button" id ="transcript" class="btn btn-block btn-info btn-sm">Upload Transcript</button>
-      </div>
       <ul class="nav navbar-nav">
       </ul>
     </div>
@@ -76,7 +73,7 @@
         </div>
         <div class="pull-left info">
           <p>{{ user }}</p>
-          <button type="button" id ="transcript" class="btn btn-block btn-info btn-sm">Upload Transcript</button>
+          <button type="button" id ="transcript" class="btn btn-block btn-info btn-xs">Upload Transcript</button>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -256,7 +253,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
             var itemName = certificate.name.split(" ").join("")
 
-            output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '    |    ' + certificate.percentage + '%' + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse" data-target="' + itemName + '_box"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-widget="remove" data-target="' + itemName + '_box"><i class="fa fa-times"></i></button></div></div>';
+            output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '    |    ' + certificate.percentage + '%' + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-toggle="collapse" data-target="' + itemName + '_box"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-toggle="remove" data-target="' + itemName + '_box"><i class="fa fa-times"></i></button></div></div>';
             output += '<div class="box-body" id = "' + itemName + '_box"><div class="row"><div class="col-md-4">' + progressBar + '</div>';
             output += '<div class="col-md-4"><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h5>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts.name + '</h6><h6><i class="fa fa-fw fa-envelope"></i><a style="color: #ffffff;" href="mailto:' + certificate.contacts.email + '">' + certificate.contacts.email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a style="color: #ffffff;" href="' + certificate.urls + '">Website</a></h6></div></div></div></div>';
             output +=  '<div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#' + itemName + '_track">Track Breakdown</a></h4></div><div id="' + itemName + '_track" class="panel-collapse collapse"><div class="panel-body">' + tracks + '</div></div></div></div></div></div></div>';
