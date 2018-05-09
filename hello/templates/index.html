@@ -69,6 +69,15 @@
     <nav class="navbar navbar-static-top">
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link active" href="index">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="https://docs.google.com/forms/d/e/1FAIpQLSfZbkE4T5wTUF86DXeMyHnCQgGEn2Dix8_3bhYsUrvo5Ctdew/viewform?usp=sf_link">Feedback</a>
+          </li>
       </ul>
     </div>
   </nav>
@@ -283,12 +292,22 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var removetag = "#" + id;
       console.log("REACHED 2");
 
-      if(clicked && $(this).attr("class") == "btn btn-info btn-sm") {
-        $this.css('background-color', '#00c0ef');
+      if(clicked && $(this).attr("class") != "btn btn-success btn-sm") {
+        /*$this.css('background-color', '#00c0ef');*/
+        $this.css('background-color', '#f39c12');
+        $this.css('border-color', '#e08e0b');
+        $(removetag).remove();
+<<<<<<< HEAD
+      } 
+     /* else if(clicked && $(this).attr("class") == "btn btn-success btn-sm") {
+        $this.css('background-color', '#00a663');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
+      }*/
+      else if (!clicked && $(this).attr("class") != "btn btn-success btn-sm") {
+=======
         console.log("REACHED 3");
-      } 
+      }
       else if(clicked && $(this).attr("class") == "btn btn-success btn-sm") {
         $this.css('background-color', '#00a663');
         $this.css('border-color', '#00acd6');
@@ -301,23 +320,54 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $("#courseq").append(text);
           console.log("REACHED 5");
       }
-      
+
 
       /*if(clicked) {
+>>>>>>> 0dc1eeb0f2af74789a7cce6bd99dd2218e011257
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
-        $(removetag).remove();
-        console.log("REACHED 3");
-      } else {
+        /*$("#courseq").append(text);*/
+      }
+      /*else {
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
-          console.log("REACHED 4");
       }*/
+
       $this.data('clicked', !clicked);
       console.log("REACHED 6");
     });
   });
+
+  $(document).ready(function () {
+    // some button click for save
+      $.ajax({
+        type: "POST",
+        datatype: "json",
+        contentType:"application/json; charset=utf-8",
+        url: "https://showme333.herokuapp.com/save",
+        data: JSON.stringify(), //stringly list of courses in queue
+        success: function(data) {
+          poplatePage()
+        }
+      });
+  });
+
+  $(document).ready(function () {
+    // some button click for delete
+      $.ajax({
+        type: "POST",
+        datatype: "json",
+        contentType:"application/json; charset=utf-8",
+        url: "https://showme333.herokuapp.com/delete",
+        data: JSON.stringify(), //stringly list of courses in queue
+        success: function(data) {
+          poplatePage()
+        }
+      });
+  });
+
+
 </script>
 
 
