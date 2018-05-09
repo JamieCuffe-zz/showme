@@ -292,7 +292,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
   $(document).ready(function () {
     $("#genCerts").on("click", ".col-md-2 button", function() {
-      console.log("REACHED 1");
       var $this = $(this);
       var clicked = $this.data('clicked');
       var id = $(this).attr("id");
@@ -300,7 +299,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var coursename = txt[0].substring(0, 3) + ' ' + txt[0].substring(3, txt[0].length);
       var text = '<a id = "'+ id + '"><i class="fa fa-book"></i> <span>' + coursename + '</span></a>';
       var removetag = "#" + id;
-      console.log("REACHED 2");
 
       if(clicked && $(this).attr("class") != "btn btn-block btn-success btn-sm") {
         $this.css('background-color', '#00c0ef');
@@ -308,18 +306,15 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $(removetag).remove();
         var i = courseQueue.indexOf(coursename);
         courseQueue.splice(i, 1);
-        console.log(courseQueue);
       }
       else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
         courseQueue.push(coursename);
-        console.log(courseQueue);
       }
 
       $this.data('clicked', !clicked);
-      console.log("REACHED 6");
     });
   });
 
