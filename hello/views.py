@@ -305,6 +305,19 @@ def certificate(request):
             for j in range(0, len(totalOutput[i]["req_list"])):
                 minRequired += totalOutput[i]["req_list"][j]["min_needed"]
                 amountTaken += totalOutput[i]["req_list"][j]["count"]
+
+            totalOutput[i]["count"] = amountTaken
+            totalOutput[i]["min_needed"] = minRequired
+
+            if totalOutput[i]["min_needed"] == 0:
+                totalOutput[i]["percentage"] = 0
+            elif totalOutput[i]["min_needed"] > 0 and totalOutput[i]["min_needed"] < 100:
+                totalOutput[i]["percentage"] = totalOutput[i]["count"]/totalOutput[i]["min_needed"] * 100
+            else:
+                totalOutput[i]["percentage"] = 100
+
+
+            '''
             totalOutput[i]['percentage'] = 0
             if minRequired > 0:
                 if (amountTaken/minRequired * 100) >= 100:
@@ -313,7 +326,7 @@ def certificate(request):
                     totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100) 
              
 
-            '''
+            
             if totalOutput[i]["min_needed"] != 0:
                 totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
             else:
