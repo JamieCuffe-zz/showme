@@ -485,7 +485,7 @@ def metainfo(request):
                 completeCert += 1
             else:
                 # calculates if the certificate is attainable
-                if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.75:
+                if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.65:
                     attainable += 1
                     neededCourses += totalOutput[i]["min_needed"] - totalOutput[i]["count"]
 
