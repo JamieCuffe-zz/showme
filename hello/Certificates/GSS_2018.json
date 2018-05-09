@@ -29,7 +29,6 @@
             "double_counting_allowed": false,
             "pdfs_allowed": 1,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "GSS 201"
             ]
@@ -42,7 +41,6 @@
             "max_common_with_major": 1,
             "pdfs_allowed": 1,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "AMS 335",
                 "ASA 347",
@@ -85,7 +83,6 @@
             "max_common_with_major": 1,
             "pdfs_allowed": 1,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "AAS 242",
                 "GSS 299",

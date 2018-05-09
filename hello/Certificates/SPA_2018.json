@@ -1,6 +1,6 @@
 {
     "type": "Certificate",
-    "name": "Language and Culture: Spanish",
+    "name": "Spanish Language and Culture",
     "code": "SPA",
     "year": 2018,
     "description": "The Program in Language and Culture, administered through the individual language and literature departments, allows concentrators in any discipline to earn a certificate in language and culture. Certificates can be earned in the departments of classics, East Asian studies, French and Italian, German, Near Eastern studies, Slavic languages and literatures, and Spanish and Portuguese languages and cultures.",
@@ -30,7 +30,6 @@
             "double_counting_allowed": false,
             "pdfs_allowed": 0,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "SPA 392",
                 "SPA 210",

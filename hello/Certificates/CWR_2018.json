@@ -26,7 +26,6 @@
             "max_common_with_major": 2,
             "pdfs_allowed": 2,
             "completed_by_semester": 4,
-            "req_list": [],
             "course_list": [
                 "CWR 201",
                 "CWR 202",
@@ -44,7 +43,6 @@
             "double_counting_allowed": false,
             "pdfs_allowed": 2,
             "completed_by_semester": 6,
-            "req_list": [],
             "course_list": [
                 "CWR 301",
                 "CWR 302",

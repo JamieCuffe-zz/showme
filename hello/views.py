@@ -172,6 +172,8 @@ def certificate(request):
 
         allMetadata = Metadata.objects.all()
 
+        copy = []
+
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
@@ -181,9 +183,8 @@ def certificate(request):
             allCertsCourses.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[0]))
             allCertsReqs.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[1]))
 
+        copy.append(allCertsCourses)
         # take courses from required courses in cert json and append to allCertsReqs
-
-        copy = json.loads(hello.new_verifier.main(formattedCourses, allCerts[10], 2018)[0])
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
             allReturned.append(testCertificate)
