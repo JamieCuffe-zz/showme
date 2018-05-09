@@ -256,12 +256,12 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           $.each(data, function(index, certificate) {
             var tracks = '';
             $.each(certificate.req_list, function(number, track) {
-              tracks += '<div class = "row"><h4>' + track.name + '</h4></div><div class = "row"><div class="btn-toolbar" role="toolbar">';
+              tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
               $.each(track.course_list, function(listing, course) {
                 courseid = course.title.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
                 tracks += '<div class="col-md-2"><button type="button" id = "' + courseid + '"class="btn btn-' + course.satisfied + ' btn-sm">' + course.title + '</button></div>';
               });
-              tracks += '</div></div>';
+              tracks += '</div>';
             });
 
             var progressBar = "";
