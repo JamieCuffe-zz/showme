@@ -282,19 +282,33 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var text = '<a id = "'+ id + '"><i class="fa fa-book"></i> <span>' + coursename + '</span></a>';
       var removetag = "#" + id;
       console.log("REACHED 2");
-      if(clicked) {
+
+      if(clicked && $(this).attr("class") == "btn btn-info btn-sm") {
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
-          console.log("REACHED 3");
-        } else {
-          $this.css('background-color', '#f39c12');
-          $this.css('border-color', '#e08e0b');
-          $("#courseq").append(text);
-            console.log("REACHED 4");
-        }
-        $this.data('clicked', !clicked);
-        console.log("REACHED 5");
+        console.log("REACHED 3");
+      } else {
+        $this.css('background-color', '#f39c12');
+        $this.css('border-color', '#e08e0b');
+        $("#courseq").append(text);
+          console.log("REACHED 4");
+      }
+      
+
+      /*if(clicked) {
+        $this.css('background-color', '#00c0ef');
+        $this.css('border-color', '#00acd6');
+        $(removetag).remove();
+        console.log("REACHED 3");
+      } else {
+        $this.css('background-color', '#f39c12');
+        $this.css('border-color', '#e08e0b');
+        $("#courseq").append(text);
+          console.log("REACHED 4");
+      }*/
+      $this.data('clicked', !clicked);
+      console.log("REACHED 5");
     });
   });
 </script>
