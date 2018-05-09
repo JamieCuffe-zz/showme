@@ -159,7 +159,7 @@ def certificate(request):
 
             
         # call interpreter 
-        allCerts = ["AAS", "AMS", "CWR", "EAS", "EMS", "ENT", "GHP", "GSS", "HUM", "LAS", "LIN", "NEU", "PAC", "PEB", "RIS", "SML", "SPA", "THR", "URB", "VPL"]
+        allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
@@ -179,7 +179,6 @@ def certificate(request):
 
         # take courses from required courses in cert json and append to allCertsReqs
 
-        error = []
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
             testFinance = list(Certificates.objects.filter(title = "Finance").values())
@@ -265,29 +264,29 @@ def certificate(request):
 
 
 
-        # adds format for each track for visual
-        for i in range(0, len(totalOutput)):
-            colors = ["info", "danger", "success", "warning", "primary"]
-            for j in range(0, len(totalOutput[i]["req_list"])):
-                textColor = "#ffffff"
-                percentage = 0
-                if totalOutput[i]["req_list"][j]["min_needed"] != 0:
-                    percentage = totalOutput[i]["req_list"][j]["count"]/totalOutput[i]["req_list"][j]["min_needed"] * 100
-                if percentage > 100:
-                    percentage = 100
-                if percentage == 0:
-                    textColor = "#000000"
-                totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"], percentage, textColor]
+        # # adds format for each track for visual
+        # for i in range(0, len(totalOutput)):
+        #     colors = ["info", "danger", "success", "warning", "primary"]
+        #     for j in range(0, len(totalOutput[i]["req_list"])):
+        #         textColor = "#ffffff"
+        #         percentage = 0
+        #         if totalOutput[i]["req_list"][j]["min_needed"] != 0:
+        #             percentage = totalOutput[i]["req_list"][j]["count"]/totalOutput[i]["req_list"][j]["min_needed"] * 100
+        #         if percentage > 100:
+        #             percentage = 100
+        #         if percentage == 0:
+        #             textColor = "#000000"
+        #         totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"], percentage, textColor]
 
-        # orders courses
-        for i in range(0, len(totalOutput)):
-            if totalOutput[i]["min_needed"] != 0:
-                totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
-            else:
-                totalOutput[i]['percentage'] = 0
+        # # orders courses
+        # for i in range(0, len(totalOutput)):
+        #     if totalOutput[i]["min_needed"] != 0:
+        #         totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
+        #     else:
+        #         totalOutput[i]['percentage'] = 0
 
-        # orders by percent complete
-        totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
+        # # orders by percent complete
+        # totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
         return JsonResponse(totalOutput, safe=False)
 
     # POST request - puts student netid and course basket into db
