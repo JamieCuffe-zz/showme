@@ -433,3 +433,11 @@ def metainfo(request):
 
         metaList = [completeCert, numTaken, attainable, neededCourses]
         return JsonResponse(metaList, safe = False)
+
+@login_required(login_url = '/accounts/login')
+def delete(request):
+    if request.method == 'POST':
+
+@login_required(login_url = '/accounts/login')
+def save(request):
+    if request.method == 'POST':
