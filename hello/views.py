@@ -273,7 +273,9 @@ def certificate(request):
                         newCourseListTwo.append(newCourseList[p])
                 totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo
 
-
+        for i in range(0, len(totalOutput)):
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                totalOutput[i]["req_list"][j]["per_track"] = 0
 
         # adds format for each track for visual
         for i in range(0, len(totalOutput)):
