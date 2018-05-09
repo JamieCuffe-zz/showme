@@ -330,7 +330,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         datatype: "json",
         contentType:"application/json; charset=utf-8",
         url: "https://showme333.herokuapp.com/save",
-        data: JSON.stringify(courseQueue), //stringly list of courses in queue
+        data: JSON.stringify(courseQueue), 
         success: function(data) {
           poplatePage()
         }
@@ -345,7 +345,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         datatype: "json",
         contentType:"application/json; charset=utf-8",
         url: "https://showme333.herokuapp.com/delete",
-        data: JSON.stringify(courseQueue), //stringly list of courses in queue
+        data: JSON.stringify(courseQueue), 
         success: function(data) {
           //clear course queue and basket
           poplatePage()

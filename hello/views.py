@@ -447,4 +447,4 @@ def delete(request):
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
-        num = 0
+        return JsonResponse(json.loads(request.body), safe = False)
