@@ -328,9 +328,10 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"application/json",
+        contentType:"text",
+        processData: false,
         url: "https://showme333.herokuapp.com/save",
-        data: JSON.stringify(courseQueue), 
+        data: courseQueue + "", 
         success: function(returnJSON) {
           console.log(returnJSON);
           poplatePage()
