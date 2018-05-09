@@ -90,6 +90,12 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">COURSE QUEUE</li>
+        <div class="col-md-6">
+            <button type="button" id ="transcript" class="btn btn-block btn-success btn-xs">Update</button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" id ="transcript" class="btn btn-block btn-danger btn-xs">Delete</button>
+        </div>
         <li class="treeview" id = "courseq">
         </li>
 
@@ -287,7 +293,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
-      } 
+      }
       else if(clicked && $(this).attr("class") == "btn btn-success btn-sm") {
         $this.css('background-color', '#00a663');
         $this.css('border-color', '#00acd6');
