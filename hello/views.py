@@ -157,7 +157,14 @@ def certificate(request):
             # data = list(courses)[0]["coursesCompleted"]
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
+            
+            basket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
+            # for i in range(0, len(basket)):
+            #     formattedCourses[0].append({"name" : basket[i]})
 
+
+        
+        
             
         # call interpreter 
         allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "FIN", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
@@ -487,9 +494,9 @@ def save(request):
             netId = request.user.username
 
         if Students.objects.filter(netid = netId).count() != 0:
-            student = Students()
-            student.courseBasket = request.body
-            returnTest = student.courseBasket
-            student.save()
+            user = Students.objects.get(netid=netId)
+            user.courseBasket = request.body
+            returnTest = user.courseBasket
+            user.save()
         
         return JsonResponse(["Complete"], safe = False)
