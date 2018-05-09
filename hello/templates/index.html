@@ -259,12 +259,12 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           $.each(data, function(index, certificate) {
             var tracks = '';
             $.each(certificate.req_list, function(number, track) {
-              tracks += '<div class = "row"><h4>' + track.name + '</h4></div><div class = "row"><div class="btn-toolbar" role="toolbar">';
+              tracks += '<div class = "row"><h5>' + track.name + '</h5></div><div class = "row">';
               $.each(track.course_list, function(listing, course) {
                 courseid = course.title.replace(/\s/g, '') + '_' + certificate.name.replace(/\s/g, '');
-                tracks += '<div class="col-md-2"><div class="btn-group" role="group"><button type="button" id = "' + courseid + '"class="btn btn-' + course.satisfied + ' btn-sm">' + course.title + '</button></div></div>';
+                tracks += '<div class="col-md-2"><button type="button" id = "' + courseid + '"class="btn btn-block btn-' + course.satisfied + ' btn-sm">' + course.title + '</button></div>';
               });
-              tracks += '</div></div>';
+              tracks += '</div>';
             });
 
             var progressBar = "";
@@ -274,7 +274,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
             var itemName = certificate.name.split(" ").join("")
 
-            output += '<div class="row"><div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title"><a data-toggle="collapse" href="#' + itemName + '_box">' + certificate.name + '    |    ' + certificate.percentage + '%' +  '</a></h3></div><div id="' + itemName + '_box" class="panel-collapse collapse"><div class="panel-body">';
+            output += '<div class="row"><div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title"><a data-toggle="collapse" href="#' + itemName + '_box">' + certificate.name + '&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;' + certificate.percentage + '%' + '</a><div class="box-tools pull-right"><i class="fa fa-caret-up"></i></div></h3></div><div id="' + itemName + '_box" class="panel-collapse collapse"><div class="panel-body">';
             output += '<div class="box-body" id = "' + itemName + '_box"><div class="row"><div class="col-md-4">' + progressBar + '</div>';
             output += '<div class="col-md-4"><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h5>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts.name + '</h6><h6><i class="fa fa-fw fa-envelope"></i><a style="color: #ffffff;" href="mailto:' + certificate.contacts.email + '">' + certificate.contacts.email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a style="color: #ffffff;" href="' + certificate.urls + '">Website</a></h6></div></div></div></div>';
             output +=  '<div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#' + itemName + '_track">Track Breakdown</a></h4></div><div id="' + itemName + '_track" class="panel-collapse collapse"><div class="panel-body">' + tracks + '</div></div></div></div></div></div></div></div></div></div></div></div>';
@@ -301,23 +301,15 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var removetag = "#" + id;
       console.log("REACHED 2");
 
-      if(clicked && $(this).attr("class") == "btn btn-info btn-sm") {
+      if(clicked && $(this).attr("class") != "btn btn-block btn-success btn-sm") {
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
-        courseQueue.pop($this);
       }
-      else if(clicked && $(this).attr("class") == "btn btn-success btn-sm") {
-        $this.css('background-color', '#00a663');
-        $this.css('border-color', '#00acd6');
-        $(removetag).remove();
-        courseQueue.pop($this);
-      }
-      else {
+      else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
-        courseQueue.push($this);
       }
 
       $this.data('clicked', !clicked);
