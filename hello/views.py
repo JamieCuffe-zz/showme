@@ -298,12 +298,27 @@ def certificate(request):
                     textColor = "#000000"
                 totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"], percentage, textColor]
 
-        # orders courses
+        # orders certificates
         for i in range(0, len(totalOutput)):
+            minRequired = 0
+            amountTaken = 0 
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                minRequired += totalOutput[i]["req_list"][j]["min_needed"]
+                amountTaken += totalOutput[i]["req_list"][j]["count"]
+            totalOutput[i]['percentage'] = 0
+            if minRequired != 0:
+                if (amountTaken/minRequired * 100) >= 100:
+                    totalOutput[i]['percentage'] = 100
+                else:
+                    totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100) 
+             
+
+            '''
             if totalOutput[i]["min_needed"] != 0:
                 totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
             else:
                 totalOutput[i]['percentage'] = 0
+            '''
 
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
