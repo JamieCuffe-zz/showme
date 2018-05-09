@@ -290,17 +290,17 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var removetag = "#" + id;
       console.log("REACHED 2");
 
-      if(clicked && $(this).attr("class") == "btn btn-info btn-sm") {
+      if(clicked && $(this).attr("class") != "btn btn-success btn-sm") {
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
       }
-      else if(clicked && $(this).attr("class") == "btn btn-success btn-sm") {
+      /*else if(clicked && $(this).attr("class") == "btn btn-success btn-sm") {
         $this.css('background-color', '#00a663');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
-      }
-      else {
+      }*/
+      else if($(this).attr("class") != "btn btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
@@ -310,6 +310,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       console.log("REACHED 6");
     });
   });
+
 
   /*$(document).ready(function () {
     // some button click for save
@@ -339,6 +340,20 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       });
   });*/
 
+
+</script>
+
+<script>
+  /*
+$(document).ready(function () {
+    $("#update").find("button").click(function(){
+
+    });
+    $("#delete").find("button").click(function(){
+
+    });
+  });
+*/
 
 </script>
 
