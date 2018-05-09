@@ -452,6 +452,5 @@ def delete(request):
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
-        #return JsonResponse(json.loads(request.body), safe = False)
-        return JsonResponse("HI", safe = False)
+        return JsonResponse(json.loads(request.body), safe = False)
         # add list to course basket as json
