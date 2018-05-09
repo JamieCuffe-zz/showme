@@ -325,7 +325,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
   $(document).ready(function () {
     $("#update").find("button").click(function(){
-      $.ajax({
+      $.post("https://showme333.herokuapp.com/save");
+      /*$.ajax({
         type: "POST",
         datatype: "json",
         contentType:"text/plain",
@@ -335,7 +336,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           console.log(returnJSON);
           poplatePage()
         }
-      });
+      });*/
     });
   }); 
 
