@@ -16,7 +16,7 @@ import requests
 import json
 import hello.verifier
 import hello.new_verifier
-from .models import Students,Certificates
+from .models import Students,Certificates,Metadata
 # def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
@@ -169,6 +169,7 @@ def certificate(request):
 
         count = 0
 
+        allMetadata = Metadata.objects.all()
 
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
@@ -186,6 +187,8 @@ def certificate(request):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
             allReturned.append(testCertificate)
             if (testCertificate):
+                trend = list(Metadata.objects.filter(code=testCertificate[0]["code"]).values())[0]["trend"]
+                number_of_students = list(Metadata.objects.filter(code=testCertificate[0]["code"]).values())[0]["number_of_students"]
                 description = testCertificate[0]["description"]
                 urls = testCertificate[0]["link_page"]
                 contactName = testCertificate[0]["contact_name"]
@@ -193,6 +196,8 @@ def certificate(request):
                 allCertsReqs[i]["description"] = description
                 allCertsReqs[i]["urls"] = urls
                 allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
+                allCertsReqs[i]["number_of_students"] = number_of_students
+                allCertsReqs[i]["trend"] = trend
                 reqList = json.loads(testCertificate[0]["tracks"])
                 for j in range(0, len(reqList)):
                     courseList = reqList[j]["courses"]
