@@ -385,6 +385,12 @@ def metainfo(request):
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
 
+        '''
+        basket = json.loads(Students.objects.get(netid=netId).courseBasket)
+        for i in range(0, len(basket)):
+            formattedCourses[0].append({"name" : basket[i]})
+        '''
+
         # extract courses and reqs from output of interpreter
         for i in range(0, len(allCerts)):
             allCertsCourses.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[0]))
@@ -415,6 +421,14 @@ def metainfo(request):
                             if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
                                 successOrFail = "success"
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
+
+                        '''
+                        # updates color for courses from queue 
+                        for t in range(0, len(courseListNew)):
+                            if courseListNew[t]["title] in basket:
+                                courseListNew[t]["satisfied"] = "warning"
+                        '''
+
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
                 totalOutput.append(allCertsReqs[i])
@@ -458,6 +472,10 @@ def delete(request):
 def save(request):
     if request.method == 'POST':
         # update backend
+        '''
+        incorporate student taken courses with this as orange color
+        '''
+
         '''
         student = Students.objects.get(netid=netId)
         student.courseBasket = request.body
