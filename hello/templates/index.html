@@ -40,6 +40,17 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118882274-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118882274-1');
+  </script>
+
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
@@ -202,16 +213,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
-/*    var poplatePage = function () {
-      // do something here
-//    }
 
-    $(document).ready(function () {
-      poplatePage()
-  }) */
-
-
-    $(document).ready(function () {
+    var poplatePage = function () {
       $.ajax({
         type: "GET",
         datatype: "json",
@@ -253,22 +256,23 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
             var itemName = certificate.name.split(" ").join("")
 
-            output += '<div class="row"><div class="col-md-12"><div class="box"><div class="box-header with-border"><h3 class="box-title">' + certificate.name + '    |    ' + certificate.percentage + '%' + '</h3><div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-toggle="collapse" data-target="' + itemName + '_box"><i class="fa fa-minus"></i></button><button type="button" class="btn btn-box-tool" data-toggle="remove" data-target="' + itemName + '_box"><i class="fa fa-times"></i></button></div></div>';
+            output += '<div class="row"><div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title"><a data-toggle="collapse" href="#' + itemName + '_box">' + certificate.name + '    |    ' + certificate.percentage + '%' +  '</a></h3></div><div id="' + itemName + '_box" class="panel-collapse collapse"><div class="panel-body">';
             output += '<div class="box-body" id = "' + itemName + '_box"><div class="row"><div class="col-md-4">' + progressBar + '</div>';
             output += '<div class="col-md-4"><h5><small>' + certificate.description + '</small></h5></div><div class="col-md-4"><div class="small-box bg-navy"><div class="inner"><h5>Contact Info</h5><h6><i class="fa fa-fw fa-user"></i>' + certificate.contacts.name + '</h6><h6><i class="fa fa-fw fa-envelope"></i><a style="color: #ffffff;" href="mailto:' + certificate.contacts.email + '">' + certificate.contacts.email + '</a></h6><h6><i class="fa fa-fw fa-link"></i><a style="color: #ffffff;" href="' + certificate.urls + '">Website</a></h6></div></div></div></div>';
-            output +=  '<div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#' + itemName + '_track">Track Breakdown</a></h4></div><div id="' + itemName + '_track" class="panel-collapse collapse"><div class="panel-body">' + tracks + '</div></div></div></div></div></div></div>';
+            output +=  '<div class="col-md-12"><div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#' + itemName + '_track">Track Breakdown</a></h4></div><div id="' + itemName + '_track" class="panel-collapse collapse"><div class="panel-body">' + tracks + '</div></div></div></div></div></div></div></div></div></div></div></div>';
           });
 
           $("#genCerts").append(output);
         }
       });
+    }
 
+    $(document).ready(function () {
+      poplatePage()
     });
-  </script>
 
-<script>
-$(document).ready(function () {
-  $("#genCerts").on("click", ".col-md-2 button", function() {
+  $(document).ready(function () {
+    $("#genCerts").on("click", ".col-md-2 button", function() {
       console.log("REACHED 1");
       var $this = $(this);
       var clicked = $this.data('clicked');
@@ -279,21 +283,20 @@ $(document).ready(function () {
       var removetag = "#" + id;
       console.log("REACHED 2");
       if(clicked) {
-          $this.css('background-color', '#00c0ef');
-          $this.css('border-color', '#00acd6');
-          $(removetag).remove();
+        $this.css('background-color', '#00c0ef');
+        $this.css('border-color', '#00acd6');
+        $(removetag).remove();
           console.log("REACHED 3");
-      } else {
+        } else {
           $this.css('background-color', '#f39c12');
           $this.css('border-color', '#e08e0b');
           $("#courseq").append(text);
-          console.log("REACHED 4");
-
-      }
-      $this.data('clicked', !clicked);
-      console.log("REACHED 5");
+            console.log("REACHED 4");
+        }
+        $this.data('clicked', !clicked);
+        console.log("REACHED 5");
+    });
   });
-});
 </script>
 
 
