@@ -1,0 +1,2142 @@
+[{
+  "type": "Certificate",
+  "name": "African American Studies",
+  "code": "AAS",
+  "degree": null,
+  "year": 2018,
+  "urls": [
+    "http://aas.princeton.edu/programs/undergraduate/aas-certificate/"
+  ],
+  "description": "Earning a certificate in African American Studies is a straightforward and enriching course of study which complements, and complicates, any Princeton concentration. Students who opt to pursue a certificate in African American Studies gain access to an extraordinary bibliography that prepares them to think about race and difference in sophisticated ways. Certificate earners are required to complete 5 units of coursework, which include AAS 201; two survey courses; and two additional subfield courses. Additionally, certificate earners are encouraged to make African American people, literature, history, or related study and/or research in African American Studies central to their senior thesis topic. PDF courses cannot be counted toward your certificate requirements (not including P/D/F Only courses).",
+  "contacts": [
+    {
+      "type": "Department Assistant",
+      "name": "Jana Johnson",
+      "email": "jana.johnson@princeton.edu"
+    }
+  ],
+  "req_list": [
+    {
+      "name": "Introduction",
+      "max_counted": 1,
+      "min_needed": 1,
+      "explanation": "Students should first take the departmental survey course, AAS 201 Introduction to the Study of African American Cultural Practices.",
+      "double_counting_allowed": false,
+      "max_common_with_major": 1,
+      "pdfs_allowed": 0,
+      "course_list": [
+        "AAS 201"
+      ]
+    },
+    {
+      "name": "Subfield",
+      "max_counted": 2,
+      "min_needed": 2,
+      "explanation": "African American Studies is organized into three subfields: African American Culture and Life (AACL), Global Race and Ethnicity (GRE), and Race and Public Policy (RPP).",
+      "double_counting_allowed": false,
+      "max_common_with_major": 0,
+      "pdfs_allowed": 0,
+      "course_list": [
+        "AAS 201",
+        "AAS 230",
+        "AAS 245",
+        "AAS 300",
+        "AAS 305",
+        "AAS 322",
+        "AAS 328",
+        "AAS 353",
+        "AAS 362",
+        "AAS 363",
+        "AAS 380",
+        "AAS 442",
+        "AAS 499",
+        "ART 473",
+        "DAN 211",
+        "DAN 233",
+        "GSS 345",
+        "GSS 503",
+        "HIS 485",
+        "HIS 492",
+        "HIS 577",
+        "NES 395",
+        "WWS 345",
+        "AAS 235",
+        "AAS 242",
+        "AAS 302",
+        "AAS 305",
+        "AAS 313",
+        "AAS 319",
+        "AAS 358",
+        "AAS 359",
+        "AAS 366",
+        "AAS 411",
+        "AAS 500",
+        "AMS 395",
+        "ARC 556",
+        "ART 378",
+        "CLA 225",
+        "CWR 316",
+        "DAN 222",
+        "DAN 322",
+        "ENG 391A",
+        "HIS 393",
+        "HIS 456",
+        "LAS 395",
+        "MUS 262",
+        "NES 316",
+        "WWS 331",
+        "LAS 337",
+        "WWS 370",
+        "SWA 200",
+        "SPA 327",
+        "SPA 352",
+        "SOC 227",
+        "SOC 210",
+        "SOC 361",
+        "SOC 354",
+        "SOC 345",
+        "SOC 359",
+        "SOC 201",
+        "REL 360",
+        "SOC 216",
+        "REL 258",
+        "REL 358",
+        "PSY 252",
+        "POR 309",
+        "PSY 307",
+        "PSY 313",
+        "POR 304",
+        "POL 421",
+        "POL 366",
+        "POL 317",
+        "MUS 264",
+        "MUS 258",
+        "HIS 306",
+        "HIS 431",
+        "HIS 270",
+        "AMS 342",
+        "HIS 315",
+        "HIS 376",
+        "HIS 316",
+        "ART 242",
+        "ART 456",
+        "ECO 351",
+        "HIS 314",
+        "ARC 305",
+        "ARC 401",
+        "ANT 350",
+        "ANT 322",
+        "ANT 321",
+        "ANT 301",
+        "ANT 210",
+        "AFS 427",
+        "AFS 320",
+        "AMS 379",
+        "ANT 304",
+        "AFS 303"
+      ]
+    },
+    {
+      "name": "Survey",
+      "max_counted": 2,
+      "min_needed": 2,
+      "explanation": "At least one survey course should be a pre-20th century course.",
+      "double_counting_allowed": false,
+      "max_common_with_major": 0,
+      "pdfs_allowed": 0,
+      "course_list": [
+        "AAS 353",
+        "AAS 366",
+        "AAS 359",
+        "AAS 367"
+      ]
+    }
+  ]
+},
+{
+    "type": "Certificate",
+    "name": "American Studies",
+    "code": "AMS",
+    "degree": null,
+    "year": 2018,
+    "description": "Objects of study range across multiple media, including texts, images, works of art, music, performance, and film, and draw from the diverse fields of literature, history, political science, art history, economics, law, cultural studies, and the history of science.  The course attends to how knowledge about America has and continues to be produced, disseminated, and consumed, emphasizing the cognitive processes associated with the invention and delineation of America.",
+    "urls": [
+        "https://ams.princeton.edu/academics/program-study"
+    ],
+    "contacts": [
+        {
+            "type": "Program Assistant",
+            "name": "Candice Kessel",
+            "email": "cwkessel@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Core",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "This course introduces a selection of signature ideas and debates that made the nation what it is today and what it is becoming.  Objects of study range across multiple media, including texts, images, works of art, music, performance, and film, and draw from the diverse fields of literature, history, political science, art history, economics, law, cultural studies, and the history of science.  The course attends to how knowledge about America has and continues to be produced, disseminated, and consumed, emphasizing the cognitive processes associated with the invention and delineation of America.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "AMS 101"
+            ]
+        },
+        {
+            "name": "Breadth",
+            "max_counted": 3,
+            "min_needed": 3,
+            "explanation": "Three courses in American Studies, Asian American Studies, or Latino Studies, either originating in the relevant program or cross-listed, and representing disciplinary breadth in the social sciences, arts, and humanities. No more than one course taken in fulfillment of the student’s concentration may be counted toward the certificate.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "AAS 305",
+                "AAS 322",
+                "AAS 363",
+                "AAS 380",
+                "AMS 306",
+                "AMS 335",
+                "AMS 356",
+                "AMS 403",
+                "AMS 404",
+                "ART 470",
+                "GSS 345",
+                "HIS 444",
+                "ASA 347",
+                "ATL 498",
+                "COM 431",
+                "ENG 401",
+                "ENG 408",
+                "ENV 357",
+                "MUS 260",
+                "HUM 346",
+                "THR 385",
+                "WWS 385",
+                "WWS 387",
+                "AMS 301",
+                "AMS 307",
+                "AMS 311",
+                "AMS 361",
+                "AMS 395",
+                "ART 384",
+                "ART 393",
+                "CWR 345",
+                "ENG 416",
+                "ENV 357",
+                "GSS 319",
+                "JDS 312",
+                "REL 360",
+                "SAS 360",
+                "THR 332"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Creative Writing",
+    "code": "CWR",
+    "year": 2018,
+    "description" : "The Program in Creative Writing, part of the Lewis Center for the Arts, allows undergraduates to work with practicing writers while pursuing a regular liberal arts course of study. Students develop their writing skills; learn the possibilities of modern poetry, fiction, nonfiction, screenwriting, and translation; and gain a special access to the critical understanding of literature through their involvement in the creative process. Small workshop courses in poetry, fiction, nonfiction, screenwriting, and translation are taught by the program faculty, and visiting writers. These courses are limited in enrollment to ensure the benefits of working closely with faculty. Students begin the creative writing course sequence in either the fall or spring with 201, 202, 203, 204, 205, 206, 348, 349, or 448. (Any of these may be repeated for credit with a different instructor.) Students who have taken two 200-level courses in poetry, fiction, and translation may apply for the 300 level. All creative writing courses require an application process. Screenwriting students may apply to intermediate and advanced screenwriting classes after one introductory screenwriting class, or any other two CWR courses.Each workshop focuses on one genre only (poetry, fiction, nonfiction, screenwriting, or translation). Workshops meet for up to three hours weekly and are devoted primarily to discussion of student work. All creative writing program courses are graded pass/D/fail but are not counted in the pass/D/fail budget.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-creative-writing",
+        "http://arts.princeton.edu/academics/creative-writing/program-of-study/"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director",
+            "name": "Tracy K. Smith",
+            "email": "Tracy.K.Smith@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Lower Level Requirements",
+            "max_counted": 1,
+            "min_needed": 2,
+            "explanation": "Candidates for the certificate normally take two 200-level courses in creative writing by the end of sophomore year. A portion of this requirement may be waived in unusual circumstances.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 2,
+            "pdfs_allowed": 2,
+            "completed_by_semester": 4,
+            "req_list": [],
+            "course_list": [
+                "CWR 201",
+                "CWR 202",
+                "CWR 203",
+                "CWR 204",
+                "CWR 205",
+                "CWR 206"
+            ]
+        },
+        {
+            "name": "Upper Level Requirements",
+            "max_counted": 1,
+            "min_needed": 2,
+            "explanation": "Candidates for the certificate normally take two 300-level courses by the end of junior year. A portion of this requirement may be waived in unusual circumstances. ",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 2,
+            "completed_by_semester": 6,
+            "req_list": [],
+            "course_list": [
+                "CWR 301",
+                "CWR 302",
+                "CWR 303",
+                "CWR 304",
+                "CWR 305",
+                "CWR 306"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "East Asian Studies",
+    "code": "EAS",
+    "year": 2018,
+    "description": "The certificate provides internationally-minded students with basic competence in an Asian area and enhances their understanding of Western civilization through perspectives gained from the study of the non-Western world. The Program also provides funding for undergraduates to study languages in East Asia, and graduate students seeking support for language study and dissertation research and completion. Also important is the Program's support of visiting faculty.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-east-asian-studies",
+        "https://eap.princeton.edu/program-certificate"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Program Coordinator",
+            "name": "Professor Chao-Hui Jenny Liu",
+            "email": "chaoliu@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Language Requirement",
+            "min_needed": 4,
+            "description": "Language Requirement",
+            "explanation": "Two years study of Chinese, Japanese, or Korean - four courses, at least two which must be at the second-year level or higher.",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "CHI 101",
+                "CHI 102",
+                "CHI 103",
+                "CHI 105",
+                "CHI 107",
+                "CHI 108",
+                "CHI 301",
+                "CHI 302",
+                "CHI 303",
+                "CHI 304",
+                "CHI 305",
+                "CHI 306",
+                "CHI 403",
+                "CHI 404",
+                "CHI 405",
+                "CHI 406",
+                "JPN 101",
+                "JPN 102",
+                "JPN 105",
+                "JPN 107",
+                "JPN 301",
+                "JPN 302",
+                "JPN 305",
+                "JPN 306",
+                "KOR 101",
+                "KOR 102",
+                "KOR 105",
+                "KOR 107",
+                "KOR 108",
+                "KOR 301",
+                "KOR 302",
+                "KOR 303",
+                "KOR 308"
+            ]
+        },
+        {
+            "name": "Content Requirement",
+            "min_needed": 4,
+            "description": "Content Requirement",
+            "explanation": "Four East Asia content courses, one of them a 200-level course.",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 1,
+            "completed_by_semester": 8,
+            "req_list": [
+                {
+                    "name": "Content Courses Any",
+                    "min_needed": 3,
+                    "description": "Content Courses (Any)",
+                    "explanation": "Four East Asia content courses, one of them a 200-level course.",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 1,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "EAS 213",
+                        "EAS 573",
+                        "EAS 411",
+                        "EAS 225",
+                        "EAS 231",
+                        "EAS 260",
+                        "EAS 280",
+                        "EAS 300",
+                        "EAS 344",
+                        "EAS 349",
+                        "EAS 415",
+                        "EAS 507",
+                        "EAS 513",
+                        "EAS 532",
+                        "EAS 534",
+                        "EAS 542",
+                        "EAS 543",
+                        "EAS 548",
+                        "EAS 576",
+                        "EAS 324",
+                        "EAS 355",
+                        "EAS 472",
+                        "EAS 522",
+                        "EAS 523",
+                        "EAS 233",
+                        "EAS 401",
+                        "EAS 405",
+                        "EAS 362",
+                        "EAS 215",
+                        "EAS 425",
+                        "EAS 569",
+                        "EAS 589",
+                        "EAS 211",
+                        "EAS 218",
+                        "EAS 223",
+                        "EAS 232",
+                        "EAS 236",
+                        "EAS 312",
+                        "EAS 314",
+                        "EAS 369",
+                        "EAS 370",
+                        "EAS 371",
+                        "EAS 416",
+                        "EAS 508",
+                        "EAS 529",
+                        "EAS 533",
+                        "EAS 544",
+                        "EAS 546",
+                        "EAS 554",
+                        "EAS 564",
+                        "EAS 568",
+                        "EAS 581",
+                        "EAS 588",
+                        "EAS 346",
+                        "EAS 208",
+                        "EAS 520",
+                        "EAS 559",
+                        "EAS 234",
+                        "EAS 537",
+                        "EAS 597",
+                        "EAS 402",
+                        "EAS 214",
+                        "EAS 322",
+                        "EAS 462"
+                    ]
+                },
+                {
+                    "name": "Content Course (200-level)",
+                    "min_needed": 1,
+                    "description": "Content Course (200-level)",
+                    "explanation": "Four East Asia content courses, one of them a 200-level course.",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 1,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "EAS 213",
+                        "EAS 225",
+                        "EAS 231 ",
+                        "EAS 260",
+                        "EAS 280",
+                        "EAS 233",
+                        "EAS 215",
+                        "EAS 211",
+                        "EAS 218",
+                        "EAS 223",
+                        "EAS 232",
+                        "EAS 236",
+                        "EAS 208",
+                        "EAS 234",
+                        "EAS 214"
+                    ]
+                }
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Engineering and Management Systems",
+    "code": "EMS",
+    "year": 2018,
+    "description": "The certificate Program in Engineering and Management Systems (EMS) provides students with tools for the complex decision-making problems that arise in engineering, the sciences, and management. The program offers a coherent, integrated set of core courses that are based on analytic methods, with applications in the planning and control of complex systems required by a modern technological society. Emphasis is placed on rigorous modeling and analysis, taking advantage of the vast flow of data and ubiquitous computing power available today. The EMS certificate program complements the certificate programs in applications of computing, applied and computational mathematics, and finance.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-engineering-and-management-systems"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director",
+            "name": "Warren B. Powell",
+            "email": "powell@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Introductory statistics course",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "An introductory statistics course",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "ECO 202",
+                "ORF 245",
+                "PHY 301",
+                "PSY 251",
+                "SOC 301",
+                "WWS 200"
+            ]
+        },
+        {
+            "name": "Introductory optimization course",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "An introductory optimization course",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "CBE 442",
+                "ELE 382",
+                "MAE 433",
+                "ORF 307"
+            ]
+        },
+        {
+            "name": "Probability",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Probability",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "ORF 309"
+            ]
+        },
+        {
+            "name": "Optimization and uncertainty",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "A course integrating optimization and uncertainty",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "COS 402",
+                "ECO 418",
+                "ECO 462",
+                "ECO 465",
+                "MAE 345",
+                "ORF 311",
+                "ORF 418"
+            ]
+        },
+        {
+            "name": "Management, entrepreneurship, or systems",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "An integrative course in management, entrepreneurship, or systems",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "CBE 442",
+                "EGR 491",
+                "EGR 497",
+                "ORF 411"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Entrepreneurship",
+    "code": "ENT",
+    "year": 2018,
+    "description": "Entrepreneurship is driving enormous social and economic changes that are shaping our collective future. The program has three main aims: to create focused pathways through the curriculum that will allow Princeton undergraduates to supplement work in their major departments with a systematic and coherent understanding of, and practice in, entrepreneurship; to leverage, expand, and enhance the University’s offerings across the liberal arts in order to fulfill the previously stated aim; and to promote an interdisciplinary academic community of undergraduate students, faculty members, and others who share an interest and commitment to learning from and contributing to these areas.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-entrepreneurship"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director",
+            "name": "Margaret R. Martonosi",
+            "email": "mrm@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Introductory Courses",
+            "max_counted": 1,
+            "min_needed": 2,
+            "explanation": "Two common introductory courses: EGR 200/ENT 201 and EGR 201/ENT 200.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "EGR 201",
+                "EGR 200"
+            ]
+        },
+        {
+            "name": "Two Core Courses",
+            "max_counted": 1,
+            "min_needed": 2,
+            "explanation": "Two core courses: must be chosen from a list, which may be updated each year by the Executive Committee",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "ANT 300",
+                "COS 448",
+                "EGR 395",
+                "EGR 491",
+                "EGR 497",
+                "EGR 488",
+                "EGR 475",
+                "HIS 379",
+                "SOC 345"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Global Health and Health Policy",
+    "code": "GHP",
+    "year": 2018,
+    "description" : "The interdepartmental Program in Global Health and Health Policy enables undergraduates to study the determinants, consequences, and patterns of disease across societies; the role of medical technologies and interventions in health improvements; and the economic, political, and social factors that shape domestic and global public health policy.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-global-health-and-health-policy",
+        "https://globalhealth.princeton.edu/"
+    ],
+    "contacts": [
+        {
+            "type": "Co-Director",
+            "name": "Joao G. Biehl",
+            "email": "jbiehl@princeton.edu"
+        },
+        {
+            "type": "Co-Director",
+            "name": "Andrea Graham",
+            "email": "algraham@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Core Requirements",
+            "min_needed": 2,
+            "explanation": "Completion of GHP 350 (Critical Perspectives on Global Health and Health Policy) and GHP 351 (Epidemiology) is required by the end of junior year.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 2,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 6,
+            "req_list": [],
+            "course_list": [
+                "GHP 350",
+                "GHP 351"
+            ]
+        },
+        {
+            "name": "Senior Thesis",
+            "max_counted": 0,
+            "min_needed": 0,
+            "explanation": "A senior thesis written in the home department that addresses or relates to global health and health policy in an interdisciplinary manner. The thesis requirement can be fulfilled in three ways: an integrated thesis on a health topic; a final chapter that connects the thesis to health and health policy; a separate research paper on a topic directly relevant to health and health policy. The topic must be approved by the GHP program in the fall of the senior year.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": []
+        },
+        {
+            "name": "Summer Project",
+            "max_counted": 0,
+            "min_needed": 0,
+            "explanation": "An approved field- or lab-based research project during the summer between the junior and senior year is required. Options include a research-focused internship, independent research, or participation in a faculty member's field or laboratory research (including lab research at Princeton with a health application). The project or internship must last a minimum of 8 weeks. The requirement cannot be fulfilled until the summer after junior year.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": []
+        },
+        {
+            "name": "Health-Related Electives",
+            "min_needed": 4,
+            "explanation": "Four additional health-related electives approved by the GHP program, at least one of which is in an area outside of the home department. ",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 1,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "AMS 306",
+                "PSY 317",
+                "WWS 453",
+                "MOL 425",
+                "MOL 458",
+                "MOL 423",
+                "ISC 326",
+                "LAS 372",
+                "GSS 420",
+                "GHP 4121",
+                "GHP 400",
+                "EEB 328",
+                "CBE 447",
+                "AAS 302",
+                "WWS 354",
+                "MOL 460",
+                "MOL 349",
+                "EEB 327",
+                "ECO 332",
+                "CHM 440",
+                "ENV 407",
+                "MOL 433",
+                "MOL 459",
+                "GHP 301",
+                "ANT 403",
+                "CBE 440",
+                "GHP 300",
+                "GHP 410",
+                "MOL 447",
+                "WWS 393",
+                "ENV 329",
+                "WWS 407",
+                "GHP 408",
+                "GHP 409"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Gender Sexuality Studies",
+    "code": "GSS",
+    "year": 2018,
+    "description" : "The Program in Gender and Sexuality Studies is an interdisciplinary forum for the study of gender and sexuality, as well as their intersections with race, class, and ethnicity, across cultures and global geographies both past and present. The program's courses, which are open to all students, and examine gender and sexuality from a variety of disciplinary and interdisciplinary perspectives. The program offers core courses, seminars, and cross-listed courses. A current list of course offerings is available on the program website. The program also encourages summer internships in relevant community-based programs, nonprofits, and nongovernmental organizations with which the program's theoretical and historical inquiries can be applied in a practical setting.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-gender-and-sexuality-studies",
+        "http://gss.princeton.edu/about-program/undergraduate-certificate"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director",
+            "name": "rkunzel@princeton.edu",
+            "email": "dprof@princeton.edu"
+        },
+        {
+            "type": "Acting Director",
+            "name": "Wallace D. Best",
+            "email": "wbest@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Core Requirement",
+            "min_needed": 1,
+            "explanation": "Students interested in pursuing the certificate generally apply to the program in their sophomore year after completing the introductory course, GSS201, which provides a background for advanced study and suggests the rich variety of feminist and LGBT scholarship being conducted today.",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 1,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "GSS 201"
+            ]
+        },
+        {
+            "name": "GSS Specific Course",
+            "min_needed": 1,
+            "explanation": "Students must take one additional 300- or 400-level GSS course.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 1,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "AMS 335",
+                "ASA 347",
+                "COM 435",
+                "ENG 408",
+                "ENV 357",
+                "GSS 345",
+                "NES 374",
+                "NES 379",
+                "POL 422",
+                "THR 385",
+                "VIS 369",
+                "AAS 319",
+                "AAS 358",
+                "AMS 301",
+                "ANT 405",
+                "CHV 390",
+                "COM 416",
+                "CWR 345",
+                "EAS 314",
+                "ENG 327",
+                "ENG 394",
+                "ENG 398",
+                "GSS 319",
+                "GSS 420",
+                "HIS 401",
+                "PSY 329",
+                "REL 328",
+                "REL 360",
+                "SAS 335",
+                "SPA 335",
+                "THR 332"
+            ]
+        },
+        {
+            "name": "Elective Courses",
+            "min_needed": 3,
+            "explanation": "Students are encouraged to take at least one course from at least three of the following thematic clusters.  At least one of the courses may not be used to satisfy the requirements for the student’s concentration:Transnational/global perspectives Gender, Race, and Ethnicity Bodies, Sexualities Culture and Representation Politics and Social Change Historical Perspectives",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 1,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "AAS 242",
+                "GSS 299",
+                "SPA 213",
+                "CLA 212",
+                "DAN 210",
+                "AMS 335",
+                "ASA 347",
+                "GSS 502",
+                "HIS 519",
+                "COM 530",
+                "COM 542",
+                "COM 435",
+                "ENG 408",
+                "ENV 357",
+                "GSS 345",
+                "NES 374",
+                "NES 379",
+                "POL 422",
+                "THR 385",
+                "VIS 369",
+                "AAS 319",
+                "AAS 358",
+                "AMS 301",
+                "ANT 405",
+                "CHV 390",
+                "COM 416",
+                "CWR 345",
+                "EAS 314",
+                "ENG 327",
+                "ENG 394",
+                "ENG 398",
+                "GSS 319",
+                "GSS 420",
+                "HIS 401",
+                "PSY 329",
+                "REL 328",
+                "REL 360",
+                "SAS 335",
+                "SPA 335",
+                "THR 332"
+            ]
+        },
+        {
+            "name": "Independent Work",
+            "min_needed": 0,
+            "explanation": "Certificate students’ independent work must incorporate issues related to Gender and Sexuality Studies.  Students can fulfill this requirement in several ways. For those concentrating in humanities or social science disciplines, the senior thesis and at least one junior paper must incorporate issues related to GSS.  For students concentrating in disciplines in which it is difficult to incorporate GSS-related questions into junior papers and theses (including fields such as science or engineering), students can fulfill this requirement by submitting two revised GSS-related course papers for review by the Director.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": []
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Humanistic Studies",
+    "code": "HUM",
+    "year": 2018,
+    "description" : "The Program in Humanistic Studies, under the auspices of the Council of the Humanities, sponsors two kinds of offerings. HUM courses explore interrelated events, ideas, texts, and artifacts of Western and Asian cultures. Students in these courses may work toward a certificate in interdisciplinary studies in the humanities. Journalism courses (subject area JRN) examine topics related to writing and the media, from creative nonfiction to relations between the media and society. Both kinds of courses are described below.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-humanistic-studies",
+        "https://humstudies.princeton.edu/certificate/"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director",
+            "name": "Eric Gregory",
+            "email": "gregory@Princeton.edudprof@princeton.edu"
+        },
+        {
+            "type": "Acting Director",
+            "name": "Esther Schor",
+            "email": "eschor@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Core Interdisciplinary Courses",
+            "min_needed": 2,
+            "explanation": "Students must complete two interdisciplinary courses during the first two years: HUM 216-217 or 218-219, Interdisciplinary Approaches to Western Culture; or HUM 233-234, East Asian Humanities; or two other equivalent courses that provide a rigorous interdisciplinary approach to the arts and culture over a span of historical time.",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 4,
+            "req_list": [],
+            "course_list": [
+                "HUM 216",
+                "HUM 218",
+                "HUM 233",
+                "HUM 234"
+            ]
+        },
+        {
+            "name": "Elective Courses",
+            "min_needed": 6,
+            "explanation": "In addition to the two prerequisites, students complete six additional courses, which may also be used to fulfill departmental requirements.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 6,
+            "completed_by_semester": 8,
+            "req_list": [
+                {
+                    "name": "Interdisciplinary Electives",
+                    "min_needed": 4,
+                    "explanation": "Four of the six elective courses must be explicitly interdisciplinary in their approach and/or subject matter.",
+                    "double_counting_allowed": false,
+                    "max_common_with_major": 4,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "ARC 594",
+                        "ART 311",
+                        "CLA 212",
+                        "COM 205",
+                        "COM 539",
+                        "ENG 390",
+                        "ENG 572",
+                        "FRE 414",
+                        "HUM 290",
+                        "HUM 346",
+                        "HUM 365",
+                        "HUM 450",
+                        "HUM 470",
+                        "HUM 583",
+                        "MED 227",
+                        "SPA 336",
+                        "STC 297",
+                        "TRA 400",
+                        "ANT 235",
+                        "COM 206",
+                        "COM 332",
+                        "DAN 316",
+                        "EAS 371",
+                        "FRE 383",
+                        "GER 517",
+                        "HIS 456",
+                        "HUM 596",
+                        "HUM 597",
+                        "PSY 210",
+                        "REL 222",
+                        "SLA 368"
+                    ]
+                },
+                {
+                    "name": "Interdisciplinary Capstone Seminar",
+                    "max_counted": 1,
+                    "min_needed": 0,
+                    "explanation": "One of the six courses is an interdisciplinary capstone seminar created specifically for certificate students, and normally held once a semester or at least once a year. Other team-taught, advanced, cross-disciplinary seminars can sometimes fulfill the capstone requirement, in consultation with the Humanities Council’s executive director.",
+                    "double_counting_allowed": false,
+                    "max_common_with_major": 1,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "HUM470"
+                    ]
+                }
+            ],
+            "course_list": []
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Latin America Studies",
+    "code": "LAS",
+    "degree": null,
+    "year": 2018,
+    "description": "The Program in Latin American Studies promotes interdisciplinary study and seeks to inspire knowledge of and experience in Latin America.Through various approaches in the humanities and the social and natural sciences, the program seeks to guide students toward an understanding of Latin American arts, cultures, histories, socioeconomic conditions, politics, and natural environments.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-latin-american-studies"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director of the Program in Latin American Studies",
+            "name": "Gabriela Nouzeilles",
+            "email": "gnouzeil@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Latin American Studies",
+            "max_counted": 1,
+            "min_needed": 4,
+            "explanation": "The Program in Latin American Studies offers two tracks of study: Latin American Studies and Brazilian Studies.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "course_list": [
+                "ARC 205",
+                "POR 304",
+                "SPA 319",
+                "HUM 346",
+                "SPA 345",
+                "SPA 220",
+                "SPA 222",
+                "SPA 330",
+                "REL 359",
+                "POR 562",
+                "AAS 328",
+                "WWS 364",
+                "SPA 548",
+                "ANT 336",
+                "ART 387",
+                "LAS 376",
+                "LAS 486",
+                "LAS 392",
+                "POR 222",
+                "AAS 322",
+                "SPA 550",
+                "ART 367",
+                "POR 221",
+                "ART 103",
+                "AAS 242",
+                "LAS 395",
+                "ART 365",
+                "SPA 213",
+                "LAS 372",
+                "SPA 338",
+                "EEB 332",
+                "EEB 338",
+                "LAS 362",
+                "HIS 468",
+                "SPA 363",
+                "SPA 239",
+                "POR 309",
+                "POL 535",
+                "SPA 555",
+                "SPA 335",
+                "AAS 319",
+                "HIS 407",
+                "AAS 313",
+                "POL 430",
+                "SPA 356",
+                "LAS 381"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Linguistics",
+    "code": "LIN",
+    "degree": null,
+    "year": 2018,
+    "description": "Linguistics is the scientific study of language and all its properties. Students at Princeton develop the skills of a linguist through hands-on engagement with gathering and interpreting data from many different languages, the employment of diverse methodologies, and the investigation of language through a variety of lenses.",
+    "urls": [
+        "https://linguistics.princeton.edu/certificate/"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Program Manager",
+            "name": "Yolanda Sullivan",
+            "email": "syolanda@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Introduction to Language and Linguistics",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "LIN 201 is an introduction to the linguistic theory that forms the basis for most of the other courses offered by the Program in Linguistics. It is also a prerequisite for most advanced courses in Linguistics.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "course_list": [
+                "LIN 201"
+            ]
+        },
+        {
+            "name": "Requirement",
+            "max_counted": 1,
+            "min_needed": 4,
+            "explanation": "Any LIN course besides 201, 200-level or above, counts for this category. At least three of the four courses should bear the LIN designation or be cross-listed with Linguistics. Linguistics related courses in other departments and programs may be counted with the approval of the director.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "course_list": [
+                "LIN 260",
+                "LIN 302",
+                "LIN 310",
+                "LIN 250",
+                "PHI 534",
+                "LIN 206",
+                "LIN 205",
+                "LIN 235",
+                "LIN 210",
+                "PHI 334",
+                "LIN 355",
+                "LIN 312",
+                "LIN 308",
+                "LIN 408",
+                "LIN 301",
+                "TRA 301",
+                "LIN 306",
+                "LIN 412"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Neuroscience",
+    "code": "NEU",
+    "year": 2018,
+    "description": "The Certificate Program in Neuroscience at Princeton is designed for University undergraduate students with a strong interest in the brain but whose primary studies are in a different subject area. Students pursuing concentrations in a wide variety of fields (e.g., molecular biology, psychology, engineering, chemistry, applied math, economics, politics, history, and music) have successfully completed the neuroscience certificate.",
+    "urls": [
+        "http://pni.princeton.edu/education/undergraduate-certificate"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "PNI Undergraduate Administrator",
+            "name": "Paryn Wallace",
+            "email": "neurocrt@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Introduction Course",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "To complete the certificate, the student must take one of the introductory courses. [Note: As of Academic Year 2017-18, NEU 175: Introduction to Neuroscience will no longer be offered]",
+            "double_counting_allowed": false,
+            "max_common_with_major": 3,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "NEU 175",
+                "NEU 200",
+                "NEU 201"
+            ]
+        },
+        {
+            "name": "Core Course",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "The student is required to take NEU 202 as a core course.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "NEU 202"
+            ]
+        },
+        {
+            "name": "Elective Courses",
+            "max_counted": 1,
+            "min_needed": 4,
+            "explanation": "The student must complete four (4) electives. These electives must come from 3 out of 4 subject areas. These areas are: Molecular/Cellular/Disease, Circuits & Systems, Neural Computation, and Social & Cognitive Neuroscience.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 4,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "NEU 301",
+                "EEB 403",
+                "PSY 413",
+                "MOL 447",
+                "MOL 451",
+                "MOL 458",
+                "NEU 475",
+                "NEU 501A",
+                "PSY 260",
+                "PSY 316",
+                "PSY 330",
+                "PSY 338",
+                "PSY 340",
+                "NEU 437",
+                "NEU 457",
+                "COS 402",
+                "COS 424",
+                "COS 495",
+                "ELE 364",
+                "MAT 323",
+                "PSY 306",
+                "PSY 316",
+                "PSY 331",
+                "PSY 337",
+                "PSY 405",
+                "NEU 200",
+                "NEU 422",
+                "MOL 451",
+                "PSY 480",
+                "PSY 516",
+                "NEU 502A",
+                "PSY 411"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Applications of Computing",
+    "code": "PAC",
+    "degree": null,
+    "year": 2018,
+    "description": "The Program in Applications of Computing is an interdisciplinary program designed for Princeton undergraduates who want to combine the study of computing and computers beyond an introductory level with another academic concentration, but who are not majoring in Computer Science. The program welcomes students in all disciplines, including both areas traditionally making heavy use of computation (such as engineering, the physical sciences, economics, and mathematics) and emerging application areas (such as biology, cognitive science, graphic arts, music, history, philosophy, politics, sociology, literature, and so on). Many students have found this program an effective way to apply computer science to their own specialties, and to understand how computing concepts and technology are changing our world.",
+    "urls": [
+        "http://www.cs.princeton.edu/ugrad/certificate-program"
+    ],
+    "contacts": [
+        {
+            "type": "Program Coordinator",
+            "name": "Colleen Kenny",
+            "email": "ckenny@cs.princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Prerequisite",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "COS 126 or permission from placement officer.",
+            "double_counting_allowed": true,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "COS 126",
+                "ISC 231",
+                "ISC 232",
+                "ISC 233",
+                "ISC 234"
+            ]
+        },
+        {
+            "name": "Intermediate",
+            "max_counted": 2,
+            "min_needed": 2,
+            "explanation": "Two courses from among the following four: COS 217, COS 226, COS 323 (cross listed as ORF 363)  and/or COS 324.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 1,
+            "course_list": [
+                "COS 324",
+                "ORF 363",
+                "COS 226",
+                "COS 217"
+            ]
+        },
+        {
+            "name": "Substantial Computing Content",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "This may be either a second COS departmental, or an outside course.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "ELE 206",
+                "MUS 314",
+                "COS 318",
+                "COS 320",
+                "ORF 363",
+                "COS 324",
+                "COS 326",
+                "COS 333",
+                "COS 340",
+                "MAT 375",
+                "COS 343",
+                "WWS 351",
+                "COS 375",
+                "ELE 396",
+                "COS 397",
+                "COS 398",
+                "TRA 301",
+                "COS 418",
+                "COS 423",
+                "COS 424",
+                "COS 426",
+                "COS 429",
+                "COS 432",
+                "COS 433",
+                "COS 436",
+                "COS 445",
+                "COS 448",
+                "QCB 455",
+                "COS 461",
+                "ELE 462",
+                "COS 463",
+                "ELE 475",
+                "COS 485",
+                "COS 487",
+                "COS 495",
+                "COS 497",
+                "COS 498",
+                "APC 524",
+                "ARC 374",
+                "CBE 422",
+                "CBE 442",
+                "CBE 448",
+                "ECO 326",
+                "ELE 375",
+                "ELE 381",
+                "ELE 396",
+                "ELE 463",
+                "ELE 481",
+                "ELE 482",
+                "ELE 475",
+                "MAT 305",
+                "MAE 345",
+                "MAE 412",
+                "MAE 433",
+                "MOL 457",
+                "NEU 314",
+                "NEU 437",
+                "ORF 307",
+                "ORF 301",
+                "MUS 315",
+                "ORF 350",
+                "ORF 417",
+                "ORF 523",
+                "ORF 467",
+                "ORF 311",
+                "ORF 309",
+                "PSY 322",
+                "WWS 357"
+            ]
+        },
+        {
+            "name": "Depth",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "One COS departmental at the 300- or 400-level, not including COS 397, COS 398, COS 497, COS 498, COS 323 (ORF 363) or COS 324. That is, if requirement (2) is satisfied with COS 217 and 226, then COS 323 (ORF 363) or COS 324 cannot count towards satisfying this requirement.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "ELE 206",
+                "MUS 314",
+                "COS 318",
+                "COS 320",
+                "COS 326",
+                "COS 333",
+                "COS 340",
+                "MAT 375",
+                "COS 343",
+                "WWS 351",
+                "COS 375",
+                "ELE 396",
+                "TRA 301",
+                "COS 418",
+                "COS 423",
+                "COS 424",
+                "COS 426",
+                "COS 429",
+                "COS 432",
+                "COS 433",
+                "COS 436",
+                "COS 445",
+                "COS 448",
+                "QCB 455",
+                "COS 461",
+                "ELE 462",
+                "COS 463",
+                "ELE 475",
+                "COS 485",
+                "COS 487",
+                "COS 495"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Program in Engineering Biology",
+    "code": "PEB",
+    "year": 2018,
+    "description" : "The Program in Engineering Biology is designed for those highly motivated students who are interested in pursuing careers or graduate education in the areas of biotechnology or bioengineering. The interface between engineering science and the life sciences is an area of dramatic growth and intellectual vigor. Innovations and new developments in this area require multidisciplinary approaches and greater exposure to life science and engineering science fundamentals than is available from a single department. For engineering majors, in addition to courses in those subjects fundamental to the student's major, the program encourages the study of cellular and molecular biology, genetics, physiology, biochemistry, and neuroscience. For biological and chemical sciences majors, the program offers study in biotechnology, biomechanics, thermodynamics, control theory, hazardous waste management, electronics, computer graphics, and information theory.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-engineering-biology",
+        "http://www.princeton.edu/engbio/info/"
+    ],
+    "allowed_majors": [
+        "ORF",
+        "ELE",
+        "MAE",
+        "COS",
+        "CEE",
+        "CBE"
+    ],
+    "contacts": [
+        {
+            "type": "Program Administrator",
+            "name": "Julie Sefa",
+            "email": "cbeug@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Life Sciences Courses Requirement",
+            "min_needed": 5,
+            "description": "The basic principle is that students from the Life Sciences (Molecular Biology or Ecology and Evolutionary Biology) have to take five Engineering School Courses; and students from any of the Engineering Departments have to take five courses from a Life Science Department.",
+            "explanation": "Any course in Molecular Biology or Ecology and Evolutionary Biology counts. Cross-listed courses count if they have significant biology content.For Engineering students whose Department does not require Organic Chemistry (i.e. all other than Chemical and Biological Engineering) then the two course Organic Chemistry sequence counts as two life science course. ISC 231-232 An Integrated, Quantitative Introduction to the Natural Sciences. The two course ISC sequence, ISC 231 and ISC 232 counts as 1 life science course.ISC 233-234 An Integrated, Quantitative Introduction to the Natural Sciences II The two course ISC sequence, ISC 233 and ISC 234 counts as 1 life science course. ISC 235 An Integrated, Quantitative Introduction to the Natural Science III (counts as 1 life science course) ISC 236 An Integrated, Quantitative Introduction to the Natural Science IV (counts as 1 life science course)",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "EEB 211",
+                "EEB 308",
+                "EEB 309",
+                "EEB 311A",
+                "EEB 321",
+                "EEB 327",
+                "EEB 329",
+                "EEB 504",
+                "EEB 507",
+                "ENV 304",
+                "MOL 214",
+                "QCB 515",
+                "ANT 206B",
+                "EEB 311A",
+                "EEB 324",
+                "EEB 328",
+                "EEB 332",
+                "EEB 338",
+                "EEB 346",
+                "EEB 380",
+                "EEB 384",
+                "EEB 403",
+                "EEB 404",
+                "EEB 506",
+                "EEB 521",
+                "EEB 522",
+                "EEB 538",
+                "ENV 302",
+                "GHP 351",
+                "GHP 400",
+                "ISC 326",
+                "CHM 542",
+                "GHP 400",
+                "ISC 233",
+                "ISC 234",
+                "ISC 326",
+                "MAT 586",
+                "MOL 101",
+                "MOL 320",
+                "MOL 340",
+                "MOL 342",
+                "MOL 345",
+                "MOL 348",
+                "MOL 350",
+                "MOL 380",
+                "MOL 432",
+                "MOL 425",
+                "MOL 431",
+                "MOL 458",
+                "MOL 459",
+                "MOL 460",
+                "MOL 475",
+                "MOL 504",
+                "MOL 506",
+                "MOL 514",
+                "MOL 518",
+                "MOL 523",
+                "MOL 540",
+                "MOL 541",
+                "MOL 558",
+                "MOL 559",
+                "MOL 561",
+                "MOL 575",
+                "NEU 301",
+                "NEU 501A",
+                "NEU 502A",
+                "NEU 502B",
+                "QCB 455",
+                "QCB 515",
+                "STC 297",
+                "COS 551",
+                "PSY 208",
+                "PSY 256",
+                "NEU 258",
+                "NEU 258A",
+                "NEU 258B",
+                "PSY 406",
+                "PSY 407",
+                "CBE 262",
+                "CBE 419",
+                "CBE 423",
+                "CBE 433",
+                "CBE 438",
+                "CBE 439",
+                "CBE 440",
+                "CBE 447",
+                "CBE 534",
+                "CBE 304",
+                "CHM 345",
+                "CHM 448",
+                "CHM 515",
+                "CHM 516",
+                "CHM 525",
+                "CHM 538",
+                "COS 445",
+                "ELE 571",
+                "ENE 418",
+                "MAE 344",
+                "QCB 301",
+                "QCB 511"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Robotics and Intelligent Systems",
+    "code": "RIS",
+    "year": 2018,
+    "description": "New industries and organizations depend increasingly on the interplay between engineering, computing, and the life sciences. Innovations and inventions require multidisciplinary approaches and entrepreneurship, as well as grounding in theory and practice, in topics that may not be covered by a single department. The program offers an integrated set of core and elective courses, introducing students to fundamental concepts, providing depth in specific fields of interest, and setting the stage for further achievement. Students are encouraged to expand their experience through summer internships with companies, government agencies, and university laboratories.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-robotics-and-intelligent-systems"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director",
+            "name": " Robert F. Stengel",
+            "email": "stengel@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Admission to the Program",
+            "max_counted": 1,
+            "min_needed": 2,
+            "explanation": "The program is open to juniors and seniors who have a satisfactory background in mathematics, science, and computing.",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 6,
+            "req_list": [
+                {
+                    "name": "Mathematics",
+                    "max_counted": 1,
+                    "min_needed": 1,
+                    "explanation": "Mathematics through MAT 202 or 204.",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 0,
+                    "completed_by_semester": 6,
+                    "req_list": [],
+                    "course_list": [
+                        "MAT 202",
+                        "MAT 204"
+                    ]
+                },
+                {
+                    "name": "Computing course",
+                    "max_counted": 1,
+                    "min_needed": 1,
+                    "explanation": "COS 126, ORF 201 or an equivalent computing course.",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 0,
+                    "completed_by_semester": 6,
+                    "req_list": [],
+                    "course_list": [
+                        "COS 126",
+                        "ORF 201"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Program of Study",
+            "max_counted": 1,
+            "min_needed": 3,
+            "explanation": "A student in this program must satisfy both program and departmental requirements. The program for each student is worked out by the student and the student's departmental adviser. The program requirements are as follows: 1. All students must take six courses, including three core courses and three electives. To qualify for the certificate, a minimum grade average of B- in the six program courses is required. Program courses may not be taken on a pass/D/fail basis, unless that is the only grading alternative for the course. In some cases, a course can fulfill both a certificate program requirement and a regular departmental requirement (contact program director for details).",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [
+                {
+                    "name": "Laboratory",
+                    "max_counted": 1,
+                    "min_needed": 1,
+                    "explanation": "Laboratory",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 0,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "ELE 206",
+                        "MAE 224",
+                        "PHY 210"
+                    ]
+                },
+                {
+                    "name": "Control Systems",
+                    "max_counted": 1,
+                    "min_needed": 1,
+                    "explanation": "Control Systems",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 0,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "CBE 445",
+                        "MAE 345",
+                        "MAE 433",
+                        "MAE 434",
+                        "ELE 301"
+                    ]
+                },
+                {
+                    "name": "Cognition, Language, and Decision Making",
+                    "max_counted": 1,
+                    "min_needed": 1,
+                    "explanation": "Cognition, Language, and Decision Making",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 0,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "PSY 255",
+                        "PSY 321",
+                        "NEU 258",
+                        "NEU 259",
+                        "NEU 330",
+                        "PSY 322"
+                    ]
+                },
+                {
+                    "name": "Elective Courses",
+                    "min_needed": 3,
+                    "explanation": "THREE COURSES, MAXIMUM OF TWO FROM ANY DEPARTMENT",
+                    "double_counting_allowed": false,
+                    "pdfs_allowed": 0,
+                    "completed_by_semester": 8,
+                    "req_list": [],
+                    "course_list": [
+                        "CBE 442",
+                        "CBE 447",
+                        "CEE 361",
+                        "COS 217",
+                        "COS 226",
+                        "COS 333",
+                        "COS 340",
+                        "COS 402",
+                        "COS 424",
+                        "COS 426",
+                        "COS 429",
+                        "COS 461",
+                        "ECO 202",
+                        "ELE 201",
+                        "ELE 302",
+                        "ELE 381",
+                        "ELE 482",
+                        "ELE 486",
+                        "MAE 206",
+                        "MAE 321",
+                        "MAE 322",
+                        "MAE 331",
+                        "MAE 332",
+                        "MAE 341",
+                        "MAE 342",
+                        "MAE 412",
+                        "ORF 245",
+                        "ORF 307",
+                        "ORF 309",
+                        "ORF 311",
+                        "ORF 350",
+                        "ORF 363",
+                        "ORF 405",
+                        "ORF 467",
+                        "PHI 207",
+                        "PSY 259",
+                        "PSY 309",
+                        "PSY 345",
+                        "PSY 422",
+                        "PSY 475"
+                    ]
+                }
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Statistics and Machine Learning",
+    "code": "SML",
+    "year": 2018,
+    "description": "The Program in Statistics and Machine Learning is designed for students, majoring in any department, who have a strong interest in data analysis and its application across disciplines. Statistics and machine learning, the academic disciplines centered around developing and understanding data analysis tools, play an essential role in various scientific fields including biology, engineering, and the social sciences. This new field of “data science” is interdisciplinary, merging contributions from a variety of disciplines to address numerous applied problems. The program provides students with a set of tools required for addressing these emerging challenges. Through the program, students will learn basic theoretical frameworks and apply statistics and machine learning methods to many problems of interest.",
+    "urls": [
+        "https://csml.princeton.edu/undergraduates/certificate-program"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Certificate Executive Committee",
+            "name": "Barbara Engelhardt",
+            "email": "bee@cs.princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Foundations of Statistics",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Students are required to take a total of five courses and earn at least B- for each course: one of the “Foundations of Statistics” courses, one of the “Foundations of Machine Learning” courses, and three elective courses. With all necessary permissions, advanced students may also take approved graduate-level courses. Students may count at most two courses from another degree program (departmental concentration) towards this certificate program.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "ECO 202",
+                "ORF 245",
+                "POL 345",
+                "PSY 251",
+                "WWS 200"
+            ]
+        },
+        {
+            "name": "Electives",
+            "max_counted": 3,
+            "min_needed": 3,
+            "explanation": "With permission, may count course not used for previous foundation tracks.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "POL 245",
+                "SML 201",
+                "SML 310",
+                "COS 402",
+                "COS 429",
+                "COS 485",
+                "ELE 477",
+                "ELE 488",
+                "ORF 418",
+                "MAT 385",
+                "ORF 309",
+                "ORF 363",
+                "AST 303",
+                "CEE 460",
+                "ECO 302",
+                "ECO 312",
+                "ECO 313",
+                "ELE 382",
+                "ELE 480",
+                "GEO 422",
+                "MAE 345",
+                "ORF 405",
+                "POL 346",
+                "SOC 400",
+                "QCB 408"
+            ]
+        },
+        {
+            "name": "Foundations of Machine Learning",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Students are required to take a total of five courses and earn at least B- for each course: one of the “Foundations of Statistics” courses, one of the “Foundations of Machine Learning” courses, and three elective courses. With all necessary permissions, advanced students may also take approved graduate-level courses. Students may count at most two courses from another degree program (departmental concentration) towards this certificate program.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "course_list": [
+                "COS 324",
+                "COS 424",
+                "ELE 364",
+                "ELE 435",
+                "MAT 390",
+                "ORF 350"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Language and Culture: Spanish",
+    "code": "SPA",
+    "year": 2018,
+    "description": "The Program in Language and Culture, administered through the individual language and literature departments, allows concentrators in any discipline to earn a certificate in language and culture. Certificates can be earned in the departments of classics, East Asian studies, French and Italian, German, Near Eastern studies, Slavic languages and literatures, and Spanish and Portuguese languages and cultures.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-language-and-culture",
+        "https://spo.princeton.edu/undergraduate/certificate"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Departmental Representative",
+            "name": "Christina Lee",
+            "email": "chrislee@princeton.edu"
+        },
+        {
+            "type": "Undergraduate Administrator",
+            "name": "Beth Heisler",
+            "email": "bheisler@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Core Requirement",
+            "min_needed": 4,
+            "description": "Department Requirement",
+            "explanation": "Four SPA courses above SPA 209, at least three of which must be 300-level (or higher) department-based courses in the Spanish language, literature, or culture. Courses must be taken for a letter grade, no Pass/D/Fail or Audit. At the discretion of the Departmental Representative, students who study abroad during the academic year may count one pre-approved course per semester abroad towards the certificate. One Princeton summer abroad course offered through the department would also count. Two pre-approved courses in a summer program abroad other than Princeton's can count as one course towards the certificate.  In no case, however, can more than two courses taken abroad count toward the certificate. Any Spanish course taught in English will require all written work to be completed in Spanish in order to count towards the certificate.",
+            "double_counting_allowed": false,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "SPA 392",
+                "SPA 210",
+                "SPA 220",
+                "SPA 222",
+                "SPA 224",
+                "SPA 330",
+                "SPA 336",
+                "SPA 345",
+                "SPA 534",
+                "SPA 540",
+                "SPA 548",
+                "SPA 373",
+                "SPA 387",
+                "SPA 211",
+                "SPA 213",
+                "SPA 214",
+                "SPA 239",
+                "SPA 304",
+                "SPA 307",
+                "SPA 319",
+                "SPA 335",
+                "SPA 338",
+                "SPA 340",
+                "SPA 356",
+                "SPA 363",
+                "SPA 380",
+                "SPA 403",
+                "SPA 500",
+                "SPA 550",
+                "SPA 555"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Theater",
+    "code": "THR",
+    "year": 2018,
+    "description": "The Program in Theater, part of the Lewis Center for the Arts, offers students the opportunity to work with artists, critics and scholars in the the rehearsal room, the theater and the classroom. Students can familiarize themselves with theatrical collaboration and with all the practical skills of theater making; and gain an understanding of the role theater has played and continues to play in many cultures throughout history. The program offers courses in playwriting, acting, directing, design, dramaturgy, performance history, and criticism. The program offers a full season of theatrical productions and explorations, chosen by the students and produced, in collaboration with professional artists and technicians, in order to support our students growth as artists. Visiting guest artists offer workshops, participate in play readings and explorations, and collaborate on student productions.",
+    "urls": [
+        "https://ua.princeton.edu/academic-units/program-theater"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Director",
+            "name": "Jane Cox",
+            "email": "janecox@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Studio Courses",
+            "max_counted": 1,
+            "min_needed": 3,
+            "explanation": "At least three must be studio courses chosen from offerings in acting, directing, playwriting, design, and dramaturgy.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "THR 400",
+                "THR 317",
+                "THR 402"
+            ]
+        },
+        {
+            "name": "Remaining requirements",
+            "max_counted": 1,
+            "min_needed": 2,
+            "explanation": "At least one course in dramatic literature, performance history, performance studies, or criticism. Up to two courses in this area may be used toward the five-course requirement.",
+            "double_counting_allowed": false,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "THR 101",
+                "THR 201",
+                "THR 205",
+                "THR 210A",
+                "THR 210B",
+                "THR 211",
+                "THR 217",
+                "THR 228",
+                "THR 237",
+                "THR 242",
+                "THR 300",
+                "THR 301",
+                "THR 303",
+                "THR 304",
+                "THR 305",
+                "THR 311",
+                "THR 314",
+                "THR 318",
+                "THR 101",
+                "THR 318",
+                "THR 321",
+                "THR 323",
+                "THR 326",
+                "THR 328",
+                "THR 330",
+                "THR 331",
+                "THR 338",
+                "THR 341",
+                "THR 343",
+                "THR 345",
+                "THR 346",
+                "THR 347"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Urban Studies",
+    "code": "URB",
+    "year": 2018,
+    "description": "The Certificate Program in Urban Studies is an interdepartmental plan of study for undergraduates that offers an interdisciplinary framework for the study of cities, metropolitan regions, and urban and suburban landscapes. With courses in diverse department, the program encourages students to think about metropolitan centers in all their complexity as physical spaces; social, cultural, political, and economic nexuses; and historical artifacts.",
+    "urls": [
+        "http://urbanstudies.princeton.edu/"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Program Administrator",
+            "name": "Valerie Smith",
+            "email": "valsmith@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Introduction",
+            "max_counted": 2,
+            "min_needed": 2,
+            "explanation": "Every student is strongly encouraged to take the program's two required introductory courses, URB 200 and ARC 205 as soon as possible although the courses can be taken at any time.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 0,
+            "req_list": [],
+            "course_list": [
+                "URB 200",
+                "ARC 205"
+            ]
+        },
+        {
+            "name": "Social Science",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Courses not on the approved list may be used as electives with the approval of the Urban Studies Director. However, each selected course must contain substantial urban content to fulfill the requirements of the certificate program.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "req_list": [],
+            "course_list": [
+                "NST 100"
+            ]
+        },
+        {
+            "name": "Humanities",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Courses not on the approved list may be used as electives with the approval of the Urban Studies Director. However, each selected course must contain substantial urban content to fulfill the requirements of the certificate program.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "req_list": [],
+            "course_list": [
+                "AAS 442",
+                "DAN 322",
+                "ENG 391N",
+                "NST 100",
+                "ARC 526",
+                "ART 387",
+                "AMS 356",
+                "HIS 388",
+                "LAS 392",
+                "MUS 258",
+                "POL 403",
+                "PSY 400",
+                "PSY 402",
+                "SOC 227",
+                "URB 200",
+                "URB 202",
+                "AMS 311",
+                "AMS 395",
+                "ANT 445",
+                "ARC 205",
+                "ARC 301",
+                "ARC 303",
+                "ARC 312",
+                "ARC 492",
+                "ENG 391B",
+                "ART 313",
+                "ENV 348",
+                "HIS 418",
+                "SOC 358",
+                "SOC 413",
+                "URB 201",
+                "SPA 239",
+                "HIS 456",
+                "MUS 264",
+                "VIS 325"
+            ]
+        },
+        {
+            "name": "Engineering & Natural Sciences",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Courses not on the approved list may be used as electives with the approval of the Urban Studies Director. However, each selected course must contain substantial urban content to fulfill the requirements of the certificate program.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 0,
+            "pdfs_allowed": 0,
+            "req_list": [],
+            "course_list": [
+                "ARC 519",
+                "CEE 334",
+                "CEE 471",
+                "ENV 305",
+                "GEO 102A",
+                "GEO 360",
+                "MAE  228",
+                "CEE 262B",
+                "CEE 262A",
+                "CEE 311"
+            ]
+        }
+    ]
+},
+{
+    "type": "Certificate",
+    "name": "Values and Public Life",
+    "code": "VPL",
+    "year": 2018,
+    "description": "Students attaining the certificate will be equipped to bring informed discussion of values into the public sphere and to integrate a critical value perspective into their future studies and pursuits. The program is open to undergraduates in all disciplines, and students are invited to apply at the end of the sophomore year. ",
+    "urls": [
+        "https://uchv.princeton.edu/academic-programs/values-and-public-life-certificate"
+    ],
+    "allowed_majors": [],
+    "contacts": [
+        {
+            "type": "Departmental Representative",
+            "name": "Femke DeRuyter",
+            "email": "vpl@princeton.edu"
+        }
+    ],
+    "req_list": [
+        {
+            "name": "Introduction Course",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Students must take PHI / CHV 202 as an introduction course.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "PHI 202"
+            ]
+        },
+        {
+            "name": "Core Course",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Students must take one course out of the following core requirements.",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "WWS 370",
+                "POL 307",
+                "POL 306",
+                "POL 312",
+                "POL 313"
+            ]
+        },
+        {
+            "name": "Seminar Course",
+            "max_counted": 1,
+            "min_needed": 1,
+            "explanation": "Students must take a Junior/Senior Seminar in Values and Public Life (topics change from year to year) or, in an exceptional scenario (e.g., study abroad), another seminar on normative issues approved by the program director. ",
+            "double_counting_allowed": false,
+            "max_common_with_major": 1,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "PHI 380",
+                "POL 403",
+                "POL 417"
+            ]
+        },
+        {
+            "name": "Thematic Courses",
+            "max_counted": 1,
+            "min_needed": 2,
+            "explanation": "Students must identify an area of focus and take 2 courses with an explicit values component related to it, chosen by the student in consultation with the program director.  Some illustrative focus areas (or “themes”) are: Bioethics, Cognitive psychology, ethics, and public policy; Democracy in theory and practice; Global justice and human right;  Constitutionalism and the rule of law; History of thought about political justice, human rights, or some other core concept in public morality; Public dilemmas in literature; Ethics, religion, and theology",
+            "double_counting_allowed": false,
+            "max_common_with_major": 2,
+            "pdfs_allowed": 0,
+            "completed_by_semester": 8,
+            "req_list": [],
+            "course_list": [
+                "CGS 312",
+                "CHV 332",
+                "CHV 333",
+                "CHV 370",
+                "CHV 390",
+                "CLA 214",
+                "ECO 385",
+                "PHI 307",
+                "PHI 519",
+                "SOC 302",
+                "CHV 528",
+                "COM 362",
+                "COM 413",
+                "PHI 315",
+                "PHI 411",
+                "REL 261"
+            ]
+        }
+    ]
+}
+]
