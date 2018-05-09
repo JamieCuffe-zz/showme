@@ -229,6 +229,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 
+    var courseQueue = [];
     var poplatePage = function () {
       $.ajax({
         type: "GET",
@@ -303,11 +304,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
       }
-      /*else if(clicked && $(this).attr("class") == "btn btn-success btn-sm") {
-        $this.css('background-color', '#00a663');
-        $this.css('border-color', '#00acd6');
-        $(removetag).remove();
-      }*/
       else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
@@ -319,9 +315,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
     });
   });
 
-
-  /*$(document).ready(function () {
-    // some button click for save
+  $(document).ready(function () {
+    $("#update").find("button").click(function(){
       $.ajax({
         type: "POST",
         datatype: "json",
@@ -332,7 +327,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
           poplatePage()
         }
       });
-  });
+    });
+  }); /*
 
   $(document).ready(function () {
     // some button click for delete
@@ -348,20 +344,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       });
   });*/
 
-
-</script>
-
-<script>
-  /*
-$(document).ready(function () {
-    $("#update").find("button").click(function(){
-
-    });
-    $("#delete").find("button").click(function(){
-
-    });
-  });
-*/
 
 </script>
 
