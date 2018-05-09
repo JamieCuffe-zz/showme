@@ -328,10 +328,11 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"application/json; charset=utf-8",
+        contentType:"application/json",
+        processData: false,
         url: "https://showme333.herokuapp.com/save",
         data: JSON.stringify(courseQueue), 
-        success: function(data) {
+        success: function(returnJSON) {
           poplatePage()
         }
       });
@@ -346,7 +347,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         contentType:"application/json; charset=utf-8",
         url: "https://showme333.herokuapp.com/delete",
         data: JSON.stringify(courseQueue), 
-        success: function(data) {
+        success: function(returnJSON) {
           //clear course queue and basket
           poplatePage()
         }
