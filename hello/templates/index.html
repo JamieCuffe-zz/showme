@@ -332,7 +332,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         url: "https://showme333.herokuapp.com/save",
         data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
-          console.log(returnJSON);
           $("#genMetaInfo").empty(output);
           $("#genCerts").empty(output);
           poplatePage()
@@ -350,7 +349,6 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         url: "https://showme333.herokuapp.com/delete",
         data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
-          console.log(returnJSON);
           $("#genMetaInfo").empty(output);
           $("#genCerts").empty(output);
           poplatePage()
