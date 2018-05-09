@@ -452,7 +452,7 @@ def delete(request):
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
-        student = Students.objects.get(netid=netId).courseBasket
+        student = Students.objects.get(netid=netId)
         student.courseBasket = request.body
         testResponse = student.courseBasket
         student.save()
