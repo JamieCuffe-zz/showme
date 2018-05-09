@@ -199,7 +199,11 @@ def certificate(request):
                 allCertsReqs[i]["urls"] = urls
                 allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
                 allCertsReqs[i]["number_of_students"] = number_of_students
-                allCertsReqs[i]["trend"] = trend
+                if trend == 0:
+                    allCertsReqs[i]["trend"] = ""
+                elif trend == 1:
+                    allCertsReqs[i]["trend"] = '<i style= "color: #00a663" class="fa fa-caret-up" data-toggle="tooltip" data-placement="top" title="Trending: The number of students taking this certificate has increased over the past 4 years."></i>'
+                
                 reqList = json.loads(testCertificate[0]["tracks"])
                 for j in range(0, len(reqList)):
                     courseList = reqList[j]["courses"]
@@ -271,11 +275,7 @@ def certificate(request):
                             seenTwo = True
                     if (seenTwo == False):
                         newCourseListTwo.append(newCourseList[p])
-                totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo
-
-        for i in range(0, len(totalOutput)):
-            for j in range(0, len(totalOutput[i]["req_list"])):
-                totalOutput[i]["req_list"][j]["per_track"] = 0
+                totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo        
 
         # adds format for each track for visual
         for i in range(0, len(totalOutput)):
@@ -466,28 +466,30 @@ def metainfo(request):
 @login_required(login_url = '/accounts/login')
 def delete(request):
     if request.method == 'POST':
-        # update backend
-        '''
-        student = Students.objects.get(netid=netId)
-        student.courseBasket = ""
-        testResponse = student.courseBasket
-        student.save()
-        '''
-        return JsonResponse("Removed", safe = False)
+        returnTest = ""
+        if request.user.is_authenticated:
+            netId = request.user.username
+
+        if Students.objects.filter(netid = netId).count() != 0:
+            student = Students()
+            student.courseBasket = ""
+            returnTest = student.courseBasket
+            student.save()
+
+        return JsonResponse(returnTest, safe = False)
 
 @csrf_exempt
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
-        # update backend
-        '''
-        incorporate student taken courses with this as orange color
-        '''
+        returnTest = ""
+        if request.user.is_authenticated:
+            netId = request.user.username
 
-        '''
-        student = Students.objects.get(netid=netId)
-        student.courseBasket = request.body
-        testResponse = student.courseBasket
-        student.save()
-        '''
-        return JsonResponse("Working", safe = False)
+        if Students.objects.filter(netid = netId).count() != 0:
+            student = Students()
+            student.courseBasket = request.body
+            returnTest = student.courseBasket
+            student.save()
+        
+        return JsonResponse(returnTest, safe = False)
