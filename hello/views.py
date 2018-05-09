@@ -179,6 +179,7 @@ def certificate(request):
 
         # take courses from required courses in cert json and append to allCertsReqs
 
+        error = []
         for i in range(0, len(allCertsReqs)):
             testCertificate = list(Certificates.objects.filter(title = allCertsReqs[i]["name"]).values())
             testFinance = list(Certificates.objects.filter(title = "Finance").values())

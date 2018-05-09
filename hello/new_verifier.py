@@ -37,8 +37,8 @@ def check_major(major_name, courses, year):
     """
     major_filename = major_name + "_" + str(year)  + ".json"
     major_filepath = os.path.join(certificates_location, major_filename)
-    with open(major_filepath, 'r') as f:
-        major = json.load(f)
+    with open(major_filepath, 'r', encoding="utf8") as f:
+        major = json.load(f, encoding="utf8")
     # with open(schema_location, 'r') as s:
     #     schema = json.load(s)
     # jsonschema.validate(major,schema)
