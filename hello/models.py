@@ -46,3 +46,13 @@ class Students(models.Model):
     pinnedCertificates = models.CharField(max_length=1000000, default='')
     class Meta:
         db_table = "students"
+
+
+class Metadata(models.Model):
+
+   title = models.CharField(max_length=100, primary_key=True)
+   code = models.CharField(max_length=5)
+   number_of_students = models.IntegerField(null=True)
+   trend = models.IntegerField(null=True)
+   class Meta:
+        db_table = "metadata"
