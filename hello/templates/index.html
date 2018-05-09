@@ -306,12 +306,15 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
+        var i = courseQueue.indexOf(coursename);
+        courseQueue.splice(i, 1);
+        console.log(courseQueue);
       }
       else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
-        courseQueue.push($this);
+        courseQueue.push(coursename);
         console.log(courseQueue);
       }
 
