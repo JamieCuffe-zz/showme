@@ -488,7 +488,7 @@ def save(request):
 
         if Students.objects.filter(netid = netId).count() != 0:
             student = Students()
-            student.courseBasket = request.body
+            student.courseBasket = json.loads(request.body)
             returnTest = student.courseBasket
             student.save()
         
