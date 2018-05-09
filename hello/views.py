@@ -466,14 +466,17 @@ def metainfo(request):
 @login_required(login_url = '/accounts/login')
 def delete(request):
     if request.method == 'POST':
-        # update backend
-        '''
-        student = Students.objects.get(netid=netId)
-        student.courseBasket = ""
-        testResponse = student.courseBasket
-        student.save()
-        '''
-        return JsonResponse("Removed", safe = False)
+        returnTest = ""
+        if request.user.is_authenticated:
+            netId = request.user.username
+
+        if Students.objects.filter(netid = netId).count() != 0:
+            student = Students()
+            student.courseBasket = ""
+            returnTest = student.courseBasket
+            student.save()
+
+        return JsonResponse(returnTest, safe = False)
 
 @csrf_exempt
 @login_required(login_url = '/accounts/login')
