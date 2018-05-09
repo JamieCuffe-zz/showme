@@ -333,6 +333,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
           console.log(returnJSON);
+          $("#genMetaInfo").empty(output);
+          $("#genCerts").empty(output);
           poplatePage()
         }
       });
@@ -349,6 +351,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
           console.log(returnJSON);
+          $("#genMetaInfo").empty(output);
+          $("#genCerts").empty(output);
           poplatePage()
         }
       });
