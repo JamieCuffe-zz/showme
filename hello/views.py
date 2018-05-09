@@ -373,7 +373,7 @@ def metainfo(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter
-        allCerts = ["AAS", "AMS", "CWR", "EAS", "EMS", "ENT", "GHP", "GSS", "HUM", "LAS", "LIN", "NEU", "PAC", "PEB", "RIS", "SML", "SPA", "THR", "URB", "VPL"]
+        allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
@@ -386,8 +386,8 @@ def metainfo(request):
 
         # extract courses and reqs from output of interpreter
         for i in range(0, len(allCerts)):
-            allCertsCourses.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[0]))
-            allCertsReqs.append(json.loads(hello.verifier.main(formattedCourses, allCerts[i], 2018)[1]))
+            allCertsCourses.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[0]))
+            allCertsReqs.append(json.loads(hello.new_verifier.main(formattedCourses, allCerts[i], 2018)[1]))
 
         # take courses from required courses in cert json and append to allCertsReqs
 
