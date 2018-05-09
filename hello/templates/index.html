@@ -304,7 +304,7 @@ $(document).ready(function(){
       var text = '<a id = "'+ id + '"><i class="fa fa-book"></i> <span>' + coursename + '</span></a>';
       var removetag = "#" + id;
 
-      if(clicked && $(this).attr("class") != "btn btn-block btn-success btn-sm") {
+      if(clicked && $(this).attr("class") == "btn btn-block btn-info btn-sm") {
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
