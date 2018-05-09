@@ -344,6 +344,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         url: "https://showme333.herokuapp.com/delete",
         data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
+          courseQueue = []
+          $("#courseq").empty();
           $("#genMetaInfo").empty();
           $("#genCerts").empty();
           poplatePage()
