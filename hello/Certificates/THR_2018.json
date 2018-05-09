@@ -23,7 +23,6 @@
             "explanation": "At least three must be studio courses chosen from offerings in acting, directing, playwriting, design, and dramaturgy.",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "THR 400",
                 "THR 317",
@@ -37,7 +36,6 @@
             "explanation": "At least one course in dramatic literature, performance history, performance studies, or criticism. Up to two courses in this area may be used toward the five-course requirement.",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "THR 101",
                 "THR 201",

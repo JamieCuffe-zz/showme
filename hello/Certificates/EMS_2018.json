@@ -23,7 +23,6 @@
             "explanation": "An introductory statistics course",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "ECO 202",
                 "ORF 245",
@@ -40,7 +39,6 @@
             "explanation": "An introductory optimization course",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "CBE 442",
                 "ELE 382",
@@ -50,12 +48,11 @@
         },
         {
             "name": "Probability",
-            "max_counted": 1,
             "min_needed": 1,
+            "max_counted" : 1,
             "explanation": "Probability",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "ORF 309"
             ]
@@ -67,7 +64,6 @@
             "explanation": "A course integrating optimization and uncertainty",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "COS 402",
                 "ECO 418",
@@ -85,7 +81,6 @@
             "explanation": "An integrative course in management, entrepreneurship, or systems",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "CBE 442",
                 "EGR 491",

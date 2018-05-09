@@ -25,7 +25,6 @@
             "max_common_with_major": 3,
             "pdfs_allowed": 0,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "NEU 175",
                 "NEU 200",
@@ -41,7 +40,6 @@
             "max_common_with_major": 1,
             "pdfs_allowed": 0,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "NEU 202"
             ]
@@ -55,7 +53,6 @@
             "max_common_with_major": 4,
             "pdfs_allowed": 0,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "NEU 301",
                 "EEB 403",

@@ -23,7 +23,6 @@
             "explanation": "Two common introductory courses: EGR 200/ENT 201 and EGR 201/ENT 200.",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "EGR 201",
                 "EGR 200"
@@ -36,7 +35,6 @@
             "explanation": "Two core courses: must be chosen from a list, which may be updated each year by the Executive Committee",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
-            "req_list": [],
             "course_list": [
                 "ANT 300",
                 "COS 448",

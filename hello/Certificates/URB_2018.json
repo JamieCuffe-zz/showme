@@ -24,7 +24,6 @@
             "double_counting_allowed": false,
             "max_common_with_major": 1,
             "pdfs_allowed": 0,
-            "req_list": [],
             "course_list": [
                 "URB 200",
                 "ARC 205"
@@ -38,7 +37,6 @@
             "double_counting_allowed": false,
             "max_common_with_major": 0,
             "pdfs_allowed": 0,
-            "req_list": [],
             "course_list": [
                 "NST 100"
             ]
@@ -51,7 +49,6 @@
             "double_counting_allowed": false,
             "max_common_with_major": 0,
             "pdfs_allowed": 0,
-            "req_list": [],
             "course_list": [
                 "AAS 442",
                 "DAN 322",
@@ -98,7 +95,6 @@
             "double_counting_allowed": false,
             "max_common_with_major": 0,
             "pdfs_allowed": 0,
-            "req_list": [],
             "course_list": [
                 "ARC 519",
                 "CEE 334",

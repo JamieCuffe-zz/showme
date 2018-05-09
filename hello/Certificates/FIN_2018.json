@@ -23,8 +23,6 @@
             "explanation": "Mathematics: MAT 175 (Mathematics for Economics/Life Sciences), or MAT 201 (Multivariable Calculus) and MAT 202 (Linear Algebra with Applications), MAT 203 (Advanced Vector Calculus), and MAT 204 (Advanced Linear Algebra with Applications)",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
-            "req_list": [
-            ],
             "course_list": [
                 "MAT 175",
                 "MAT 175",
@@ -41,8 +39,6 @@
             "explanation": "Economics: ECO 310 (Microeconomic Theory: A Mathematical Approach)",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
-            "req_list": [
-            ],
             "course_list": [
                 "ECO 310"
             ]
@@ -54,8 +50,6 @@
             "explanation": "Probability and Statistics: ORF 245 (Fundamentals of Engineering Statistics), or ECO 202 (Statistics and Data Analysis for Economics), or PSY 251 (Quantitative Methods), or SOC 301 (Sociological Research Methods), or POL 345 (Quantitative Analysis and Politics), WWS 200 (Statistics for Social Science) or WWS 332 (Quantitative Analysis for Public Policy), or PHY 301 (Thermal Physics) and PHY 312 (Experimental Physics), or a score of 5 in AP Statistics",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
-            "req_list": [
-            ],
             "course_list": [
                 "ORF 245",
                 "ECO 202",
@@ -75,8 +69,6 @@
             "explanation": "The two core courses, ECO 362 (Financial Investments) and ECO 363 (Corporate Finance and Financial Institutions), typically completed during the junior year.",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
-            "req_list": [
-            ],
             "course_list": [
                 "ECO 362",
                 "ECO 363"
@@ -89,8 +81,6 @@
             "explanation": "List 1: Financial Applications, and List 2: General Methodology for Finance. ECO and ORF majors must take at least two of their three elective courses from List 1. All other concentrators must take at least one of their three elective courses from List 1.",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
-            "req_list": [
-            ],
             "course_list": [
                 "ECO 315",
                 "ECO 342",
@@ -127,8 +117,6 @@
             "explanation": "List 1: Financial Applications, and List 2: General Methodology for Finance. ECO and ORF majors must take at least two of their three elective courses from List 1. All other concentrators must take at least one of their three elective courses from List 1.",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
-            "req_list": [
-            ],
             "course_list": [
                 "APC 350",
                 "CEE 460",

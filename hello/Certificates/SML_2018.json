@@ -74,7 +74,6 @@
             "min_needed": 1,
             "explanation": "Students are required to take a total of five courses and earn at least B- for each course: one of the “Foundations of Statistics” courses, one of the “Foundations of Machine Learning” courses, and three elective courses. With all necessary permissions, advanced students may also take approved graduate-level courses. Students may count at most two courses from another degree program (departmental concentration) towards this certificate program.",
             "double_counting_allowed": false,
-            "max_common_with_major": 0,
             "pdfs_allowed": 0,
             "course_list": [
                 "COS 324",
