@@ -437,7 +437,9 @@ def metainfo(request):
 @login_required(login_url = '/accounts/login')
 def delete(request):
     if request.method == 'POST':
+        num = 0
 
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
+        num = 0
