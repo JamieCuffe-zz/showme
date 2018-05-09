@@ -316,23 +316,6 @@ def certificate(request):
             else:
                 totalOutput[i]["percentage"] = 100
 
-
-            '''
-            totalOutput[i]['percentage'] = 0
-            if minRequired > 0:
-                if (amountTaken/minRequired * 100) >= 100:
-                    totalOutput[i]['percentage'] = 100
-                else:
-                    totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100) 
-             
-
-            
-            if totalOutput[i]["min_needed"] != 0:
-                totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
-            else:
-                totalOutput[i]['percentage'] = 0
-            '''
-
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
         return JsonResponse(totalOutput, safe=False)
@@ -528,3 +511,17 @@ def save(request):
             user.save()
         
         return JsonResponse(["Complete"], safe = False)
+
+@login_required(login_url = '/accounts/login')
+def queue(request):
+    # get course queue for student
+    if request.method == 'POST':
+        returnQueue = []
+        if request.user.is_authenticated:
+            netId = request.user.username
+
+        if Students.objects.filter(netid = netId).count() != 0:
+            user = Students.objects.get(netid=netId)
+            returnQueue = json.loads(user.courseBasket)
+
+        return JsonResponse(returnQueue, safe = False)

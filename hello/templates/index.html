@@ -288,6 +288,23 @@ $(document).ready(function(){
           $("#genCerts").append(output);
         }
       });
+
+      /*$.ajax({
+        type: "GET",
+        datatype: "json",
+        url: "https://showme333.herokuapp.com/queue",
+        success: function(data) {
+
+          var output = "";
+          var courseid = ""; 
+          $.each(data, function(index, element) {
+            courseid = element.course.replace(/\s/g, '') + '_' + element.certificate.replace(/\s/g, '');
+            output += '<a id = "'+ courseid + '"><i class="fa fa-book"></i> <span>' + element.course + '</span></a>';
+          });
+
+          $("#courseq").append(output);
+        }
+      });*/
     }
 
     $(document).ready(function () {
@@ -308,14 +325,14 @@ $(document).ready(function(){
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
-        var i = courseQueue.indexOf(coursename);
+        var i = courseQueue.indexOf(coursename+'_'+id);
         courseQueue.splice(i, 1);
       }
       else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
-        courseQueue.push(coursename);
+        courseQueue.push(coursename+'_'+id);
       }
 
       $this.data('clicked', !clicked);
