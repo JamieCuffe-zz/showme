@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^accounts/callback$', django_cas_ng.views.callback, name='cas_ng_proxy_callback'),
     url(r'^$', hello.views.transcript_check, name = 'transcript_check'),
     url(r'^index', hello.views.index, name = 'index'),
+    url(r'^about', hello.views.about, name = 'about'),
     url(r'^certificate', hello.views.certificate, name = 'certificate'),
     url(r'^transcript_result', hello.views.transcript_result, name='transcript_result'),
     url(r'^getrequest', hello.views.getrequest, name = 'getrequest'),

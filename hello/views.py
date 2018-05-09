@@ -133,6 +133,12 @@ def index(request):
     #return HttpResponse(htmlOut)
     return render(request, 'index.html', {'user': netId})
 
+    @login_required(login_url = '/accounts/login')
+    def about(request):
+        if request.user.is_authenticated:
+            netId = request.user.username
+        return render(request, 'about.html', {'user': netId})
+
 # def my_view(request):
 
 
@@ -151,7 +157,7 @@ def certificate(request):
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
-        # call interpreter 
+        # call interpreter
         allCerts = ["PAC", "ACM", "FIN", "GHP", "AAS", "AMS"]
         allCertsCourses = []
         allCertsReqs = []
@@ -160,7 +166,7 @@ def certificate(request):
 
         allReturned = []
 
-        
+
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
@@ -361,14 +367,14 @@ def metainfo(request):
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
-        # call interpreter 
+        # call interpreter
         allCerts = ["PAC", "ACM", "FIN", "GHP", "AAS"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
         totalOutput = []
 
-        
+
         # format courses from transcript to be passed into interpreter
         for i in range (0, len(studentCourses)):
             formattedCourses[0].append({"name" : studentCourses[i]})
@@ -390,7 +396,7 @@ def metainfo(request):
                 allCertsReqs[i]["description"] = description
                 allCertsReqs[i]["urls"] = urls
                 allCertsReqs[i]["contacts"] = {"name" : contactName, "email" : contactEmail}
-                
+
                 reqList = json.loads(testCertificate[0]["tracks"])
                 for j in range(0, len(reqList)):
                     courseList = reqList[j]["courses"]
@@ -415,11 +421,11 @@ def metainfo(request):
             if totalOutput[i]["satisfied"] == True:
                 completeCert += 1
             else:
-                # calculates if the certificate is attainable 
+                # calculates if the certificate is attainable
                 if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.75:
                     attainable += 1
                     neededCourses += totalOutput[i]["min_needed"] - totalOutput[i]["count"]
-        
+
         numTaken = 0
         for i in range(0, len(formattedCourses)):
             for j in range(0, len(formattedCourses[i])):
