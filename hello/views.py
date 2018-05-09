@@ -159,7 +159,7 @@ def certificate(request):
 
             
         # call interpreter 
-        allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
+        allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "FIN", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
@@ -373,7 +373,7 @@ def metainfo(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter
-        allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
+        allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "FIN", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
