@@ -17,6 +17,7 @@ import json
 import hello.verifier
 import hello.new_verifier
 from .models import Students,Certificates
+from django.views.decorators.csrf import csrf_exempt
 # def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
@@ -439,13 +440,18 @@ def metainfo(request):
         metaList = [completeCert, numTaken, attainable, neededCourses]
     return JsonResponse(metaList, safe = False)
 
+@csrf_exempt
 @login_required(login_url = '/accounts/login')
 def delete(request):
     if request.method == 'POST':
         num = 0
+        # delete list in course baset
+        # incorporate basket as student taken courses
 
+@csrf_exempt
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
         #return JsonResponse(json.loads(request.body), safe = False)
         return JsonResponse("HI", safe = False)
+        # add list to course basket as json

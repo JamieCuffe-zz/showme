@@ -325,18 +325,17 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
   $(document).ready(function () {
     $("#update").find("button").click(function(){
-      $.post("https://showme333.herokuapp.com/save");
-      /*$.ajax({
+      $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"text/plain",
+        contentType:"application/json; charset=utf-8",
         url: "https://showme333.herokuapp.com/save",
-        data: courseQueue + "", 
+        data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
           console.log(returnJSON);
           poplatePage()
         }
-      });*/
+      });
     });
   }); 
 
