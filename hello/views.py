@@ -306,7 +306,7 @@ def certificate(request):
                 minRequired += totalOutput[i]["req_list"][j]["min_needed"]
                 amountTaken += totalOutput[i]["req_list"][j]["count"]
             totalOutput[i]['percentage'] = 0
-            if minRequired != 0:
+            if minRequired > 0:
                 if (amountTaken/minRequired * 100) >= 100:
                     totalOutput[i]['percentage'] = 100
                 else:
