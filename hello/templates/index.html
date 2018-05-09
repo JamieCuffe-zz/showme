@@ -232,6 +232,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   <script>
 
     var courseQueue = [];
+
     var poplatePage = function () {
       $.ajax({
         type: "GET",
@@ -310,6 +311,8 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
+        courseQueue.push($this);
+        console.log(courseQueue);
       }
 
       $this.data('clicked', !clicked);
