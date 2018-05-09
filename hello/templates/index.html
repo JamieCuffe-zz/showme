@@ -326,7 +326,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
   $(document).ready(function () {
     $("#update").find("button").click(function(){
       $.ajax({
-        type: "POST",
+        type: "GET",
         datatype: "json",
         contentType:"application/json",
         processData: false,
