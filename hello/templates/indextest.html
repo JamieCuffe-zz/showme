@@ -195,6 +195,10 @@
 
 <script>
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 document.getElementById("transcript").onclick = function () {
 location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result";
 };
