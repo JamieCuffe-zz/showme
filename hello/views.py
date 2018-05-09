@@ -492,4 +492,4 @@ def save(request):
             returnTest = student.courseBasket
             student.save()
         
-        return JsonResponse(returnTest, safe = False)
+        return JsonResponse(["HI"], safe = False)
