@@ -444,16 +444,24 @@ def metainfo(request):
 @login_required(login_url = '/accounts/login')
 def delete(request):
     if request.method == 'POST':
-        num = 0
-        # delete list in course baset
-        # incorporate basket as student taken courses
+        # update backend
+        '''
+        student = Students.objects.get(netid=netId)
+        student.courseBasket = ""
+        testResponse = student.courseBasket
+        student.save()
+        '''
+        return JsonResponse("Removed", safe = False)
 
 @csrf_exempt
 @login_required(login_url = '/accounts/login')
 def save(request):
     if request.method == 'POST':
+        # update backend
+        '''
         student = Students.objects.get(netid=netId)
         student.courseBasket = request.body
         testResponse = student.courseBasket
         student.save()
-        return JsonResponse(testResponse, safe = False)
+        '''
+        return JsonResponse("Working", safe = False)

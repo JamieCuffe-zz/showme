@@ -344,12 +344,11 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       $.ajax({
         type: "POST",
         datatype: "json",
-        contentType:"application/json; charset=utf-8",
+        contentType:"text",
         url: "https://showme333.herokuapp.com/delete",
-        processData: false,
         data: JSON.stringify(courseQueue), 
         success: function(returnJSON) {
-          //clear course queue and basket
+          console.log(returnJSON);
           poplatePage()
         }
       });
