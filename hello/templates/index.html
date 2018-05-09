@@ -259,7 +259,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
 
 <script>
 $(document).ready(function () {
-  $(".col-md-2").find("button").click(function(){
+  $("#genCerts").on("click", ".col-md-2 button", function() {
       console.log("REACHED 1");
       var $this = $(this);
       var clicked = $this.data('clicked');
