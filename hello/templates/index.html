@@ -298,7 +298,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
       var removetag = "#" + id;
       console.log("REACHED 2");
 
-      if(clicked && $(this).attr("class") != "btn btn-success btn-sm") {
+      if(clicked && $(this).attr("class") != "btn btn-block btn-success btn-sm") {
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
@@ -308,7 +308,7 @@ location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
       }*/
-      else if($(this).attr("class") != "btn btn-success btn-sm"){
+      else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
