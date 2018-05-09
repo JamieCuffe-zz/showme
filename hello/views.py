@@ -476,7 +476,7 @@ def delete(request):
             returnTest = student.courseBasket
             student.save()
 
-        return JsonResponse(returnTest, safe = False)
+        return JsonResponse(["Complete"], safe = False)
 
 @csrf_exempt
 @login_required(login_url = '/accounts/login')
@@ -492,4 +492,4 @@ def save(request):
             returnTest = student.courseBasket
             student.save()
         
-        return JsonResponse(returnTest, safe = False)
+        return JsonResponse(["Complete"], safe = False)

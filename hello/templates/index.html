@@ -348,7 +348,6 @@ $(document).ready(function(){
         url: "https://showme333.herokuapp.com/delete",
         data: JSON.stringify(courseQueue),
         success: function(returnJSON) {
-          console.log(returnJSON);
           courseQueue = [];
           $("#courseq").empty();
           $("#genMetaInfo").empty();
