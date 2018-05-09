@@ -152,7 +152,7 @@ def certificate(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 
         # call interpreter 
-        allCerts = ["PAC", "ACM", "FIN", "GHP", "AAS"]
+        allCerts = ["PAC", "ACM", "FIN", "GHP", "AAS", "AMS"]
         allCertsCourses = []
         allCertsReqs = []
         formattedCourses = [[]]
