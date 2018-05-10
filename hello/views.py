@@ -521,7 +521,7 @@ def save(request):
 @login_required(login_url = '/accounts/login')
 def queue(request):
     # get course queue for student
-    if request.method == 'POST':
+    if request.method == 'GET':
         returnQueue = []
         if request.user.is_authenticated:
             netId = request.user.username
