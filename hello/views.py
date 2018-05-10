@@ -314,7 +314,7 @@ def certificate(request):
                 if percentage > 100:
                     percentage = 100
                 if percentage == 0:
-                    textColor = "#000000"
+                    textColor = "#f4f3f4"
                 totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"], percentage, textColor]
 
         # orders certificates
@@ -487,7 +487,7 @@ def metainfo(request):
                 completeCert += 1
             else:
                 # calculates if the certificate is attainable
-                if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.65:
+                if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.60:
                     attainable += 1
                     neededCourses += totalOutput[i]["min_needed"] - totalOutput[i]["count"]
 
