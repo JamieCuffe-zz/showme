@@ -492,48 +492,48 @@ def metainfo(request):
         metaList = [completeCert, numTaken, attainable, neededCourses]
     return JsonResponse(metaList, safe = False)
 
-# @csrf_exempt
-# @login_required(login_url = '/accounts/login')
-# def delete(request):
-#     if request.method == 'POST':
-#         returnTest = ""
-#         if request.user.is_authenticated:
-#             netId = request.user.username
+@csrf_exempt
+@login_required(login_url = '/accounts/login')
+def delete(request):
+    # if request.method == 'POST':
+    #     returnTest = ""
+    #     if request.user.is_authenticated:
+    #         netId = request.user.username
 
-#         if Students.objects.filter(netid = netId).count() != 0:
-#             user = Students.objects.get(netid=netId)
-#             user.courseBasket = ""
-#             returnTest = user.courseBasket
-#             user.save()
+    #     if Students.objects.filter(netid = netId).count() != 0:
+    #         user = Students.objects.get(netid=netId)
+    #         user.courseBasket = ""
+    #         returnTest = user.courseBasket
+    #         user.save()
 
-#         return JsonResponse(["Complete"], safe = False)
+    return JsonResponse(["Complete"], safe = False)
 
-# @csrf_exempt
-# @login_required(login_url = '/accounts/login')
-# def save(request):
-#     if request.method == 'POST':
-#         returnTest = ""
-#         if request.user.is_authenticated:
-#             netId = request.user.username
+@csrf_exempt
+@login_required(login_url = '/accounts/login')
+def save(request):
+    # if request.method == 'POST':
+    #     returnTest = ""
+    #     if request.user.is_authenticated:
+    #         netId = request.user.username
 
-#         if Students.objects.filter(netid = netId).count() != 0:
-#             user = Students.objects.get(netid=netId)
-#             user.courseBasket = json.loads(request.body)
-#             returnTest = user.courseBasket
-#             user.save()
+    #     if Students.objects.filter(netid = netId).count() != 0:
+    #         user = Students.objects.get(netid=netId)
+    #         user.courseBasket = json.loads(request.body)
+    #         returnTest = user.courseBasket
+    #         user.save()
 
-#         return JsonResponse(["Complete"], safe = False)
+    return JsonResponse(["Complete"], safe = False)
 
-# @login_required(login_url = '/accounts/login')
-# def queue(request):
-#     # get course queue for student
-#     if request.method == 'GET':
-#         returnQueue = []
-#         if request.user.is_authenticated:
-#             netId = request.user.username
+@login_required(login_url = '/accounts/login')
+def queue(request):
+    # get course queue for student
+    # if request.method == 'GET':
+    #     returnQueue = []
+    #     if request.user.is_authenticated:
+    #         netId = request.user.username
 
-#         if Students.objects.filter(netid = netId).count() != 0:
-#             user = Students.objects.get(netid=netId)
-#             returnQueue = json.dumps(user.courseBasket)
+    #     if Students.objects.filter(netid = netId).count() != 0:
+    #         user = Students.objects.get(netid=netId)
+    #         returnQueue = json.dumps(user.courseBasket)
 
-#         return JsonResponse(returnQueue, safe = False)
+    return JsonResponse(["Complete"], safe = False)
