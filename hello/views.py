@@ -478,6 +478,16 @@ def metainfo(request):
 
                 totalOutput.append(allCertsReqs[i])
 
+        for i in range(0, len(totalOutput)):
+            minRequired = 0
+            amountTaken = 0
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                minRequired += totalOutput[i]["req_list"][j]["min_needed"]
+                amountTaken += totalOutput[i]["req_list"][j]["count"]
+
+            totalOutput[i]["count"] = amountTaken
+            totalOutput[i]["min_needed"] = minRequired
+
         completeCert = 0
         attainable = 0
         neededCourses = 0
