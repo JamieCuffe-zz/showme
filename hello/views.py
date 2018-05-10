@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 from django.core.serializers.json import DjangoJSONEncoder
 import os
+import ast
 import re
 import collections
 import requests
@@ -159,10 +160,11 @@ def certificate(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
             
             ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
-            for i in range(0, len(ogbasket)):
-                output = ogbasket[i].split('*')
-                courseid = output[0]
-                studentCourses.append(courseid)
+            ogbasket = ogbasket[1:len(ogbasket) - 1]
+            # for i in range(0, len(ogbasket)):
+            #     output = ogbasket[i].split('*')
+            #     courseid = output[0]
+            #     studentCourses.append(courseid)
 
         
             
