@@ -160,7 +160,8 @@ def certificate(request):
             
             ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
             for i in range(0, len(ogbasket)):
-                courseid,coursename = ogbasket[i].split('*')
+                output = ogbasket[i].split('*')
+                courseid = output[0]
                 studentCourses.append(courseid)
 
         
