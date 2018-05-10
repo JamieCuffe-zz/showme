@@ -529,6 +529,6 @@ def queue(request):
 
         if Students.objects.filter(netid = netId).count() != 0:
             user = Students.objects.get(netid=netId)
-            returnQueue = json.loads(user.courseBasket)
+            returnQueue = json.dumps(user.courseBasket)
 
         return JsonResponse(returnQueue, safe = False)
