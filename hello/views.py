@@ -158,7 +158,7 @@ def certificate(request):
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
             
-            basket = json.loads(list(Students.objects.filter(netid = netId).values())[0]["courseBasket"])
+            basket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
             # for i in range(0,len(basket)):
             #     studentCourses.append(basket[i])
             # for i in range(0, len(basket)):
