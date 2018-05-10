@@ -163,7 +163,7 @@ def certificate(request):
             ogbasket = ogbasket[1:len(ogbasket) - 1]
             courses = ogbasket.split(', ')
             for i in range(0, len(courses)):
-                studentCourses.append(courses[i].split('*')[0])
+                studentCourses.append(courses[i].split('*')[0][1:])
             # for i in range(0, len(ogbasket)):
             #     output = ogbasket[i].split('*')
             #     courseid = output[0]
