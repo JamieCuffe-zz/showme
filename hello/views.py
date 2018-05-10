@@ -314,7 +314,7 @@ def certificate(request):
                 if percentage > 100:
                     percentage = 100
                 if percentage == 0:
-                    textColor = "#000000"
+                    textColor = "#f4f3f4"
                 totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"], percentage, textColor]
 
         # orders certificates
