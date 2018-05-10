@@ -159,6 +159,8 @@ def certificate(request):
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
             
             basket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
+            for i in range(0,len(basket)):
+                studentCourses.append(basket[i])
             # for i in range(0, len(basket)):
             #     formattedCourses[0].append({"name" : basket[i]})
 
@@ -223,8 +225,12 @@ def certificate(request):
                             if (matchCourseList[l]["used"]):
                                 count += 1
                             if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
-                                successOrFail = "success"
+                                if (matchCourseList[l]["name"]) in basket:
+                                    successOrFail = "warning"
+                                else:
+                                    successOrFail = "success"
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
+
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
                 totalOutput.append(allCertsReqs[i])
