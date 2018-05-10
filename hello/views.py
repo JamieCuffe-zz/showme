@@ -51,9 +51,9 @@ def transcript_check(request):
     # check if user is in database already
     if Students.objects.filter(netid = netId).count() == 0:
         # if not, add user netid to db
-        newUser = Students()
-        newUser.netid = netId
-        newUser.save()
+        # newUser = Students()
+        # newUser.netid = netId
+        # newUser.save()
         # redirect to tigerapps transcript upload
         return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result")
     # if user is in db already, their courses must be there already - redirect to main page
@@ -86,7 +86,14 @@ def transcript_result(request):
             for course in courses:
                 allCourses.append(course)
 
-    # update database with courses associated with netid
+    # if student doesn't exist in db, just add their netid
+    if Students.objects.filter(netid = netId).count() == 0:
+        # if not, add user netid to db
+        newUser = Students()
+        newUser.netid = netId
+        newUser.save()
+
+    # save courses associated with netid into db
     user = Students.objects.get(netid=netId)
     user.coursesCompleted = json.dumps(allCourses)
     user.save()
