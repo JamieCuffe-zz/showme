@@ -304,12 +304,23 @@ def certificate(request):
                     textColor = "#000000"
                 totalOutput[i]["req_list"][j]["barGraph"] = [colors[j%5], totalOutput[i]["req_list"][j]["count"], totalOutput[i]["req_list"][j]["min_needed"], percentage, textColor]
 
-        # orders courses
+        # orders certificates
         for i in range(0, len(totalOutput)):
-            if totalOutput[i]["min_needed"] != 0:
-                totalOutput[i]['percentage'] = round((totalOutput[i]['count']/totalOutput[i]["min_needed"]) * 100)
+            minRequired = 0
+            amountTaken = 0 
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                minRequired += totalOutput[i]["req_list"][j]["min_needed"]
+                amountTaken += totalOutput[i]["req_list"][j]["count"]
+
+            totalOutput[i]["count"] = amountTaken
+            totalOutput[i]["min_needed"] = minRequired
+
+            if totalOutput[i]["min_needed"] == 0:
+                totalOutput[i]["percentage"] = 0
+            elif totalOutput[i]["min_needed"] > 0 and (totalOutput[i]["count"]/totalOutput[i]["min_needed"] * 100) < 100:
+                totalOutput[i]["percentage"] = int(round(totalOutput[i]["count"]/totalOutput[i]["min_needed"] * 100))
             else:
-                totalOutput[i]['percentage'] = 0
+                totalOutput[i]["percentage"] = 100
 
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
@@ -463,7 +474,7 @@ def metainfo(request):
                 completeCert += 1
             else:
                 # calculates if the certificate is attainable
-                if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.75:
+                if totalOutput[i]["count"]/totalOutput[i]["min_needed"] >= 0.65:
                     attainable += 1
                     neededCourses += totalOutput[i]["min_needed"] - totalOutput[i]["count"]
 
@@ -506,3 +517,17 @@ def save(request):
             user.save()
         
         return JsonResponse(["Complete"], safe = False)
+
+@login_required(login_url = '/accounts/login')
+def queue(request):
+    # get course queue for student
+    if request.method == 'POST':
+        returnQueue = []
+        if request.user.is_authenticated:
+            netId = request.user.username
+
+        if Students.objects.filter(netid = netId).count() != 0:
+            user = Students.objects.get(netid=netId)
+            returnQueue = json.loads(user.courseBasket)
+
+        return JsonResponse(returnQueue, safe = False)
