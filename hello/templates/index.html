@@ -274,7 +274,7 @@ $(document).ready(function(){
 
             var progressBar = "";
             $.each(certificate.req_list, function(number, track) {
-              progressBar += '<h5>' + track.name + '</h5><div class="progress"><div style="background-color: ##f5f5f5;" class="progress-bar progress-bar-' + track.barGraph[0] + '" role="progressbar" aria-valuenow="' + track.barGraph[1] + '" aria-valuemin="0" aria-valuemax="' + track.barGraph[2] + '" style="width:' + track.barGraph[3] + '%;">' + track.barGraph[1] + ' of ' + track.barGraph[2] + ' completed</div></div>';
+              progressBar += '<h5>' + track.name + '</h5><div class="progress"><div class="progress-bar progress-bar-' + track.barGraph[0] + '" role="progressbar" aria-valuenow="' + track.barGraph[1] + '" aria-valuemin="0" aria-valuemax="' + track.barGraph[2] + '" style="width:' + track.barGraph[3] + '%;color: #f5f5f5'  + ';">' + track.barGraph[1] + ' of ' + track.barGraph[2] + ' completed</div></div>';
             });
 
             var itemName = certificate.name.split(" ").join("")
@@ -286,22 +286,6 @@ $(document).ready(function(){
           });
 
           $("#genCerts").append(output);
-        }
-      });
-
-      $.ajax({
-        type: "GET",
-        datatype: "json",
-        url: "https://showme333.herokuapp.com/queue",
-        success: function(data) {
-
-          var output = "";
-          var courseid = ""; 
-          $.each(data, function(index, element) {
-            var items = element.split("_");
-            output += '<a id = "'+ items[1] + '"><i class="fa fa-book"></i> <span>' + items[0] + '</span></a>';
-          });
-          $("#courseq").append(output);
         }
       });
     }
@@ -324,16 +308,14 @@ $(document).ready(function(){
         $this.css('background-color', '#00c0ef');
         $this.css('border-color', '#00acd6');
         $(removetag).remove();
-        var all = coursename + '_' + id;
-        var i = courseQueue.indexOf(all);
+        var i = courseQueue.indexOf(coursename);
         courseQueue.splice(i, 1);
       }
       else if($(this).attr("class") != "btn btn-block btn-success btn-sm"){
         $this.css('background-color', '#f39c12');
         $this.css('border-color', '#e08e0b');
         $("#courseq").append(text);
-        var all = coursename + '*' + id;
-        courseQueue.push(all);
+        courseQueue.push(coursename);
       }
 
       $this.data('clicked', !clicked);
