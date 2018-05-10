@@ -297,6 +297,7 @@ $(document).ready(function(){
 
           var output = "";
           var courseid = ""; 
+          console.log(data);
           $.each(data, function(index, element) {
             var items = element.split("_");
             output += '<a id = "'+ items[1] + '"><i class="fa fa-book"></i> <span>' + items[0] + '</span></a>';
