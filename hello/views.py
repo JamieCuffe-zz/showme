@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.backends import ModelBackend
 from django.core.serializers.json import DjangoJSONEncoder
 import os
+import ast
 import re
 import collections
 import requests
@@ -157,12 +158,22 @@ def certificate(request):
             # data = list(courses)[0]["coursesCompleted"]
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
+<<<<<<< HEAD
 
+=======
+            basket = []
+>>>>>>> beaeaaf4a239b740788e03cace26b195a7ac6cb7
             ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
-            for i in range(0, len(ogbasket)):
-                output = ogbasket[i].split('*')
-                courseid = output[0]
-                studentCourses.append(courseid)
+            ogbasket = ogbasket[1:len(ogbasket) - 1]
+            courses = ogbasket.split(', ')
+            for i in range(0, len(courses)):
+                stupid = courses[i].split('*')[0]
+                studentCourses.append(stupid[1:len(stupid) -1])
+                basket.append(stupid[1:len(stupid) -1])
+            # for i in range(0, len(ogbasket)):
+            #     output = ogbasket[i].split('*')
+            #     courseid = output[0]
+            #     studentCourses.append(courseid)
 
 
 
@@ -223,11 +234,11 @@ def certificate(request):
                             if (matchCourseList[l]["used"]):
                                 count += 1
                             if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
-                                successOrFail = "success"
-                                # if (matchCourseList[l]["name"]) in basket:
-                                #     successOrFail = "warning"
-                                # else:
-                                #     successOrFail = "success"
+                                #successOrFail = "success"
+                                if (matchCourseList[l]["name"]) in basket:
+                                    successOrFail = "warning"
+                                else:
+                                    successOrFail = "success"
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
 
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
@@ -323,7 +334,7 @@ def certificate(request):
 
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
-        return JsonResponse(ogbasket, safe=False)
+        return JsonResponse(totalOutput, safe=False)
 
     # POST request - puts student netid and course basket into db
 
