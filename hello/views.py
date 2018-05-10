@@ -159,6 +159,7 @@ def certificate(request):
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             basket = []
@@ -170,6 +171,16 @@ def certificate(request):
                 stupid = courses[i].split('*')[0]
                 studentCourses.append(stupid[1:len(stupid) -1])
                 basket.append(stupid[1:len(stupid) -1])
+=======
+            # basket = []
+            # ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
+            # ogbasket = ogbasket[1:len(ogbasket) - 1]
+            # courses = ogbasket.split(', ')
+            # for i in range(0, len(courses)):
+            #     stupid = courses[i].split('*')[0]
+            #     studentCourses.append(stupid[1:len(stupid) -1])
+            #     basket.append(stupid[1:len(stupid) -1])
+>>>>>>> c7b47ced94a5fe5286c6e848c3c8509521be771d
             # for i in range(0, len(ogbasket)):
             #     output = ogbasket[i].split('*')
             #     courseid = output[0]
@@ -234,11 +245,11 @@ def certificate(request):
                             if (matchCourseList[l]["used"]):
                                 count += 1
                             if (re.search(regexString, matchCourseList[l]["name"])) and (matchCourseList[l]["used"]):
-                                #successOrFail = "success"
-                                if (matchCourseList[l]["name"]) in basket:
-                                    successOrFail = "warning"
-                                else:
-                                    successOrFail = "success"
+                                successOrFail = "success"
+                                # if (matchCourseList[l]["name"]) in basket:
+                                #     successOrFail = "warning"
+                                # else:
+                                #     successOrFail = "success"
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
 
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
