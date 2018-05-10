@@ -51,9 +51,9 @@ def transcript_check(request):
     # check if user is in database already
     if Students.objects.filter(netid = netId).count() == 0:
         # if not, add user netid to db
-        newUser = Students()
-        newUser.netid = netId
-        newUser.save()
+        # newUser = Students()
+        # newUser.netid = netId
+        # newUser.save()
         # redirect to tigerapps transcript upload
         return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result")
     # if user is in db already, their courses must be there already - redirect to main page
@@ -86,7 +86,14 @@ def transcript_result(request):
             for course in courses:
                 allCourses.append(course)
 
-    # update database with courses associated with netid
+    # if student doesn't exist in db, just add their netid
+    if Students.objects.filter(netid = netId).count() == 0:
+        # if not, add user netid to db
+        newUser = Students()
+        newUser.netid = netId
+        newUser.save()
+
+    # save courses associated with netid into db
     user = Students.objects.get(netid=netId)
     user.coursesCompleted = json.dumps(allCourses)
     user.save()
@@ -158,20 +165,6 @@ def certificate(request):
             # data = list(courses)[0]["coursesCompleted"]
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-            basket = []
->>>>>>> beaeaaf4a239b740788e03cace26b195a7ac6cb7
-            ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
-            ogbasket = ogbasket[1:len(ogbasket) - 1]
-            courses = ogbasket.split(', ')
-            for i in range(0, len(courses)):
-                stupid = courses[i].split('*')[0]
-                studentCourses.append(stupid[1:len(stupid) -1])
-                basket.append(stupid[1:len(stupid) -1])
-=======
             # basket = []
             # ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
             # ogbasket = ogbasket[1:len(ogbasket) - 1]
@@ -180,7 +173,6 @@ def certificate(request):
             #     stupid = courses[i].split('*')[0]
             #     studentCourses.append(stupid[1:len(stupid) -1])
             #     basket.append(stupid[1:len(stupid) -1])
->>>>>>> c7b47ced94a5fe5286c6e848c3c8509521be771d
             # for i in range(0, len(ogbasket)):
             #     output = ogbasket[i].split('*')
             #     courseid = output[0]
@@ -510,45 +502,45 @@ def metainfo(request):
 @csrf_exempt
 @login_required(login_url = '/accounts/login')
 def delete(request):
-    if request.method == 'POST':
-        returnTest = ""
-        if request.user.is_authenticated:
-            netId = request.user.username
+    # if request.method == 'POST':
+    #     returnTest = ""
+    #     if request.user.is_authenticated:
+    #         netId = request.user.username
 
-        if Students.objects.filter(netid = netId).count() != 0:
-            user = Students.objects.get(netid=netId)
-            user.courseBasket = ""
-            returnTest = user.courseBasket
-            user.save()
+    #     if Students.objects.filter(netid = netId).count() != 0:
+    #         user = Students.objects.get(netid=netId)
+    #         user.courseBasket = ""
+    #         returnTest = user.courseBasket
+    #         user.save()
 
-        return JsonResponse(["Complete"], safe = False)
+    return JsonResponse(["Complete"], safe = False)
 
 @csrf_exempt
 @login_required(login_url = '/accounts/login')
 def save(request):
-    if request.method == 'POST':
-        returnTest = ""
-        if request.user.is_authenticated:
-            netId = request.user.username
+    # if request.method == 'POST':
+    #     returnTest = ""
+    #     if request.user.is_authenticated:
+    #         netId = request.user.username
 
-        if Students.objects.filter(netid = netId).count() != 0:
-            user = Students.objects.get(netid=netId)
-            user.courseBasket = json.loads(request.body)
-            returnTest = user.courseBasket
-            user.save()
+    #     if Students.objects.filter(netid = netId).count() != 0:
+    #         user = Students.objects.get(netid=netId)
+    #         user.courseBasket = json.loads(request.body)
+    #         returnTest = user.courseBasket
+    #         user.save()
 
-        return JsonResponse(["Complete"], safe = False)
+    return JsonResponse(["Complete"], safe = False)
 
 @login_required(login_url = '/accounts/login')
 def queue(request):
     # get course queue for student
-    if request.method == 'GET':
-        returnQueue = []
-        if request.user.is_authenticated:
-            netId = request.user.username
+    # if request.method == 'GET':
+    #     returnQueue = []
+    #     if request.user.is_authenticated:
+    #         netId = request.user.username
 
-        if Students.objects.filter(netid = netId).count() != 0:
-            user = Students.objects.get(netid=netId)
-            returnQueue = json.dumps(user.courseBasket)
+    #     if Students.objects.filter(netid = netId).count() != 0:
+    #         user = Students.objects.get(netid=netId)
+    #         returnQueue = json.dumps(user.courseBasket)
 
-        return JsonResponse(returnQueue, safe = False)
+    return JsonResponse(["Complete"], safe = False)
