@@ -158,7 +158,7 @@ def certificate(request):
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
             
-            basket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
+            basket = list(Students.objects.filter(netid = netId).values())
             for i in range(0,len(basket)):
                 studentCourses.append(basket[i])
             # for i in range(0, len(basket)):
@@ -324,7 +324,7 @@ def certificate(request):
 
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
-        return JsonResponse(totalOutput, safe=False)
+        return JsonResponse(basket, safe=False)
 
     # POST request - puts student netid and course basket into db
 
