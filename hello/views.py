@@ -323,7 +323,7 @@ def certificate(request):
 
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
-        return JsonResponse(studentCourses, safe=False)
+        return JsonResponse(ogbasket, safe=False)
 
     # POST request - puts student netid and course basket into db
 
