@@ -289,7 +289,7 @@ $(document).ready(function(){
         }
       });
 
-      /*$.ajax({
+      $.ajax({
         type: "GET",
         datatype: "json",
         url: "https://showme333.herokuapp.com/queue",
@@ -298,13 +298,13 @@ $(document).ready(function(){
           var output = "";
           var courseid = ""; 
           $.each(data, function(index, element) {
-            courseid = element.course.replace(/\s/g, '') + '_' + element.certificate.replace(/\s/g, '');
-            output += '<a id = "'+ courseid + '"><i class="fa fa-book"></i> <span>' + element.course + '</span></a>';
+            var items = element.split("_");
+            output += '<a id = "'+ items[1] + '"><i class="fa fa-book"></i> <span>' + items[0] + '</span></a>';
           });
 
           $("#courseq").append(output);
         }
-      });*/
+      });
     }
 
     $(document).ready(function () {
