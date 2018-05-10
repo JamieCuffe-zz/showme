@@ -513,7 +513,7 @@ def save(request):
 
         if Students.objects.filter(netid = netId).count() != 0:
             user = Students.objects.get(netid=netId)
-            user.courseBasket = request.body
+            user.courseBasket = json.loads(request.body)
             returnTest = user.courseBasket
             user.save()
         
