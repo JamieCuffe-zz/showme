@@ -161,6 +161,9 @@ def certificate(request):
             
             ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
             ogbasket = ogbasket[1:len(ogbasket) - 1]
+            courses = ogbasket.split(', ')
+            for i in range(0, len(courses)):
+                studentCourses.append(courses[i].split('*')[0])
             # for i in range(0, len(ogbasket)):
             #     output = ogbasket[i].split('*')
             #     courseid = output[0]
@@ -325,7 +328,7 @@ def certificate(request):
 
         # orders by percent complete
         totalOutput.sort(key = lambda item:item['percentage'], reverse = True)
-        return JsonResponse(totalOutput, safe=False)
+        return JsonResponse(studentCourses, safe=False)
 
     # POST request - puts student netid and course basket into db
 
