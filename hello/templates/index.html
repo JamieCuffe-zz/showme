@@ -348,7 +348,7 @@ $(document).ready(function(){
         datatype: "json",
         contentType:"json",
         url: "https://showme333.herokuapp.com/save",
-        data: JSON.stringify(courseQueue),
+        data: courseQueue,
         success: function(returnJSON) {
           $("#genMetaInfo").empty();
           $("#genCerts").empty();
