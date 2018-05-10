@@ -157,16 +157,16 @@ def certificate(request):
             # data = list(courses)[0]["coursesCompleted"]
             # studentCourses = json.loads(data)
             studentCourses = json.loads(list(Students.objects.filter(netid = netId).values("coursesCompleted"))[0]["coursesCompleted"])
-            
+
             ogbasket = list(Students.objects.filter(netid = netId).values())[0]["courseBasket"]
             for i in range(0, len(ogbasket)):
                 output = ogbasket[i].split('*')
                 courseid = output[0]
                 studentCourses.append(courseid)
 
-        
-            
-        # call interpreter 
+
+
+        # call interpreter
         allCerts = ["AAS", "AMS", "CWR", "EMS", "ENT", "FIN", "GHP", "GSS", "LAS", "LIN", "NEU", "PAC", "PEB", "SML", "SPA", "THR", "URB", "VPL"]
         allCertsCourses = []
         allCertsReqs = []
@@ -209,8 +209,8 @@ def certificate(request):
                 if trend == 0:
                     allCertsReqs[i]["trend"] = ""
                 elif trend == 1:
-                    allCertsReqs[i]["trend"] = '<i style= "color: #00a663" class="fa fa-caret-up" data-toggle="tooltip" data-placement="top" title="Trending: The number of students taking this certificate has increased over the past 4 years."></i>'
-                
+                    allCertsReqs[i]["trend"] = '<i style= "color: #00c1eb" class="fa fa-line-chart" data-toggle="tooltip" data-placement="top" title="Trending: The number of students taking this certificate has increased over the past 4 years."></i>'
+
                 reqList = json.loads(testCertificate[0]["tracks"])
                 for j in range(0, len(reqList)):
                     courseList = reqList[j]["courses"]
@@ -287,7 +287,7 @@ def certificate(request):
                             seenTwo = True
                     if (seenTwo == False):
                         newCourseListTwo.append(newCourseList[p])
-                totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo        
+                totalOutput[i]["req_list"][j]["course_list"] =newCourseListTwo
 
         # adds format for each track for visual
         for i in range(0, len(totalOutput)):
@@ -306,7 +306,7 @@ def certificate(request):
         # orders certificates
         for i in range(0, len(totalOutput)):
             minRequired = 0
-            amountTaken = 0 
+            amountTaken = 0
             for j in range(0, len(totalOutput[i]["req_list"])):
                 minRequired += totalOutput[i]["req_list"][j]["min_needed"]
                 amountTaken += totalOutput[i]["req_list"][j]["count"]
@@ -454,7 +454,7 @@ def metainfo(request):
                         courseListNew.append({"title" : courseList[k], "satisfied" : successOrFail})
 
                         '''
-                        # updates color for courses from queue 
+                        # updates color for courses from queue
                         for t in range(0, len(courseListNew)):
                             if courseListNew[t]["title] in basket:
                                 courseListNew[t]["satisfied"] = "warning"
@@ -514,7 +514,7 @@ def save(request):
             user.courseBasket = json.loads(request.body)
             returnTest = user.courseBasket
             user.save()
-        
+
         return JsonResponse(["Complete"], safe = False)
 
 @login_required(login_url = '/accounts/login')
