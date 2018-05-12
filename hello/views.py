@@ -148,6 +148,12 @@ def about(request):
         netId = request.user.username
     return render(request, 'about.html', {'user': netId})
 
+@login_required(login_url = '/accounts/login')
+def data(request):
+    if request.user.is_authenticated:
+        netId = request.user.username
+    return render(request, 'data.html', {'user': netId})
+
 # def my_view(request):
 
 
