@@ -10,6 +10,8 @@
    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Datatables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/static/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -59,40 +61,44 @@
 
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
-  <div class="wrapper">
+      <!-- ***** Preloader Start ***** -->
+      <div id="preloader">
+          <div class="mosh-preloader"></div>
+      </div>
 
-  <header class="main-header">
+      <header class="header_area">
+          <div class="container-fluid h-100">
+              <div class="row h-100">
+                  <!-- Menu Area Start -->
+                  <div class="col-12 h-100">
+                      <div class="menu_area h-100">
+                          <nav class="navbar h-100 navbar-expand-lg align-items-center">
+                              <!-- Logo -->
+                              <h1><a href="index.html" style="color: #ffffff;" class="logo">
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg">show<b>ME</b></span>
+                            </a></h1>
 
-    <!-- Logo -->
-    <a href="index.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">S<b>M</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">show<b>ME</b></span>
-    </a>
+                              <!-- Menu Area -->
+                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mosh-navbar" aria-controls="mosh-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-    <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
-          <li class="nav-item">
-              <a class="nav-link active" href="index">Home</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" href="about">About</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" href="data">Certificate Information</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" href="https://docs.google.com/forms/d/e/1FAIpQLSfZbkE4T5wTUF86DXeMyHnCQgGEn2Dix8_3bhYsUrvo5Ctdew/viewform?usp=sf_link">Feedback</a>
-          </li>
-      </ul>
-    </div>
-  </nav>
-  </header>
+                              <div class="collapse navbar-collapse justify-content-end" id="mosh-navbar">
+                                  <ul class="navbar-nav animated" id="nav">
+                                      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                      <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
+                                      <li class="nav-item">
+                                          <a class="nav-link active" href="data">Certificate Information</a>
+                                      </li>
+                                      <li class="nav-item"><a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfZbkE4T5wTUF86DXeMyHnCQgGEn2Dix8_3bhYsUrvo5Ctdew/viewform">Feedback</a></li>
+                                  </ul>
+                              </div>
+                          </nav>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
 
-<div class="content-wrapper">
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
