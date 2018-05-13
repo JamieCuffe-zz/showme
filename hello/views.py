@@ -351,7 +351,7 @@ def testtranscript(request):
     return render(request, 'testtranscript.html')
 
 def presentation(request):
-    return FileResponse(open('/static/showME_Presentation.pdf', 'rb'), content_type='application/pdf')
+    return FileResponse(open('showME_Presentation.pdf', 'rb'), content_type='application/pdf')
 
 @login_required(login_url = '/accounts/login')
 def result(request):
