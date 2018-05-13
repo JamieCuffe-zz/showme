@@ -148,6 +148,12 @@ def about(request):
         netId = request.user.username
     return render(request, 'about.html', {'user': netId})
 
+@login_required(login_url = '/accounts/login')
+def data(request):
+    if request.user.is_authenticated:
+        netId = request.user.username
+    return render(request, 'data.html', {'user': netId})
+
 # def my_view(request):
 
 
@@ -477,6 +483,16 @@ def metainfo(request):
                     allCertsReqs[i]["req_list"][j]["course_list"] = courseListNew
 
                 totalOutput.append(allCertsReqs[i])
+
+        for i in range(0, len(totalOutput)):
+            minRequired = 0
+            amountTaken = 0
+            for j in range(0, len(totalOutput[i]["req_list"])):
+                minRequired += totalOutput[i]["req_list"][j]["min_needed"]
+                amountTaken += totalOutput[i]["req_list"][j]["count"]
+
+            totalOutput[i]["count"] = amountTaken
+            totalOutput[i]["min_needed"] = minRequired
 
         completeCert = 0
         attainable = 0
