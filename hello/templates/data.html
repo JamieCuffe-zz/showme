@@ -520,7 +520,7 @@
 $(document).ready(function () {
 
 //doughnut
-var ctxD = document.getElementById("doughnutChart2017").getContext('2d');
+var ctxD = document.getElementById("doughnutChart2014").getContext('2d');
 var myLineChart = new Chart(ctxD, {
     type: 'doughnut',
     data: {
@@ -539,36 +539,36 @@ var myLineChart = new Chart(ctxD, {
 });
 
 //doughnut
-var ctxD = document.getElementById("doughnutChart2016").getContext('2d');
-var myLineChart = new Chart(ctxD, {
-    type: 'doughnut',
-    data: {
-        labels: ["0 Certificates", "1 Certificate", "2 Certificates", "3 Certificates", "4 Certificates", "5 Certificates", "6 Certificates"],
-        datasets: [
-            {
-                data: [47.27, 39.16, 10.84, 2.34, 0.39],
-                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#000080","#156f00", "#4D5360"],
-                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#1d2a92", "#33921D", "#616774"]
-            }
-        ]
-    },
-    options: {
-        responsive: true
-    }
-});
-
-
-//doughnut
 var ctxD = document.getElementById("doughnutChart2015").getContext('2d');
 var myLineChart = new Chart(ctxD, {
     type: 'doughnut',
     data: {
-        labels: ["0 Certificates", "1 Certificate", "2 Certificates", "3 Certificates", "4 Certificates", "5 Certificates", "6 Certificates"],
+        labels: ["0 Certificates", "1 Certificate", "2 Certificates", "3 Certificates", "4 Certificates"],
+        datasets: [
+            {
+                data: [47.27, 39.16, 10.84, 2.34, 0.39],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#000080"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#1d2a92"]
+            }
+        ]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+
+//doughnut
+var ctxD = document.getElementById("doughnutChart2016").getContext('2d');
+var myLineChart = new Chart(ctxD, {
+    type: 'doughnut',
+    data: {
+        labels: ["0 Certificates", "1 Certificate", "2 Certificates", "3 Certificates", "4 Certificates"],
         datasets: [
             {
                 data: [45.91, 38.41, 13.08, 2.45, 0.15],
-                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#000080","#156f00", "#4D5360"],
-                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#1d2a92", "#33921D", "#616774"]
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#000080"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#1d2a92"]
             }
         ]
     },
@@ -578,16 +578,16 @@ var myLineChart = new Chart(ctxD, {
 });
 
 //doughnut
-var ctxD = document.getElementById("doughnutChart2014").getContext('2d');
+var ctxD = document.getElementById("doughnutChart2017").getContext('2d');
 var myLineChart = new Chart(ctxD, {
     type: 'doughnut',
     data: {
-        labels: ["0 Certificates", "1 Certificate", "2 Certificates", "3 Certificates", "4 Certificates", "5 Certificates", "6 Certificates"],
+        labels: ["0 Certificates", "1 Certificate", "2 Certificates", "3 Certificates", "4 Certificates", "5 Certificates"],
         datasets: [
             {
                 data: [46.80, 37.97, 11.72, 3.05, 0.39, 0.08],
-                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#000080","#156f00", "#4D5360"],
-                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#1d2a92", "#33921D", "#616774"]
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#000080","#156f00"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#1d2a92", "#33921D"]
             }
         ]
     },
