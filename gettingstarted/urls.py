@@ -42,4 +42,4 @@ urlpatterns = [
     url(r'^delete', hello.views.delete, name='delete'),
     url(r'^save', hello.views.save, name='save'),
     url(r'^queue', hello.views.queue, name='queue'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static('static', document_root='hello/templates')
