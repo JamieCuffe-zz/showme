@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^about', hello.views.about, name = 'about'),
     url(r'^data', hello.views.data, name = 'data'),
     url(r'^certificate', hello.views.certificate, name = 'certificate'),
+    url(r'^presentation', hello.views.presentation, name = 'presentation'),
     url(r'^transcript_result', hello.views.transcript_result, name='transcript_result'),
     url(r'^getrequest', hello.views.getrequest, name = 'getrequest'),
     url(r'^testtranscript', hello.views.testtranscript, name='testtranscript'),

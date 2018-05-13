@@ -19,6 +19,7 @@ import hello.verifier
 import hello.new_verifier
 from .models import Students,Certificates,Metadata
 from django.views.decorators.csrf import csrf_exempt
+from django.http import FileResponse, Http404
 # def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
@@ -348,6 +349,12 @@ def getrequest(request):
 @login_required(login_url = '/accounts/login')
 def testtranscript(request):
     return render(request, 'testtranscript.html')
+
+def presentation(request):
+    try:
+        return FileResponse(open('/static/showME_Presentation.pdf', 'rb'), content_type='application/pdf')
+    except FileNotFoundError:
+        raise Http404()
 
 @login_required(login_url = '/accounts/login')
 def result(request):
