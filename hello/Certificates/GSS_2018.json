@@ -23,8 +23,9 @@
     ],
     "req_list": [
         {
-            "name": "Core Requirement",
+            "name": "Core",
             "min_needed": 1,
+            "max_counted": 1,
             "explanation": "Students interested in pursuing the certificate generally apply to the program in their sophomore year after completing the introductory course, GSS201, which provides a background for advanced study and suggests the rich variety of feminist and LGBT scholarship being conducted today.",
             "double_counting_allowed": false,
             "pdfs_allowed": 1,
@@ -34,8 +35,9 @@
             ]
         },
         {
-            "name": "GSS Specific Course",
+            "name": "GSS Specific",
             "min_needed": 1,
+            "max_counted": 1,
             "explanation": "Students must take one additional 300- or 400-level GSS course.",
             "double_counting_allowed": false,
             "max_common_with_major": 1,
@@ -76,8 +78,9 @@
             ]
         },
         {
-            "name": "Elective Courses",
+            "name": "Elective",
             "min_needed": 3,
+            "max_counted": 3,
             "explanation": "Students are encouraged to take at least one course from at least three of the following thematic clusters.  At least one of the courses may not be used to satisfy the requirements for the student’s concentration:Transnational/global perspectives Gender, Race, and Ethnicity Bodies, Sexualities Culture and Representation Politics and Social Change Historical Perspectives",
             "double_counting_allowed": false,
             "max_common_with_major": 1,
@@ -125,17 +128,6 @@
                 "SPA 335",
                 "THR 332"
             ]
-        },
-        {
-            "name": "Independent Work",
-            "min_needed": 0,
-            "explanation": "Certificate students’ independent work must incorporate issues related to Gender and Sexuality Studies.  Students can fulfill this requirement in several ways. For those concentrating in humanities or social science disciplines, the senior thesis and at least one junior paper must incorporate issues related to GSS.  For students concentrating in disciplines in which it is difficult to incorporate GSS-related questions into junior papers and theses (including fields such as science or engineering), students can fulfill this requirement by submitting two revised GSS-related course papers for review by the Director.",
-            "double_counting_allowed": false,
-            "max_common_with_major": 0,
-            "pdfs_allowed": 0,
-            "completed_by_semester": 8,
-            "req_list": [],
-            "course_list": []
         }
     ]
 }
