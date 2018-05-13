@@ -693,7 +693,6 @@
         {
             "name": "Core",
             "min_needed": 2,
-            "max_counted": 2,
             "explanation": "Completion of GHP 350 (Critical Perspectives on Global Health and Health Policy) and GHP 351 (Epidemiology) is required by the end of junior year.",
             "double_counting_allowed": false,
             "max_common_with_major": 2,
@@ -707,7 +706,6 @@
         {
             "name": "Health-Related Electives",
             "min_needed": 4,
-            "max_counted": 4,
             "explanation": "Four additional health-related electives approved by the GHP program, at least one of which is in an area outside of the home department. ",
             "double_counting_allowed": false,
             "pdfs_allowed": 1,
