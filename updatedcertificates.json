@@ -380,7 +380,7 @@
     ],
     "req_list": [
         {
-            "name": "Introductory statistics course",
+            "name": "Introductory Statistics",
             "max_counted": 1,
             "min_needed": 1,
             "explanation": "An introductory statistics course",
@@ -396,7 +396,7 @@
             ]
         },
         {
-            "name": "Introductory optimization course",
+            "name": "Introductory Optimization",
             "max_counted": 1,
             "min_needed": 1,
             "explanation": "An introductory optimization course",
@@ -404,9 +404,9 @@
             "completed_by_semester": 8,
             "course_list": [
                 "CBE 442",
-                "ELE 382",
                 "MAE 433",
-                "ORF 307"
+                "ORF 307",
+                "ORF 363"
             ]
         },
         {
@@ -421,24 +421,26 @@
             ]
         },
         {
-            "name": "Optimization and uncertainty",
+            "name": "Optimization and Uncertainty",
             "max_counted": 1,
             "min_needed": 1,
             "explanation": "A course integrating optimization and uncertainty",
             "double_counting_allowed": false,
             "completed_by_semester": 8,
             "course_list": [
-                "COS 402",
+                "ORF 311",
+                "ORF 418",
+                "CEE 460",
+                "COS 324",
+                "MAE 345",
                 "ECO 418",
                 "ECO 462",
                 "ECO 465",
-                "MAE 345",
-                "ORF 311",
-                "ORF 418"
+                "WWS 340"
             ]
         },
         {
-            "name": "Management, entrepreneurship, or systems",
+            "name": "Management, Entrepreneurship, or Systems",
             "max_counted": 1,
             "min_needed": 1,
             "explanation": "An integrative course in management, entrepreneurship, or systems",
@@ -448,6 +450,7 @@
                 "CBE 442",
                 "EGR 491",
                 "EGR 497",
+                "ORF 360",
                 "ORF 411"
             ]
         }
