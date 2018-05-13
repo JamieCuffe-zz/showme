@@ -63,7 +63,8 @@ def transcript_check(request):
         # newUser.netid = netId
         # newUser.save()
         # redirect to tigerapps transcript upload
-        return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result")
+        return redirect("https://showme333.herokuapp.com/about")
+        #return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result")
     # if user is in db already, their courses must be there already - redirect to main page
     else:
         return redirect("https://showme333.herokuapp.com/index")
