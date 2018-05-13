@@ -351,10 +351,7 @@ def testtranscript(request):
     return render(request, 'testtranscript.html')
 
 def presentation(request):
-    try:
-        return FileResponse(open('/static/showME_Presentation.pdf', 'rb'), content_type='application/pdf')
-    except FileNotFoundError:
-        raise Http404()
+    return FileResponse(open('/static/showME_Presentation.pdf', 'rb'), content_type='application/pdf')
 
 @login_required(login_url = '/accounts/login')
 def result(request):
