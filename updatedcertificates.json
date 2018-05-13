@@ -471,7 +471,7 @@
         {
             "name": "Foundation Courses: Economics",
             "max_counted": 1,
-            "min_needed": 3,
+            "min_needed": 1,
             "explanation": "Economics: ECO 310 (Microeconomic Theory: A Mathematical Approach)",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
@@ -710,8 +710,8 @@
     "contacts": [
         {
             "type": "Director",
-            "name": "rkunzel@princeton.edu",
-            "email": "dprof@princeton.edu"
+            "name": "Regina Kunzel",
+            "email": "rkunzel@princeton.edu"
         },
         {
             "type": "Acting Director",

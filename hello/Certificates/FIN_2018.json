@@ -35,7 +35,7 @@
         {
             "name": "Foundation Courses: Economics",
             "max_counted": 1,
-            "min_needed": 3,
+            "min_needed": 1,
             "explanation": "Economics: ECO 310 (Microeconomic Theory: A Mathematical Approach)",
             "double_counting_allowed": false,
             "completed_by_semester": 4,
