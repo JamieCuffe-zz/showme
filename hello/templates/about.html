@@ -112,6 +112,18 @@
     <div class="mosh-breadcumb-area" style="background-image: url(/static/img/core-img/breadcumb.png);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumbContent">
+                        <h2>Get started with showME</h2>
+                        <p>To see your certificate progress, simply upload your transcript by clicking on the button below (don't worry, we don't save your grades!). You can get your transcript by logging into TigerHub and clicking on "View Internal Transcript."</p>
+                        <button id='start' type="submit">Launch App</button>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">About Us</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -410,6 +422,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/static/js/plugins.js"></script>
     <!-- Active js -->
     <script src="/static/js/active.js"></script>
+    <script>
+        document.getElementById("start").onclick = function () {
+            location.href = "https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result";
+        };
+    </script>
 </body>
 
 </html>
