@@ -17,7 +17,7 @@
     ],
     "req_list": [
         {
-            "name": "Introductory",
+            "name": "Introductory Courses",
             "max_counted": 1,
             "min_needed": 2,
             "explanation": "Two common introductory courses: EGR 200/ENT 201 and EGR 201/ENT 200.",
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "name": "Core",
+            "name": "Two Core Courses",
             "max_counted": 1,
             "min_needed": 2,
             "explanation": "Two core courses: must be chosen from a list, which may be updated each year by the Executive Committee",
@@ -45,29 +45,6 @@
                 "EGR 475",
                 "HIS 379",
                 "SOC 345"
-            ]
-        },
-        {
-            "name": "Breadth",
-            "max_counted": 1,
-            "min_needed": 2,
-            "explanation": "Unlike the above list of core courses, the below list of possible breadth courses is illustrative only. Each student may suggest other courses outside of this list, subject to approval by the program director. Students from science or engineering must use a course from the humanities or social science to satisfy the breadth course requirement.",
-            "double_counting_allowed": false,
-            "completed_by_semester": 8,
-            "course_list": [
-                "ANT 301",
-                "ECO 317",
-                "ECO 385",
-                "HIS 481",
-                "VIS 214",
-                "VIS 439",
-                "POL 377",
-                "POL 349",
-                "PSY 311",
-                "PSY 420",
-                "NEU 425",
-                "SOC 346",
-                "WWS 340"
             ]
         }
     ]
