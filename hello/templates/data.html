@@ -93,6 +93,8 @@
   </nav>
   </header>
 
+  <div class="content-wrapper">
+
     <div class="row">
         <div class="col-md-6">
             <div class="panel-group">
@@ -103,7 +105,7 @@
                         </h3>
                     </div>
                     <div class="box-body">
-                      <canvas id="pieChart2017" style="height:250px"></canvas>
+                      <canvas id="doughnutChart2017"></canvas>
                     </div>
                 </div>
             </div>
@@ -117,7 +119,7 @@
                         </h3>
                     </div>
                     <div class="box-body">
-                      <canvas id="pieChart2016" style="height:250px"></canvas>
+                      <canvas id="doughnutChart2016"></canvas>
                     </div>
                 </div>
             </div>
@@ -134,7 +136,7 @@
                         </h3>
                     </div>
                     <div class="box-body">
-                      <canvas id="pieChart2015" style="height:250px"></canvas>
+                      <canvas id="doughnutChart2015"></canvas>
                     </div>
                 </div>
             </div>
@@ -148,7 +150,7 @@
                         </h3>
                     </div>
                     <div class="box-body">
-                      <canvas id="pieChart2014" style="height:250px"></canvas>
+                      <canvas id="doughnutChart2014"></canvas>
                     </div>
                 </div>
             </div>
@@ -637,12 +639,15 @@
         </tfoot>
     </table>
 </div>
+</div>
 
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
     });
 </script>
+
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.2/js/mdb.js"> </script>
 
 <script>
 
@@ -652,168 +657,86 @@
 // Get context with jQuery - using jQuery's .get() method.
 
 $(document).ready(function () {
-    var pieChartCanvas = $('#pieChart2017').get(0).getContext('2d')
-    var config = {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					data: [
-						1,2,3
-					],
-					backgroundColor: [
-						'blue',
-                        'red',
-                        'green'
-					],
-					label: 'Dataset 1'
-				}],
-				labels: [
-					'Applications',
-					'Systems',
-					'Theory'
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'right',
-				},
-				title: {
-					display: true,
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-		};
 
-    var pieChart2017 = new Chart(pieChartCanvas, config)
+//doughnut
+var ctxD = document.getElementById("doughnutChart2017").getContext('2d');
+var myLineChart = new Chart(ctxD, {
+    type: 'doughnut',
+    data: {
+        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        datasets: [
+            {
+                data: [300, 50, 100, 40, 120],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }
+        ]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+//doughnut
+var ctxD = document.getElementById("doughnutChart2016").getContext('2d');
+var myLineChart = new Chart(ctxD, {
+    type: 'doughnut',
+    data: {
+        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        datasets: [
+            {
+                data: [300, 50, 100, 40, 120],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }
+        ]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+
+//doughnut
+var ctxD = document.getElementById("doughnutChart2015").getContext('2d');
+var myLineChart = new Chart(ctxD, {
+    type: 'doughnut',
+    data: {
+        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        datasets: [
+            {
+                data: [300, 50, 100, 40, 120],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }
+        ]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+//doughnut
+var ctxD = document.getElementById("doughnutChart2014").getContext('2d');
+var myLineChart = new Chart(ctxD, {
+    type: 'doughnut',
+    data: {
+        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        datasets: [
+            {
+                data: [300, 50, 100, 40, 120],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }
+        ]
+    },
+    options: {
+        responsive: true
+    }
+});
 
 });
 
-$(document).ready(function () {
-    var pieChartCanvas = $('#pieChart2016').get(0).getContext('2d')
-    var config = {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					data: [
-						1,2,3
-					],
-					backgroundColor: [
-						'blue',
-                        'red',
-                        'green'
-					],
-					label: 'Dataset 1'
-				}],
-				labels: [
-					'Applications',
-					'Systems',
-					'Theory'
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'right',
-				},
-				title: {
-					display: true,
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-		};
-
-    var pieChart2016 = new Chart(pieChartCanvas, config)
-
-});
-
-$(document).ready(function () {
-    var pieChartCanvas = $('#pieChart2015').get(0).getContext('2d')
-    var config = {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					data: [
-						1,2,3
-					],
-					backgroundColor: [
-						'blue',
-                        'red',
-                        'green'
-					],
-					label: 'Dataset 1'
-				}],
-				labels: [
-					'Applications',
-					'Systems',
-					'Theory'
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'right',
-				},
-				title: {
-					display: true,
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-		};
-
-    var pieChart2015 = new Chart(pieChartCanvas, config)
-
-});
-
-$(document).ready(function () {
-    var pieChartCanvas = $('#pieChart2014').get(0).getContext('2d')
-    var config = {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					data: [
-						1,2,3
-					],
-					backgroundColor: [
-						'blue',
-                        'red',
-                        'green'
-					],
-					label: 'Dataset 1'
-				}],
-				labels: [
-					'Applications',
-					'Systems',
-					'Theory'
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'right',
-				},
-				title: {
-					display: true,
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-		};
-
-    var pieChart2014 = new Chart(pieChartCanvas, config)
-
-});
 </script>
 
 </body>
