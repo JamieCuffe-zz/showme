@@ -107,9 +107,9 @@ def index(request):
     if request.user.is_authenticated:
         netId = request.user.username
 
-    #user tries to bypass intended flow without courses uploaded
+    #user tries to bypass intended flow without courses uploaded, redirect to transcript upload page
     if Students.objects.filter(netid = netId).count() == 0:
-        return redirect("https://showme333.herokuapp.com/about")
+        return redirect("https://transcriptapi.tigerapps.org?redirect=https://showme333.herokuapp.com/transcript_result")
     else:
         return render(request, 'index.html', {'user': netId})
 
