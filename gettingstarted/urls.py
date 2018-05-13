@@ -23,8 +23,8 @@ import django_cas_ng.views
 
 #@login_required
 
-handler404 = 'hello.views.404'
-handler500 = 'hello.views.500'
+# handler404 = 'hello.views.404'
+# handler500 = 'hello.views.500'
 
 #NEW
 urlpatterns = [
