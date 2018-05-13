@@ -108,6 +108,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# DISABLE VIEWABLE REST API
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
+
 CAS_SERVER_URL = 'https://fed.princeton.edu/cas/'
 
 CAS_REDIRECT_URL = 'https://showme333.herokuapp.com/index.html'
