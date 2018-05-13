@@ -350,9 +350,6 @@ def getrequest(request):
 def testtranscript(request):
     return render(request, 'testtranscript.html')
 
-def presentation(request):
-    return FileResponse(open('showME_Presentation.pdf', 'rb'), content_type='application/pdf')
-
 @login_required(login_url = '/accounts/login')
 def result(request):
     BASE_SERVICE_URL = "https://transcriptapi.tigerapps.org"
