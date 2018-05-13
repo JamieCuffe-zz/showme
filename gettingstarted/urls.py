@@ -23,6 +23,9 @@ import django_cas_ng.views
 
 #@login_required
 
+handler404 = 'hello.views.404'
+handler500 = 'hello.views.500'
+
 #NEW
 urlpatterns = [
     url(r'^accounts/login$', django_cas_ng.views.login, name='cas_ng_login'),

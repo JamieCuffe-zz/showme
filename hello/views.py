@@ -35,6 +35,14 @@ from django.views.decorators.csrf import csrf_exempt
     #     else:
     #         del session["CAS_TOKEN"]
     # return redirect(redirect_url)
+
+def handler404(request):
+    return render(request, '404.html', status=404)
+
+def handler500(request):
+    return render(request, '500.html', status=500)
+
+
 @login_required(login_url = '/accounts/login')
 def userCookiesTest(request):
     if request.user.is_authenticated:
