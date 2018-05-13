@@ -93,7 +93,26 @@
   </nav>
   </header>
 
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="/static/dist/img/user_placeholder.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>{{ user }}</p>
+        </div>
+      </div>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
   <div class="content-wrapper">
+
+  <section class="content">
 
     <div class="row">
         <div class="col-md-6">
@@ -115,7 +134,7 @@
                 <div class="panel panel-default">
                     <div style="background-color: #ffffff;" class="panel-heading">
                         <h3 class="panel-title">
-                            <a data-toggle="collapse" href="#2016_box">Class of 2017</a>
+                            <a data-toggle="collapse" href="#2016_box">Class of 2016</a>
                         </h3>
                     </div>
                     <div class="box-body">
@@ -132,7 +151,7 @@
                 <div class="panel panel-default">
                     <div style="background-color: #ffffff;" class="panel-heading">
                         <h3 class="panel-title">
-                            <a data-toggle="collapse" href="#2015_box">Class of 2017</a>
+                            <a data-toggle="collapse" href="#2015_box">Class of 2015</a>
                         </h3>
                     </div>
                     <div class="box-body">
@@ -146,11 +165,11 @@
                 <div class="panel panel-default">
                     <div style="background-color: #ffffff;" class="panel-heading">
                         <h3 class="panel-title">
-                            <a data-toggle="collapse" href="#2014_box">Class of 2017</a>
+                            <a data-toggle="collapse" href="#2014_box">Class of 2014</a>
                         </h3>
                     </div>
                     <div class="box-body">
-                      <canvas id="doughnutChart2014"></canvas>
+                      <canvas id="doughnutChart2014" style="height:200px"></canvas>
                     </div>
                 </div>
             </div>
@@ -640,6 +659,9 @@
     </table>
 </div>
 </div>
+</div>
+
+</section>
 
 <script>
     $(document).ready(function() {
