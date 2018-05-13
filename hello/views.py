@@ -62,7 +62,7 @@ def transcript_check(request):
     else:
         return redirect("https://showme333.herokuapp.com/index")
 
-
+@login_required(login_url = '/accounts/login')
 def transcript_result(request):
     if request.user.is_authenticated:
         netId = request.user.username
