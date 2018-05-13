@@ -115,41 +115,13 @@ def transcript_result(request):
 def index(request):
     if request.user.is_authenticated:
         netId = request.user.username
-    # intialize html string
-    #htmlOut = render_to_string('index.html')
-    # gets user specific information
-    # currentStudent = Students.objects.get(netid = 'testStudent')
 
-    #certificates = Certificates.objects.all()
-
-    # currentStudent = ""
-    # listOfInfo = interpretedData(currentStudent)
-    # certsComplete = listOfInfo[0]
-    # coursesComplete = listOfInfo[1]
-    # certsAttainable = listOfInfo[2]
-    # coursesNeeded = listOfInfo[3]
-
-    # for certificate in certificates:
-    #     # add header to htmlOut
-    #     studentContext = {
-    #         'student_name' : certificate.title,
-    #         'student_major' : certificate.contact_name,
-    #         'student_degree' : "AB",
-    #         'student_year' : 2020,
-    #         'gen_numCertsComplete' : 1,
-    #         'gen_numCoursesComplete' : 16,
-    #         'gen_numCertsAttainable' : 3,
-    #         'gen_numCoursesNeeded' : 12
-    #     }
-
-
-    # htmlOut += render_to_string('header_template.html', studentContext)
-
-    # htmlOut += render_to_string('bottom_end_structure.html')
-
-    # return html code
-    #return HttpResponse(htmlOut)
-    return render(request, 'index.html', {'user': netId})
+    #user tries to bypass intended flow without courses uploaded
+    if Students.objects.filter(netid = netId).count() == 0:
+        return redirect("https://showme333.herokuapp.com/about")
+    else:
+        return render(request, 'index.html', {'user': netId})
+    
 
 @login_required(login_url = '/accounts/login')
 def about(request):
