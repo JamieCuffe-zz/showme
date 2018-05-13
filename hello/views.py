@@ -19,6 +19,7 @@ import hello.verifier
 import hello.new_verifier
 from .models import Students,Certificates,Metadata
 from django.views.decorators.csrf import csrf_exempt
+from django.http import FileResponse, Http404
 # def login(request):
     # CAS login
     # redirect_url = "https://fed.princeton.edu/cas/login"
